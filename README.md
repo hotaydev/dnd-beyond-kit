@@ -2,7 +2,7 @@
 
 Extension to translate your D&D Beyond character sheet page to your language.
 
-It's also usefull to use the International System of Units (SI) for the metrics of character, spells, monsters, etc.
+It's also useful to use the International System of Units (SI) for the metrics of character, spells, monsters, etc.
 
 ---
 
