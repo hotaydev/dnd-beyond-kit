@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "D&D Beyond Translate",
+  "description": "Translate your D&D Beyond page to other languages, and use the SI metric system (meters, kg, etc.)",
+  "version": "0.1.0",
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png"
+    }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "js": [ "scripts/metrics.js" ],
+      "matches": [
+        "https://www.dndbeyond.com/characters/*",
+        "https://www.dndbeyond.com/monsters/*",
+        "https://www.dndbeyond.com/magic-items/*",
+        "https://www.dndbeyond.com/spells/*",
+        "https://www.dndbeyond.com/sources/*",
+        "https://www.dndbeyond.com/encounters/*",
+        "https://www.dndbeyond.com/combat-tracker/*"
+      ]
+    },
+    {
+      "js": [ "scripts/translations.js" ],
+      "matches": [
+        "https://www.dndbeyond.com/characters/*"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["translations/pt-br.json", "translations/es-es.json"],
+      "matches": [
+        "*://*/*"
+      ]
+    }
+  ]
+}

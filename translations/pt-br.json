@@ -1,0 +1,80 @@
+{
+  "skills": {
+    "strength": {
+      "title": "Força",
+      "abbr": "FOR"
+    },
+    "dexterity": {
+      "title": "Destreza",
+      "abbr": "DES"
+    },
+    "constitution": {
+      "title": "Constituição",
+      "abbr": "CON"
+    },
+    "intelligence": {
+      "title": "Inteligência",
+      "abbr": "INT"
+    },
+    "wisdom": {
+      "title": "Sabedoria",
+      "abbr": "SAB"
+    },
+    "charisma": {
+      "title": "Carisma",
+      "abbr": "CAR"
+    }
+  },
+  "subskills": {
+    "acrobatics": "Acrobacia",
+    "animal handling": "Adestramento",
+    "arcana": "Arcana (magia)",
+    "athletics": "Atletismo",
+    "deception": "Enganação",
+    "history": "História",
+    "insight": "Intuição",
+    "intimidation": "Intimidação",
+    "investigation": "Investigação",
+    "medicine": "Medicina",
+    "nature": "Natureza",
+    "perception": "Percepção",
+    "performance": "Atuação",
+    "persuasion": "Persuasão",
+    "religion": "Religião",
+    "sleight of hand": "Roubo",
+    "stealth": "Furtividade",
+    "survival": "Sobrevivência"
+  },
+  "main": {
+    "initiative": "Iniciativa",
+    "proficiency": "Proficiência",
+    "walking": "Velocidade",
+    "speed": "Caminhar",
+    "inspiration": "Inspirado",
+    "life": {
+      "heal": "Curar",
+      "damage": "Dano",
+      "current": "Atual",
+      "max": "Max",
+      "temp": "Temp",
+      "hitPoints": "Pontos de Vida"
+    },
+    "rest": {
+      "long rest": "Descanso Longo",
+      "short rest": "Descanso Curto"
+    },
+    "defense": {
+      "armor": "Defesa",
+      "class": "AC"
+    }
+  },
+  "actions": {
+    "actions": "Ações",
+    "spells": "Feitições",
+    "inventory": "Inventário",
+    "features & traits": "Características",
+    "description": "Descrição",
+    "notes": "Notas",
+    "extras": "Extras"
+  }
+}
