@@ -1,5 +1,7 @@
 # D&D Beyond Translate
 
+[link for Chrome Web Store](https://chromewebstore.google.com/detail/dd-beyond-translate/gdpopbkamfkkenkillfnocgljokkcopg)
+
 Extension to translate your D&D Beyond character sheet page to your language.
 
 It's also useful to use the International System of Units (SI) for the metrics of character, spells, monsters, etc.
@@ -7,7 +9,7 @@ It's also useful to use the International System of Units (SI) for the metrics o
 ---
 
 > [!IMPORTANT]
-> Using the character sheet in English is difficult, sometimes (Honestly, I didn't know what "Sleight of hand" meant, and I believe that "theft" or "steal" make more sense), so I've created this extension to simplify the process.
+> Using the character sheet in English is difficult, sometimes (Honestly, I didn't know what "Sleight of hand" meant, and I believe that "theft" or "steal" make more sense), so I've created this extension to simplify the process for non-US citizen users.
 
 ### Languages
 
