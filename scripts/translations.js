@@ -149,6 +149,16 @@ function translateActions(translations) {
   });
 }
 
+function translateConditions(translations) {
+  const conditions = document.querySelectorAll('.ct-combat__statuses .ct-combat__summary-label');
+  if (!conditions) return;
+
+  conditions.forEach((condition) => {
+    const actionContent = condition.innerText.toLowerCase();
+    condition.innerText = translations.main.conditions[actionContent] ?? condition.innerText;
+  });
+}
+
 async function translateContent() {
   const language = await languageOfTheExtension();
   const translations = await getTranslations(language);
@@ -160,6 +170,7 @@ async function translateContent() {
   translateWalkAndDefense(translations);
   translateHealth(translations);
   translateActions(translations);
+  translateConditions(translations);
 }
 
 async function runWhenPageReady() {

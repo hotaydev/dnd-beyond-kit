@@ -66,6 +66,10 @@
     "defense": {
       "armor": "Defesa",
       "class": "AC"
+    },
+    "conditions": {
+      "defenses": "Defesas",
+      "conditions": "Condições"
     }
   },
   "actions": {
