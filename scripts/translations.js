@@ -159,6 +159,20 @@ function translateConditions(translations) {
   });
 }
 
+function minifyContent() {
+  const footer = document.querySelector('footer');
+  const megamenu = document.querySelector('div[name=megamenu] .mm-navbar');
+  const socials = document.querySelector('.site-bar__container .socials');
+  const interactions = document.querySelector('.site-bar__container .user-interactions');
+  const search = document.querySelector('.site-bar__container .site-search form .react-autosuggest__container');
+
+  if (footer) footer.style.visibility = 'hidden';
+  if (megamenu) megamenu.style.visibility = 'hidden';
+  if (socials) socials.style.visibility = 'hidden';
+  if (interactions) interactions.style.visibility = 'hidden';
+  if (search) search.style.visibility = 'hidden';
+}
+
 async function translateContent() {
   const language = await languageOfTheExtension();
   const translations = await getTranslations(language);
@@ -172,6 +186,7 @@ async function translateContent() {
   translateActions(translations);
   translateConditions(translations);
 
+  minifyContent();
   document.title = document.title.split('\'s')[0];
 }
 
