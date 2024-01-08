@@ -171,6 +171,8 @@ async function translateContent() {
   translateHealth(translations);
   translateActions(translations);
   translateConditions(translations);
+
+  document.title = document.title.split('\'s')[0];
 }
 
 async function runWhenPageReady() {
