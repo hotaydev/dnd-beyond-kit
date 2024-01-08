@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "D&D Beyond Translate",
-  "description": "Translate your D&D Beyond page to other languages, and use the SI metric system (meters, kg, etc.)",
+  "name": "D&D Beyond Kit",
+  "description": "Translate, add common metrics, and add new features to your D&D Beyond pages.",
   "version": "0.2.0",
   "icons": {
     "16": "images/icon-16.png",
