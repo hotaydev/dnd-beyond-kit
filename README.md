@@ -1,10 +1,13 @@
-# D&D Beyond Translate
+# D&D Beyond Kit
 
 [link for Chrome Web Store](https://chromewebstore.google.com/detail/dd-beyond-translate/gdpopbkamfkkenkillfnocgljokkcopg)
 
-Extension to translate your D&D Beyond character sheet page to your language.
-
-It's also useful to use the International System of Units (SI) for the metrics of character, spells, monsters, etc.
+This extension is used to:
+- Traslate your D&D Beyond character sheet page to your language;
+- Use the International Unit System (SI) for metrics on Character Sheet, monsters, spells, etc.;
+- Remove the Character Sheep interface pollutionm leaving it simpler;
+- Add a "Skip to the top" button on long pages;
+- Add autoload on listing pages (such as monsters and spells pages).
 
 ---
 

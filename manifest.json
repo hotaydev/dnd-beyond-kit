@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "D&D Beyond Translate",
   "description": "Translate your D&D Beyond page to other languages, and use the SI metric system (meters, kg, etc.)",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "icons": {
     "16": "images/icon-16.png",
     "32": "images/icon-32.png",
@@ -23,7 +23,8 @@
   ],
   "content_scripts": [
     {
-      "js": [ "scripts/metrics.js" ],
+      "js": [ "scripts/metrics.js", "scripts/backToTop.js", "scripts/lazyLoad.js" ],
+      "css": [ "scripts/styles.css" ],
       "matches": [
         "https://www.dndbeyond.com/characters/*",
         "https://www.dndbeyond.com/monsters/*",
@@ -31,7 +32,8 @@
         "https://www.dndbeyond.com/spells/*",
         "https://www.dndbeyond.com/sources/*",
         "https://www.dndbeyond.com/encounters/*",
-        "https://www.dndbeyond.com/combat-tracker/*"
+        "https://www.dndbeyond.com/combat-tracker/*",
+        "https://www.dndbeyond.com/homebrew/*"
       ]
     },
     {
