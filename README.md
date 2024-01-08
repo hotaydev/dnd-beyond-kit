@@ -1,6 +1,6 @@
 # D&D Beyond Kit
 
-[link for Chrome Web Store](https://chromewebstore.google.com/detail/dd-beyond-translate/gdpopbkamfkkenkillfnocgljokkcopg)
+[link for Chrome Web Store](https://chromewebstore.google.com/detail/dd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg)
 
 This extension is used to:
 - Traslate your D&D Beyond character sheet page to your language;
