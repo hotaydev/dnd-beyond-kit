@@ -68,6 +68,7 @@ function translateSkills(translations) {
 
 function translateSubskills(translations) {
   const subSkills = document.querySelectorAll('.ct-skills__item .ct-skills__col--skill');
+  const skillsName = document.querySelector('.ct-skills__header .ct-skills__col--skill .ct-skills__heading');
   if (!subSkills) return;
 
   subSkills.forEach((skill) => {
@@ -75,6 +76,8 @@ function translateSubskills(translations) {
     skill.innerText = translations.subskills[skillTitle] ?? skill.innerText;
     skill.title = skillTitle;
   });
+
+  if (skillsName) skillsName.innerText = translations.subskills.skills.toUpperCase();
 }
 
 function translateTopBarMainContent(translations) {
