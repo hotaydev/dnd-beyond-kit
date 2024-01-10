@@ -75,11 +75,47 @@
   },
   "actions": {
     "actions": "Ações",
-    "spells": "Feitiçõs",
+    "actions_types": {
+      "all": "Todas",
+      "attack": "Ataques",
+      "action": "Ações",
+      "bonus action": "Ações Bônus",
+      "reaction": "Reações",
+      "other": "Outras"
+    },
+    "spells": "Feitiços",
+    "spells_types": {
+      "modifier": "Modificador",
+      "spell attack": "Modificador do Hit",
+      "save dc": "DC para salvar"
+    },
     "inventory": "Inventário",
+    "inventory_types": {
+      "weight carried:": "Peso carregado:"
+    },
     "features & traits": "Características",
+    "features_types": {
+      "all": "Todas",
+      "class features": "Características de Classe",
+      "racial traits": "Características da Raça",
+      "feats": "Talentos"
+    },
     "description": "Descrição",
+    "description_types": {
+      "all": "Todas",
+      "background": "Passado / História",
+      "characteristics": "Características",
+      "appearance": "Aparência"
+    },
     "notes": "Notas",
+    "notes_types": {
+      "all": "Todas",
+      "orgs": "Organizações",
+      "allies": "Aliados",
+      "enemies": "Inimigos",
+      "backstory": "Passado",
+      "other": "Outros"
+    },
     "extras": "Extras"
   }
 }

@@ -176,6 +176,49 @@ function minifyContent() {
   if (search) search.style.visibility = 'hidden';
 }
 
+function tabsListener(translations) {
+  const tabs = document.querySelectorAll('.ddbc-tab-list__nav-item-label');
+  tabs.forEach((tab) => tab.addEventListener('click', async () => {
+    setTimeout(async () => await translateTab(translations, tab.innerText.toLowerCase()), 300);
+  }));
+}
+
+async function translateTab(translations, tab) {
+  let innerTabs;
+
+  switch (tab) {
+    case "ações":
+    case "acciones":
+      innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
+      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.actions_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      break;
+    case "feitiços":
+    case "hechizos":
+      innerTabs = document.querySelectorAll('.ct-spells__casting .ct-spells-level-casting__info-group .ct-spells-level-casting__info-label');
+      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.spells_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      break;
+    case "inventário":
+    case "inventario":
+      innerTabs = document.querySelector('.ct-equipment-overview__weight-carried-label');
+      innerTabs.innerText = translations.actions.inventory_types[innerTabs.innerText.toLowerCase()] ?? innerTabs.innerText;
+      break;
+    case "características":
+      innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
+      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.features_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      break;
+    case "descrição":
+    case "descripción":
+      innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
+      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.description_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      break;
+    case "notas":
+    case "notas":
+      innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
+      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.notes_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      break;
+  }
+}
+
 async function translateContent() {
   const language = await languageOfTheExtension();
   const translations = await getTranslations(language);
@@ -188,6 +231,8 @@ async function translateContent() {
   translateHealth(translations);
   translateActions(translations);
   translateConditions(translations);
+  tabsListener(translations);
+  translateTab(translations, 'ações');
 
   minifyContent();
   document.title = document.title.split('\'s')[0];
