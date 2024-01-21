@@ -12,7 +12,7 @@ This extension is used to:
 ---
 
 > [!IMPORTANT]
-> Using the character sheet in English is difficult, sometimes (Honestly, I didn't know what "Sleight of hand" meant, and I believe that "theft" or "steal" make more sense), so I've created this extension to simplify the process for non-US citizen users.
+> Using the character sheet in English is difficult, sometimes, so I've created this extension to simplify the process for non-US citizen users.
 
 ### Languages
 
