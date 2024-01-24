@@ -16,9 +16,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-var currentBrowser = typeof chrome === 'undefined' ? browser : chrome;
-
-
 const fractionMap = [
   [/(\d*)\s*\xBD/g, 0.5],
   [/(\d*)\s*\xBC/g, 0.25],
@@ -464,5 +461,5 @@ function on_error(error) {
   console.log(`Error: ${error}`);
 }
 
-const getting = currentBrowser.storage.local.get("state");
+const getting = chrome.storage.local.get("state");
 getting.then(load_and_run, on_error);

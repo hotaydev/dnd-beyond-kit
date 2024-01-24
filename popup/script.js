@@ -1,5 +1,6 @@
-var currentBrowser = typeof chrome === 'undefined' ? browser : chrome;
+document.getElementById('languageSelect').addEventListener('change', async (event) => {
+  chrome.storage.local.set({"language": event.target.value});
 
-document.getElementById('languageSelect').addEventListener('change', (event) => {
-  currentBrowser.storage.local.set({"language": event.target.value});
+  const tab = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
+  chrome.scripting.executeScript({target: {tabId: tab[0].id, allFrames: true}, func: () => window.location.reload()});
 });

@@ -1,10 +1,5 @@
-
-// TODO: Start using english version and then give to the user the oportunity to change the language
-
-var currentBrowser = typeof chrome === 'undefined' ? browser : chrome;
-
 async function getTranslations(lang) {
-  const jsonUrl = currentBrowser.runtime.getURL(`translations/${lang}.json`);
+  const jsonUrl = chrome.runtime.getURL(`translations/${lang}.json`);
 
   return await fetch(jsonUrl)
     .then(res => res.json())
@@ -12,10 +7,10 @@ async function getTranslations(lang) {
 }
 
 async function languageOfTheExtension() {
-  return await currentBrowser.storage.local.get("language").then((result) => {
+  return await chrome.storage.local.get("language").then((result) => {
     
     if (!result.language) {
-      currentBrowser.storage.local.set({ language: "pt-br" });
+      chrome.storage.local.set({ language: "pt-br" });
       return "pt-br";
     }
 

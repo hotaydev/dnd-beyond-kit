@@ -8,20 +8,18 @@
 </head>
 <body>
   <div class="container">
-    <h1>D&D Beyond Translate</h1>
-    <p>Choose your language from the list below:</p>
+    <h1 id="title"></h1>
+    <p id="choose_language"></p>
     <select id="languageSelect">
-      <option value="" disabled selected>Choose language...</option>
+      <option value="" disabled selected id="choose_language_option"></option>
       <option value="pt-br">Português</option>
       <option value="es-es">Español</option>
     </select>
 
-    <!-- TODO: Show the following message just after some lang change -->
-    <p class="hint">Reload the page to load the translations</p>
-    
-    <p class="message">Thank you for using this extension!</p>
+    <p class="message" id="thanks"></p>
   </div>
 
   <script src="./script.js"></script>
+  <script src="./translate.js"></script>
 </body>
 </html>

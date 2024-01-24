@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "D&D Beyond Translate",
+    "description": "Title of the extension"
+  },
+  "choose_language": {
+    "message": "Elija su idioma de la lista a continuación:",
+    "description": "Language to be used on the translation"
+  },
+  "choose_language_option": {
+    "message": "Elija su idioma...",
+    "description": "Default option of language"
+  },
+  "thanks": {
+    "message": "Gracias por usar esta extensión!",
+    "description": "Thanks message to the user"
+  }
+}
