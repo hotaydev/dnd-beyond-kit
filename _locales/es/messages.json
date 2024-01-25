@@ -14,5 +14,9 @@
   "thanks": {
     "message": "Gracias por usar esta extensión!",
     "description": "Thanks message to the user"
+  },
+  "backToTop": {
+    "message": "Volver arriba",
+    "description": "Button to scroll to the top of page"
   }
 }
