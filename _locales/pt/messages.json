@@ -8,7 +8,7 @@
     "description": "Language to be used on the translation"
   },
   "choose_language_option": {
-    "message": "Escolha o idioma...",
+    "message": "Escolha o idioma",
     "description": "Default option of language"
   },
   "thanks": {
@@ -18,5 +18,9 @@
   "backToTop": {
     "message": "Voltar ao topo",
     "description": "Button to scroll to the top of page"
+  },
+  "convertToSI": {
+    "message": "Converter medidas para o SI",
+    "description": "Toggle the International Metrics System"
   }
 }

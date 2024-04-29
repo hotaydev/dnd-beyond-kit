@@ -16,6 +16,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+async function needToChangeMetrics() {
+  return await chrome.storage.local.get("convertUnits").then((result) => {
+    return result.convertUnits ?? true;
+  });
+}
+
 const fractionMap = [
   [/(\d*)\s*\xBD/g, 0.5],
   [/(\d*)\s*\xBC/g, 0.25],
@@ -448,11 +454,13 @@ function observe_when_ready() {
 
 }
 
-function load_and_run(result) {
+async function load_and_run(result) {
+  const needToRun = await needToChangeMetrics();
   if (result.state == "disabled") {
     console.log("Metric Beyond is disabled");
-  }
-  else {
+  } else if (!needToRun) {
+    console.log("Metrics convert is disabled");
+  } else {
     observe_when_ready();
   }
 }
