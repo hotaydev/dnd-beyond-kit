@@ -81,7 +81,8 @@
       "action": "Acción",
       "bonus action": "Acción de bonificación",
       "reaction": "Reacciones",
-      "other": "Otras"
+      "other": "Otras",
+      "limited use": "Uso Limitado"
     },
     "spells": "Hechizos",
     "spells_types": {

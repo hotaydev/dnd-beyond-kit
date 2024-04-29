@@ -143,7 +143,7 @@ function translateHealth(translations) {
 }
 
 function translateActions(translations) {
-  const actions = document.querySelectorAll('.ddbc-tab-list .ddbc-tab-list__nav .ddbc-tab-list__nav-item span');
+  const actions = document.querySelectorAll('.ct-primary-box menu li button');
   if (!actions) return;
 
   actions.forEach((action) => {
@@ -177,7 +177,7 @@ function minifyContent() {
 }
 
 function tabsListener(translations) {
-  const tabs = document.querySelectorAll('.ddbc-tab-list__nav-item-label');
+  const tabs = document.querySelectorAll('.ct-primary-box menu li button');
   tabs.forEach((tab) => tab.addEventListener('click', async () => {
     setTimeout(async () => await translateTab(translations, tab.innerText.toLowerCase()), 300);
   }));

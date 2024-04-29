@@ -81,7 +81,8 @@
       "action": "Ações",
       "bonus action": "Ações Bônus",
       "reaction": "Reações",
-      "other": "Outras"
+      "other": "Outras",
+      "limited use": "Uso Limitado"
     },
     "spells": "Feitiços",
     "spells_types": {
