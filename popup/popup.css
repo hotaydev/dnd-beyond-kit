@@ -38,3 +38,7 @@ select:focus {
   margin-top: 8px;
   font-size: 0.7rem;
 }
+
+.github a {
+  color: white;
+}

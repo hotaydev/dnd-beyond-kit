@@ -1,4 +1,9 @@
 async function getTranslations(lang) {
+
+  if (lang === 'en-us') {
+    return null;
+  }
+
   const jsonUrl = chrome.runtime.getURL(`translations/${lang}.json`);
 
   return await fetch(jsonUrl)
@@ -219,18 +224,20 @@ async function translateContent() {
   const translations = await getTranslations(language);
 
   // Translations:
-  translateSkills(translations);
-  translateSubskills(translations);
-  translateTopBarMainContent(translations);
-  translateWalkAndDefense(translations);
-  translateHealth(translations);
-  translateActions(translations);
-  translateConditions(translations);
-  tabsListener(translations);
-  translateTab(translations, 'ações');
+  if (translations) {
+    translateSkills(translations);
+    translateSubskills(translations);
+    translateTopBarMainContent(translations);
+    translateWalkAndDefense(translations);
+    translateHealth(translations);
+    translateActions(translations);
+    translateConditions(translations);
+    tabsListener(translations);
+    translateTab(translations, 'ações');
+  }
 
   minifyContent();
-  document.title = document.title.split('\'s')[0];
+  document.title = document.title.split('\'s')[0] + " | D&D Beyond";
 }
 
 async function runWhenPageReady() {
