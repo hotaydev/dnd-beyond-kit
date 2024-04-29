@@ -26,7 +26,7 @@
   ],
   "content_scripts": [
     {
-      "js": [ "scripts/metrics.js", "scripts/backToTop.js", "scripts/lazyLoad.js" ],
+      "js": [ "scripts/metrics.js", "scripts/backToTop.js", "scripts/lazyLoad.js", "scripts/diceRolls.js" ],
       "css": [ "scripts/styles.css" ],
       "matches": [
         "https://www.dndbeyond.com/characters/*",
