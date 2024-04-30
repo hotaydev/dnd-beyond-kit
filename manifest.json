@@ -24,9 +24,16 @@
     "scripting",
     "activeTab"
   ],
+  "background": {
+    "service_worker": "scripts/OMM/worker.js"
+  },
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
   "content_scripts": [
     {
-      "js": [ "scripts/metrics.js", "scripts/backToTop.js", "scripts/lazyLoad.js", "scripts/diceRolls.js" ],
+      "js": [ "scripts/metrics.js", "scripts/backToTop.js", "scripts/lazyLoad.js" ],
       "css": [ "scripts/styles.css" ],
       "matches": [
         "https://www.dndbeyond.com/characters/*",
@@ -40,9 +47,15 @@
       ]
     },
     {
-      "js": [ "scripts/translations.js" ],
+      "js": [ "scripts/translations.js", "scripts/OMM/diceRolls.js" ],
       "matches": [
         "https://www.dndbeyond.com/characters/*"
+      ]
+    },
+    {
+      "js": [ "scripts/OMM/omm.js" ],
+      "matches": [
+        "https://multiverse.com/verses/*/session/*"
       ]
     }
   ],
@@ -53,5 +66,6 @@
         "*://*/*"
       ]
     }
-  ]
+  ],
+  "minimum_chrome_version": "100"
 }
