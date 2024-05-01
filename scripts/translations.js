@@ -66,6 +66,33 @@ function translateSkills(translations) {
   }
 }
 
+function translateProficiencies(translations) {
+  const proficiencyLabels = document.querySelectorAll('.ct-proficiency-groups__group-label');
+  const proficiencyContents = document.querySelectorAll('.ct-proficiency-groups__group-items');
+  if (!proficiencyLabels || !proficiencyContents) return;
+
+  proficiencyLabels.forEach((proficiency) => {
+    const proficiencyText = proficiency.innerText.toLowerCase();
+    proficiency.innerText = translations.proficiencies[proficiencyText] ?? proficiency.innerText;
+  });
+
+  proficiencyContents.forEach((proficiency) => {
+    Object.keys(translations.proficiencies.values).forEach((value) => {
+      proficiency.innerText = proficiency.innerText.replaceAll(value, translations.proficiencies.values[value]);
+    });
+  });
+}
+
+function translateAreaTitles(translations) {
+  const titles = document.querySelectorAll('.ddbc-manage-icon__content');
+  if (!titles) return;
+
+  titles.forEach((title) => {
+    const text = title.innerText.toLowerCase();
+    title.innerText = translations.areaTitles[text] ?? title.innerText;
+  });
+}
+
 function translateSubskills(translations) {
   const subSkills = document.querySelectorAll('.ct-skills__item .ct-skills__col--skill');
   const skillsName = document.querySelector('.ct-skills__header .ct-skills__col--skill .ct-skills__heading');
@@ -232,6 +259,8 @@ async function translateContent() {
     translateHealth(translations);
     translateActions(translations);
     translateConditions(translations);
+    translateProficiencies(translations);
+    translateAreaTitles(translations);
     tabsListener(translations);
     translateTab(translations, 'ações');
   }

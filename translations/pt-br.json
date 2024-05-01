@@ -118,5 +118,25 @@
       "other": "Outros"
     },
     "extras": "Extras"
+  },
+  "proficiencies": {
+    "armor": "Armadura",
+    "weapons": "Armas",
+    "tools": "Ferramentas",
+    "languages": "Idiomas",
+    "values": {
+      "None": "Nenhuma",
+      "Light": "Armas Leves",
+      "Finesse": "Armas Ágeis (Finesse)",
+      "Draconic": "Dracônico",
+      "Common": "Comum",
+      "Deep Speech": "Fala Profunda"
+    }
+  },
+  "areaTitles": {
+    "proficiencies & languages": "Proficiências",
+    "skills": "Habilidades",
+    "senses": "Sentidos",
+    "saving throws": "Testes de Resistência"
   }
 }
