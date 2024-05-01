@@ -13,6 +13,7 @@ chrome.runtime.onMessage.addListener(
         if (tab.url && matchPatternOMM.test(tab.url)) {
           diceWasRolledInOMM = true;
           await chrome.tabs.sendMessage(tab.id, {dice_roll: request.dice_roll});
+          await chrome.tabs.update(tab.id, {active: true});
         }
       });
 

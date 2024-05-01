@@ -1,3 +1,7 @@
+let DOMelements = {
+  logsMenu: undefined,
+  dicePanel: undefined,
+};
 
 function runWhenPageReady_dice() {
   if (document.querySelector(".ct-quick-info")) {
@@ -11,13 +15,8 @@ function logDiceRolls() {
   const allDiceRollButtons = document.querySelectorAll('.integrated-dice__container');
 
   allDiceRollButtons.forEach((btn) => {
-    const prevAct = btn.onclick; // It's the 3D dice roll action
     const diceBeingRolled = extractText(btn);
-
-    btn.onclick = async () => {
-      await chrome.runtime.sendMessage({dice_roll: diceBeingRolled});
-      if (prevAct) prevAct();
-    };
+    btn.onclick = async () => await chrome.runtime.sendMessage({dice_roll: diceBeingRolled});
   });
 }
 
@@ -40,33 +39,29 @@ function addD20(roll) {
   return roll.replace(/\s+/g, '');
 }
 
+function selectElement(element, key) {
+  let interval = setInterval(() => {
+    const selectedElement = document.querySelector(element);
+    if (selectedElement) {
+      DOMelements[key] = selectedElement;
+      clearInterval(interval);
+    }
+  }, 200);
+}
+
+function changeOpacityWhenFound(opacity) {
+  let interval = setInterval(() => {
+    if (DOMelements.logsMenu) DOMelements.logsMenu.style.opacity = opacity;
+    if (DOMelements.dicePanel) DOMelements.dicePanel.style.opacity = opacity;
+    if (DOMelements.dicePanel && DOMelements.logsMenu) clearInterval(interval);
+  }, 200);
+}
+
 chrome.runtime.onMessage.addListener(
   async (request, sender, sendResponse) => {
-    const logsMenu = document.querySelector('#noty_layout__bottomRight');
-    const dicePanel = document.querySelector('.dice-rolling-panel');
-
-    if (request.roll_dice) {
-
-      const div = document.createElement('div');
-      div.innerText = chrome.i18n.getMessage("successSendingToOMM");
-      div.classList.add('toast_notification');
-      document.body.appendChild(div);
-
-      setTimeout(() => {
-        div.remove();
-      }, 2500);
-
-      if (logsMenu) logsMenu.style.opacity=0;
-      if (dicePanel) dicePanel.style.opacity=0;
-
-      document.querySelectorAll('audio, video').forEach(item => {
-        item.muted = true;
-        item.pause();
-      });
-    } else {
-      if (logsMenu) logsMenu.style.opacity=100;
-      if (dicePanel) dicePanel.style.opacity=100;
-    }
+    if (!DOMelements.logsMenu) selectElement('#noty_layout__bottomRight', 'logsMenu');
+    if (!DOMelements.dicePanel) selectElement('.dice-rolling-panel', 'dicePanel');
+    changeOpacityWhenFound(request.roll_dice ? 0 : 100);
   }
 );
 
