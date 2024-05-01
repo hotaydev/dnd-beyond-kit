@@ -28,8 +28,15 @@
     "service_worker": "scripts/OMM/worker.js"
   },
   "host_permissions": [
-    "http://*/*",
-    "https://*/*"
+    "https://www.dndbeyond.com/characters/*",
+    "https://www.dndbeyond.com/monsters/*",
+    "https://www.dndbeyond.com/magic-items/*",
+    "https://www.dndbeyond.com/spells/*",
+    "https://www.dndbeyond.com/sources/*",
+    "https://www.dndbeyond.com/encounters/*",
+    "https://www.dndbeyond.com/combat-tracker/*",
+    "https://www.dndbeyond.com/homebrew/*",
+    "https://multiverse.com/verses/*/session/*"
   ],
   "content_scripts": [
     {
