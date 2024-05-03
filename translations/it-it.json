@@ -1,0 +1,142 @@
+{
+  "skills": {
+    "strength": {
+      "title": "Forza",
+      "abbr": "FOR"
+    },
+    "dexterity": {
+      "title": "Destrezza",
+      "abbr": "DES"
+    },
+    "constitution": {
+      "title": "Costituzione",
+      "abbr": "CON"
+    },
+    "intelligence": {
+      "title": "Intelligenza",
+      "abbr": "INT"
+    },
+    "wisdom": {
+      "title": "Saggezza",
+      "abbr": "SAG"
+    },
+    "charisma": {
+      "title": "Carisma",
+      "abbr": "CAR"
+    }
+  },
+  "subskills": {
+    "acrobatics": "Acrobazia",
+    "animal handling": "Addestrare Animali",
+    "arcana": "Arcano",
+    "athletics": "Atletismo",
+    "deception": "Inganno",
+    "history": "Storia",
+    "insight": "Percezione",
+    "intimidation": "Intimidire",
+    "investigation": "Investigare",
+    "medicine": "Medicina",
+    "nature": "Natura",
+    "perception": "Percezione",
+    "performance": "Intrattenere",
+    "persuasion": "Persuasione",
+    "religion": "Religione",
+    "sleight of hand": "Rapidità di Mano",
+    "stealth": "Furtività",
+    "survival": "Sopravvivenza",
+    "skills": "Abilità"
+  },
+  "main": {
+    "initiative": "Iniziativa",
+    "proficiency": "Competenza",
+    "walking": "Velocità",
+    "speed": "Camminare",
+    "inspiration": "Ispirazione",
+    "life": {
+      "heal": "Cura",
+      "damage": "Danno",
+      "current": "Attuali",
+      "max": "Max",
+      "temp": "Temp",
+      "hitPoints": "Punti Vita"
+    },
+    "rest": {
+      "long rest": "Riposo Lungo",
+      "short rest": "Riposo Corto"
+    },
+    "defense": {
+      "armor": "Armatura",
+      "class": "AC"
+    },
+    "conditions": {
+      "defenses": "Difese",
+      "conditions": "Condizioni"
+    }
+  },
+  "actions": {
+    "actions": "Azioni",
+    "actions_types": {
+      "all": "Tutto",
+      "attack": "Attacchi",
+      "action": "Azioni",
+      "bonus action": "Azione Bonus",
+      "reaction": "Reazione",
+      "other": "Altro",
+      "limited use": "Uso limitato"
+    },
+    "spells": "Incantesimi",
+    "spells_types": {
+      "modifier": "Modificatori",
+      "spell attack": "Attacco Incantesimo",
+      "save dc": "Tiro Salvezza"
+    },
+    "inventory": "Inventario",
+    "inventory_types": {
+      "weight carried:": "Peso trasportato:"
+    },
+    "features & traits": "Caratteristiche",
+    "features_types": {
+      "all": "Tutto",
+      "class features": "Caratteristiche di classe",
+      "racial traits": "Tratti Raziali",
+      "feats": "Abilità"
+    },
+    "description": "Descrizione",
+    "description_types": {
+      "all": "Tutto",
+      "background": "Storia",
+      "characteristics": "Caratteristiche",
+      "appearance": "Apparenza"
+    },
+    "notes": "Note",
+    "notes_types": {
+      "all": "Tutto",
+      "orgs": "Organizzazione",
+      "allies": "Alleati",
+      "enemies": "Nemici",
+      "backstory": "Storia Passata",
+      "other": "Altro"
+    },
+    "extras": "Extras"
+  },
+  "proficiencies": {
+    "armor": "Armatura",
+    "weapons": "Armi",
+    "tools": "Utensili",
+    "languages": "Lingue",
+    "values": {
+      "None": "Nessuno",
+      "Light": "Armi leggere",
+      "Finesse": "Armi agili (Finesse)",
+      "Draconic": "Draconico",
+      "Common": "Comune",
+      "Deep Speech": "Discorso profondo"
+    }
+  },
+  "areaTitles": {
+    "proficiencies & languages": "Competenze",
+    "skills": "Capacità",
+    "senses": "Sensi",
+    "saving throws": "Prove di resistenza"
+  }
+}

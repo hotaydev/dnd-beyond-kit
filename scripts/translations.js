@@ -267,7 +267,8 @@ async function translateContent() {
 
   minifyContent();
   setInterval(() => {
-    document.title = document.title.split('\'s')[0] + " | D&D Beyond";
+    const splittedTitle = document.title.split('\'s');
+    if (splittedTitle.length > 1) document.title = splittedTitle[0] + " | D&D Beyond";
   }, 2000); // 2 seconds
 }
 

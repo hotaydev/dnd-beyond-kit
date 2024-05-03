@@ -1,0 +1,30 @@
+{
+  "title": {
+    "message": "D&D Beyond Kit",
+    "description": "Title of the extension"
+  },
+  "choose_language": {
+    "message": "Scegli la tua lingua dall'elenco seguente:",
+    "description": "Language to be used on the translation"
+  },
+  "choose_language_option": {
+    "message": "Scegli la lingua",
+    "description": "Default option of language"
+  },
+  "thanks": {
+    "message": "Grazie per aver utilizzato questa estensione!",
+    "description": "Thanks message to the user"
+  },
+  "backToTop": {
+    "message": "Torna in cima",
+    "description": "Button to scroll to the top of page"
+  },
+  "convertToSI": {
+    "message": "Convertire le misurazioni in SI",
+    "description": "Toggle the International Metrics System"
+  },
+  "successSendingToOMM": {
+    "message": "Risultato inviato a OMM!",
+    "description": "Integration between DnD Beyond and OMM message"
+  }
+}
