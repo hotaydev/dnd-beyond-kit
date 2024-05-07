@@ -91,11 +91,13 @@ function translateAreaTitles(translations) {
     const text = title.innerText.toLowerCase();
     title.innerText = translations.areaTitles[text] ?? title.innerText;
   });
+
+  const savingThrows = document.querySelector('.ct-saving-throws-box__info .ct-saving-throws-box__modifiers');
+  if (savingThrows) savingThrows.innerText = translations.areaTitles.savingThrowsModifiers ?? savingThrows.innerText;
 }
 
 function translateSubskills(translations) {
   const subSkills = document.querySelectorAll('.ct-skills__item .ct-skills__col--skill');
-  const skillsName = document.querySelector('.ct-skills__header .ct-skills__col--skill .ct-skills__heading');
   if (!subSkills) return;
 
   subSkills.forEach((skill) => {
@@ -104,7 +106,15 @@ function translateSubskills(translations) {
     skill.title = skillTitle;
   });
 
+  const skillsName = document.querySelector('.ct-skills__header .ct-skills__col--skill .ct-skills__heading');
+  const additionalSkills = document.querySelector('.ct-skills__additional');
+  const proficiency = document.querySelector('.ct-skills__header .ct-skills__col--proficiency abbr');
+  const modifier = document.querySelector('.ct-skills__header .ct-skills__col--stat abbr');
+
   if (skillsName) skillsName.innerText = translations.subskills.skills.toUpperCase();
+  if (additionalSkills) additionalSkills.innerText = translations.subskills.additionalSkills ?? additionalSkills.innerText;
+  if (proficiency) proficiency.setAttribute('title', translations.subskills.proficiency);
+  if (modifier) modifier.setAttribute('title', translations.subskills.modifier);
 }
 
 function translateTopBarMainContent(translations) {

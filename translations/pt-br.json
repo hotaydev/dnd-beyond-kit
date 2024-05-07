@@ -44,7 +44,10 @@
     "sleight of hand": "Prestidigitação",
     "stealth": "Furtividade",
     "survival": "Sobrevivência",
-    "skills": "Habilidades"
+    "skills": "Habilidades",
+    "modifier": "Modificador",
+    "proficiency": "Proficiência",
+    "additionalSkills": "Habilidades Adicionais"
   },
   "main": {
     "initiative": "Iniciativa",
@@ -137,6 +140,7 @@
     "proficiencies & languages": "Proficiências",
     "skills": "Habilidades",
     "senses": "Sentidos",
-    "saving throws": "Testes de Resistência"
+    "saving throws": "Testes de Resistência",
+    "savingThrowsModifiers": "Modificadores dos Testes de Resistência"
   }
 }

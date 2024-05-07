@@ -44,7 +44,10 @@
     "sleight of hand": "Juego de Manos",
     "stealth": "Sigilo",
     "survival": "Supervivencia",
-    "skills": "Habilidades"
+    "skills": "Habilidades",
+    "modifier": "Modificador",
+    "proficiency": "Proficiencia",
+    "additionalSkills": "Habilidades adicionales"
   },
   "main": {
     "initiative": "Iniciativa",
@@ -137,6 +140,7 @@
     "proficiencies & languages": "Competencias",
     "skills": "Habilidades",
     "senses": "Sentidos",
-    "saving throws": "Pruebas de resistencia"
+    "saving throws": "Pruebas de resistencia",
+    "savingThrowsModifiers": "Modificadores de Pruebas de resistencia"
   }
 }
