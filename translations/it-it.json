@@ -141,6 +141,7 @@
     "skills": "Capacità",
     "senses": "Sensi",
     "saving throws": "Prove di resistenza",
-    "savingThrowsModifiers": "Modificatori del Prove di resistenza"
+    "savingThrowsModifiers": "Modificatori del Prove di resistenza",
+    "manage": "Gestire"
   }
 }

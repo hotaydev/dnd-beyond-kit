@@ -141,6 +141,7 @@
     "skills": "Habilidades",
     "senses": "Sentidos",
     "saving throws": "Pruebas de resistencia",
-    "savingThrowsModifiers": "Modificadores de Pruebas de resistencia"
+    "savingThrowsModifiers": "Modificadores de Pruebas de resistencia",
+    "manage": "Administrar"
   }
 }

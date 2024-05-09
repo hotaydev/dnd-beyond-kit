@@ -94,6 +94,13 @@ function translateAreaTitles(translations) {
 
   const savingThrows = document.querySelector('.ct-saving-throws-box__info .ct-saving-throws-box__modifiers');
   if (savingThrows) savingThrows.innerText = translations.areaTitles.savingThrowsModifiers ?? savingThrows.innerText;
+
+  // Not actually working due to way D&D Beyond handle the tooltips.
+  // const manageItems = document.querySelectorAll('.ddbc-tooltip[data-original-title="Manage"]');
+  // if (manageItems) manageItems.forEach((item) => item.setAttribute('data-original-title', translations.areaTitles.manage));
+
+  const manageMainButton = document.querySelector('.ddbc-character-tidbits__menu-callout button span');
+  if (manageMainButton) manageMainButton.innerText = translations.areaTitles.manage ?? manageMainButton.innerText;
 }
 
 function translateSubskills(translations) {
