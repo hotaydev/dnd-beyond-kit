@@ -22,9 +22,5 @@
   "convertToSI": {
     "message": "Convertire le misurazioni in SI",
     "description": "Toggle the International Metrics System"
-  },
-  "successSendingToOMM": {
-    "message": "Risultato inviato a OMM!",
-    "description": "Integration between DnD Beyond and OMM message"
   }
 }

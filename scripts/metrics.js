@@ -34,6 +34,8 @@ async function run() {
   if (!needToRun) {
     console.log("Metrics convert is disabled");
   } else {
+
+    // TODO: this "observer" strategy isn't working
     var observedNode = document.querySelector("body");
     const observer = new MutationObserver(() => {replaceFeetsByMetersInText(observedNode)});
     observer.observe(observedNode, { childList: true, subtree: true });

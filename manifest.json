@@ -24,9 +24,6 @@
     "scripting",
     "activeTab"
   ],
-  "background": {
-    "service_worker": "scripts/OMM/worker.js"
-  },
   "host_permissions": [
     "https://www.dndbeyond.com/characters/*",
     "https://www.dndbeyond.com/monsters/*",
@@ -40,8 +37,14 @@
   ],
   "content_scripts": [
     {
-      "js": [ "scripts/metrics.js", "scripts/backToTop.js", "scripts/lazyLoad.js" ],
-      "css": [ "scripts/styles.css" ],
+      "js": [
+        "scripts/metrics.js",
+        "scripts/backToTop.js",
+        "scripts/lazyLoad.js"
+      ],
+      "css": [
+        "scripts/styles.css"
+      ],
       "matches": [
         "https://www.dndbeyond.com/characters/*",
         "https://www.dndbeyond.com/monsters/*",
@@ -54,21 +57,21 @@
       ]
     },
     {
-      "js": [ "scripts/translations.js", "scripts/OMM/diceRolls.js" ],
+      "js": [
+        "scripts/translations.js"
+      ],
       "matches": [
         "https://www.dndbeyond.com/characters/*"
-      ]
-    },
-    {
-      "js": [ "scripts/OMM/omm.js" ],
-      "matches": [
-        "https://multiverse.com/verses/*/session/*"
       ]
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["translations/pt-br.json", "translations/es-es.json", "translations/it-it.json"],
+      "resources": [
+        "translations/pt-br.json",
+        "translations/es-es.json",
+        "translations/it-it.json"
+      ],
       "matches": [
         "*://*/*"
       ]
