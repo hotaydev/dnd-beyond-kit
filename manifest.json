@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "D&D Beyond Kit",
   "description": "Translate, add common metrics, and add new features to your D&D Beyond pages.",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "default_locale": "en",
   "icons": {
     "16": "images/icon-16.png",
@@ -26,14 +26,10 @@
   ],
   "host_permissions": [
     "https://www.dndbeyond.com/characters/*",
-    "https://www.dndbeyond.com/monsters/*",
-    "https://www.dndbeyond.com/magic-items/*",
-    "https://www.dndbeyond.com/spells/*",
-    "https://www.dndbeyond.com/sources/*",
-    "https://www.dndbeyond.com/encounters/*",
-    "https://www.dndbeyond.com/combat-tracker/*",
-    "https://www.dndbeyond.com/homebrew/*",
-    "https://multiverse.com/verses/*/session/*"
+    "https://www.dndbeyond.com/monsters*",
+    "https://www.dndbeyond.com/magic-items*",
+    "https://www.dndbeyond.com/spells*",
+    "https://www.dndbeyond.com/homebrew/*"
   ],
   "content_scripts": [
     {
@@ -47,12 +43,9 @@
       ],
       "matches": [
         "https://www.dndbeyond.com/characters/*",
-        "https://www.dndbeyond.com/monsters/*",
-        "https://www.dndbeyond.com/magic-items/*",
-        "https://www.dndbeyond.com/spells/*",
-        "https://www.dndbeyond.com/sources/*",
-        "https://www.dndbeyond.com/encounters/*",
-        "https://www.dndbeyond.com/combat-tracker/*",
+        "https://www.dndbeyond.com/monsters*",
+        "https://www.dndbeyond.com/magic-items*",
+        "https://www.dndbeyond.com/spells*",
         "https://www.dndbeyond.com/homebrew/*"
       ]
     },
@@ -70,7 +63,8 @@
       "resources": [
         "translations/pt-br.json",
         "translations/es-es.json",
-        "translations/it-it.json"
+        "translations/it-it.json",
+        "translations/fr-fr.json"
       ],
       "matches": [
         "*://*/*"

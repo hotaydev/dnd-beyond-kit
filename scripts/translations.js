@@ -13,7 +13,7 @@ async function getTranslations(lang) {
 
 async function languageOfTheExtension() {
   return await chrome.storage.local.get("language").then((result) => {
-    
+
     if (!result.language) {
       chrome.storage.local.set({ language: "pt-br" });
       return "pt-br";
@@ -31,12 +31,12 @@ function translateSkills(translations) {
   if (skillBoxes) {
     skillBoxes.forEach((skill) => {
       const skillTitle = skill.innerText.toLowerCase();
-  
+
       if (skillTitle.length > 3) {
         skill.innerText = (translations.skills[skillTitle].title ?? skill.innerText).toUpperCase();
       } else {
         Object.keys(translations.skills).forEach((singleSkill) => {
-          if (skillTitle == singleSkill.substring(0,3)) {
+          if (skillTitle == singleSkill.substring(0, 3)) {
             skill.innerText = (translations.skills[singleSkill].abbr ?? skill.innerText).toUpperCase();
           }
         })
@@ -58,7 +58,7 @@ function translateSkills(translations) {
     skillsInList.forEach((skill) => {
       const skillAbbr = skill.innerText.toLowerCase();
       Object.keys(translations.skills).forEach((singleSkill) => {
-        if (skillAbbr == singleSkill.substring(0,3)) {
+        if (skillAbbr == singleSkill.substring(0, 3)) {
           skill.innerText = (translations.skills[singleSkill].abbr ?? skill.innerText).toUpperCase();
         }
       })

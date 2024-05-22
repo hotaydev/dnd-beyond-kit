@@ -1,4 +1,4 @@
-(function() {
+(function () {
   const LIST = document.getElementsByClassName("listing")[0];
   const PAGING = document.getElementsByClassName("b-pagination")[1];
   const FOOTER = document.getElementById("footer-push");
