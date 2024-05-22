@@ -1,0 +1,147 @@
+{
+  "skills": {
+    "strength": {
+      "title": "Force",
+      "abbr": "FOR"
+    },
+    "dexterity": {
+      "title": "Dextérité",
+      "abbr": "DEX"
+    },
+    "constitution": {
+      "title": "Constitution",
+      "abbr": "CON"
+    },
+    "intelligence": {
+      "title": "Intelligence",
+      "abbr": "INT"
+    },
+    "wisdom": {
+      "title": "Sagesse",
+      "abbr": "SAG"
+    },
+    "charisma": {
+      "title": "Charisme",
+      "abbr": "CHA"
+    }
+  },
+  "subskills": {
+    "acrobatics": "Acrobaties",
+    "animal handling": "Dressage",
+    "arcana": "Arcanes",
+    "athletics": "Athlétisme",
+    "deception": "Tromperie",
+    "history": "Histoire",
+    "insight": "Perspicacité",
+    "intimidation": "Intimidation",
+    "investigation": "Investigation",
+    "medicine": "Médecine",
+    "nature": "Nature",
+    "perception": "Perception",
+    "performance": "Représentation",
+    "persuasion": "Persuasion",
+    "religion": "Religion",
+    "sleight of hand": "Escamotage",
+    "stealth": "Discrétion",
+    "survival": "Survie",
+    "skills": "Compétences",
+    "modifier": "Modificateur",
+    "proficiency": "Maîtrise",
+    "additionalSkills": "Compétences supplémentaires"
+  },
+  "main": {
+    "initiative": "Initiative",
+    "proficiency": "Maîtrise",
+    "walking": "Marche",
+    "speed": "Vitesse",
+    "inspiration": "Inspiration",
+    "life": {
+      "heal": "Soigner",
+      "damage": "Dégâts",
+      "current": "Actuel",
+      "max": "Max",
+      "temp": "Temp",
+      "hitPoints": "Points de Vie"
+    },
+    "rest": {
+      "long rest": "Repos Long",
+      "short rest": "Repos Court"
+    },
+    "defense": {
+      "armor": "Armure",
+      "class": "CA"
+    },
+    "conditions": {
+      "defenses": "Défenses",
+      "conditions": "Conditions"
+    }
+  },
+  "actions": {
+    "actions": "Actions",
+    "actions_types": {
+      "all": "Toutes",
+      "attack": "Attaques",
+      "action": "Action",
+      "bonus action": "Action bonus",
+      "reaction": "Réactions",
+      "other": "Autres",
+      "limited use": "Utilisation Limitée"
+    },
+    "spells": "Sorts",
+    "spells_types": {
+      "modifier": "Modificateur",
+      "spell attack": "Attaque de sort",
+      "save dc": "DD de sauvegarde"
+    },
+    "inventory": "Inventaire",
+    "inventory_types": {
+      "weight carried:": "Poids transporté :"
+    },
+    "features & traits": "Caractéristiques",
+    "features_types": {
+      "all": "Toutes",
+      "class features": "Caractéristiques de classe",
+      "racial traits": "Traits raciaux",
+      "feats": "Dons"
+    },
+    "description": "Description",
+    "description_types": {
+      "all": "Toutes",
+      "background": "Historique",
+      "characteristics": "Caractéristiques",
+      "appearance": "Apparence"
+    },
+    "notes": "Notes",
+    "notes_types": {
+      "all": "Toutes",
+      "orgs": "Organisations",
+      "allies": "Alliés",
+      "enemies": "Ennemis",
+      "backstory": "Histoire passée",
+      "other": "Autres"
+    },
+    "extras": "Extras"
+  },
+  "proficiencies": {
+    "armor": "Armures",
+    "weapons": "Armes",
+    "tools": "Outils",
+    "languages": "Langues",
+    "values": {
+      "None": "Aucune",
+      "Light": "Légères",
+      "Finesse": "Finesse",
+      "Draconic": "Draconique",
+      "Common": "Commun",
+      "Deep Speech": "Profond"
+    }
+  },
+  "areaTitles": {
+    "proficiencies & languages": "Compétences et Langues",
+    "skills": "Compétences",
+    "senses": "Sens",
+    "saving throws": "Jets de sauvegarde",
+    "savingThrowsModifiers": "Modificateurs de jets de sauvegarde",
+    "manage": "Gérer"
+  }
+}
