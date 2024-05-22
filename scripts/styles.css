@@ -19,22 +19,6 @@
   100% { transform: rotate(360deg); }
 }
 
-.toast_notification {
-  position: fixed;
-  top: 14px;
-  right: 40%;
-  left: 40%;
-  border-radius: 4px;
-  margin: 0;
-  color: #252525;
-  text-align: center;
-  background-color: #22ff47;
-  border: 1px solid #00bc1f;
-  font-size: 14px;
-  padding: 8px 16px;
-  z-index: 100;
-}
-
 .scrollToTop {
   position: fixed;
   bottom: 0;
