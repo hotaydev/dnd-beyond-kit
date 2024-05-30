@@ -112,6 +112,7 @@ input:checked + .slider:before {
 .github {
   text-align: center;
   margin-top: 14px;
+  margin-bottom: 20px;
 }
 
 .github a {
@@ -121,4 +122,34 @@ input:checked + .slider:before {
 
 .github a:hover {
   text-decoration: underline;
+}
+
+.separator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.separator .inner-separator {
+  height: 1px;
+  background-color: #a7a7a7;
+  width: 75%;
+}
+
+.icons {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.icons .icon-separator {
+  color: #a7a7a7;
+}
+
+.icons a img {
+  width: 20px;
+  height: 20px;
 }
