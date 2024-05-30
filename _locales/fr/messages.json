@@ -1,0 +1,26 @@
+{
+  "title": {
+    "message": "D&D Beyond Kit",
+    "description": "Title of the extension"
+  },
+  "choose_language": {
+    "message": "Choisissez votre langue dans la liste ci-dessous :",
+    "description": "Language to be used on the translation"
+  },
+  "choose_language_option": {
+    "message": "Choisissez la langue",
+    "description": "Default option of language"
+  },
+  "thanks": {
+    "message": "Merci d'utiliser cette extension !",
+    "description": "Thanks message to the user"
+  },
+  "backToTop": {
+    "message": "Retour au sommet",
+    "description": "Button to scroll to the top of page"
+  },
+  "convertToSI": {
+    "message": "Convertir les mesures en SI",
+    "description": "Toggle the International Metrics System"
+  }
+}
