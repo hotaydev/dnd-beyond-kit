@@ -129,11 +129,15 @@
     "languages": "Idiomas",
     "values": {
       "None": "Ninguna",
-      "Light": "Armas ligeras",
+      "Light Armor": "Armadura ligera",
+      "Medium Armor": "Armadura media",
+      "Heavy Armor": "Armadura pesada",
+      "Shields": "Escudos",
       "Finesse": "Armas ágiles (Finesse)",
       "Draconic": "Dracónico",
       "Common": "Común",
-      "Deep Speech": "Habla Profunda"
+      "Deep Speech": "Habla Profunda",
+      "Light": "Armas ligeras"
     }
   },
   "areaTitles": {

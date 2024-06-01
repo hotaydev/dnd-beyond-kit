@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "D&D Beyond Kit",
   "description": "Translate, add common metrics, and add new features to your D&D Beyond pages.",
-  "version": "0.5.1",
+  "version": "0.5.0",
   "default_locale": "en",
   "icons": {
     "16": "images/icon-16.png",
@@ -24,13 +24,17 @@
     "scripting",
     "activeTab"
   ],
+  "background": {
+    "service_worker": "scripts/OMM/worker.js"
+  },
   "host_permissions": [
     "https://www.dndbeyond.com/characters/*",
     "https://www.dndbeyond.com/monsters*",
     "https://www.dndbeyond.com/equipment*",
     "https://www.dndbeyond.com/magic-items*",
     "https://www.dndbeyond.com/spells*",
-    "https://www.dndbeyond.com/homebrew/*"
+    "https://www.dndbeyond.com/homebrew/*",
+    "https://multiverse.com/verses/*/session/*"
   ],
   "content_scripts": [
     {
@@ -53,10 +57,19 @@
     },
     {
       "js": [
-        "scripts/translations.js"
+        "scripts/translations.js",
+        "scripts/OMM/diceRolls.js"
       ],
       "matches": [
         "https://www.dndbeyond.com/characters/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/OMM/omm.js"
+      ],
+      "matches": [
+        "https://multiverse.com/verses/*/session/*"
       ]
     }
   ],

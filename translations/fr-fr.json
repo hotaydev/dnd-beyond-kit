@@ -129,11 +129,15 @@
     "languages": "Langues",
     "values": {
       "None": "Aucune",
-      "Light": "Légères",
+      "Light Armor": "Armure légère",
+      "Medium Armor": "Armure moyenne",
+      "Heavy Armor": "Armure lourde",
+      "Shields": "Boucliers",
       "Finesse": "Finesse",
       "Draconic": "Draconique",
       "Common": "Commun",
-      "Deep Speech": "Profond"
+      "Deep Speech": "Profond",
+      "Light": "Légères"
     }
   },
   "areaTitles": {

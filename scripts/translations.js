@@ -93,7 +93,7 @@ function translateAreaTitles(translations) {
   });
 
   const savingThrows = document.querySelector('.ct-saving-throws-box__info .ct-saving-throws-box__modifiers');
-  if (savingThrows) savingThrows.innerText = translations.areaTitles.savingThrowsModifiers ?? savingThrows.innerText;
+  if (savingThrows && savingThrows.innerText == "Saving Throw Modifiers") savingThrows.innerText = translations.areaTitles.savingThrowsModifiers ?? savingThrows.innerText;
 
   // Not actually working due to way D&D Beyond handle the tooltips.
   // const manageItems = document.querySelectorAll('.ddbc-tooltip[data-original-title="Manage"]');
