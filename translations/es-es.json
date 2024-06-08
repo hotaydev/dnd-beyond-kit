@@ -27,8 +27,8 @@
   },
   "subskills": {
     "acrobatics": "Acrobacias",
-    "animal handling": "Manejo de animales",
-    "arcana": "Arcana (magia)",
+    "animal handling": "Trato con animales",
+    "arcana": "C. Arcano",
     "athletics": "Atletismo",
     "deception": "Engaño",
     "history": "Historia",
@@ -38,7 +38,7 @@
     "medicine": "Medicina",
     "nature": "Naturaleza",
     "perception": "Percepción",
-    "performance": "Actuación",
+    "performance": "Interpretación",
     "persuasion": "Persuasión",
     "religion": "Religión",
     "sleight of hand": "Juego de Manos",
@@ -46,12 +46,12 @@
     "survival": "Supervivencia",
     "skills": "Habilidades",
     "modifier": "Modificador",
-    "proficiency": "Proficiencia",
+    "proficiency": "Competencia",
     "additionalSkills": "Habilidades adicionales"
   },
   "main": {
     "initiative": "Iniciativa",
-    "proficiency": "Proficiencia",
+    "proficiency": "Competencia",
     "walking": "Velocidad",
     "speed": "Caminar",
     "inspiration": "Inspirado",
@@ -68,8 +68,8 @@
       "short rest": "Descanso Corto"
     },
     "defense": {
-      "armor": "Defensa",
-      "class": "AC"
+      "armor": "Armadura",
+      "class": "CA"
     },
     "conditions": {
       "defenses": "Defensas",
@@ -82,8 +82,8 @@
       "all": "Todas",
       "attack": "Ataques",
       "action": "Acción",
-      "bonus action": "Acción de bonificación",
-      "reaction": "Reacciones",
+      "bonus action": "Acción adicional",
+      "reaction": "Reacción",
       "other": "Otras",
       "limited use": "Uso Limitado"
     },
@@ -91,7 +91,7 @@
     "spells_types": {
       "modifier": "Modificador",
       "spell attack": "Ataque de hechizo",
-      "save dc": "DC para salvar"
+      "save dc": "CD de salvación"
     },
     "inventory": "Inventario",
     "inventory_types": {
@@ -117,7 +117,7 @@
       "orgs": "Organizaciones",
       "allies": "Aliados",
       "enemies": "Enemigos",
-      "backstory": "Historia pasada",
+      "backstory": "Trasfondo",
       "other": "Otros"
     },
     "extras": "Extras"
@@ -134,9 +134,9 @@
       "Heavy Armor": "Armadura pesada",
       "Shields": "Escudos",
       "Finesse": "Armas ágiles (Finesse)",
-      "Draconic": "Dracónico",
+      "Draconic": "Dracónido",
       "Common": "Común",
-      "Deep Speech": "Habla Profunda",
+      "Deep Speech": "Habla de las profundidades",
       "Light": "Armas ligeras"
     }
   },
@@ -144,8 +144,8 @@
     "proficiencies & languages": "Competencias",
     "skills": "Habilidades",
     "senses": "Sentidos",
-    "saving throws": "Pruebas de resistencia",
-    "savingThrowsModifiers": "Modificadores de Pruebas de resistencia",
+    "saving throws": "Tiradas de salvación",
+    "savingThrowsModifiers": "Modificadores a las Tiradas de Salvación",
     "manage": "Administrar"
   }
 }
