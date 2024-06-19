@@ -6,16 +6,23 @@ chrome.runtime.onMessage.addListener(
     if (request.dice_roll) {
       // A dice was rolled in D&D Beyond, we need to replicate to OMM
 
+      const ommintegration = await chrome.storage.local.get("ommIntegration").then((result) => {
+        return result.ommIntegration ?? false;
+      });
+
       const tabs = await chrome.tabs.query({});
 
       let diceWasRolledInOMM = false;
-      await tabs.forEach(async tab => {
-        if (tab.url && matchPatternOMM.test(tab.url)) {
-          diceWasRolledInOMM = true;
-          await chrome.tabs.sendMessage(tab.id, { dice_roll: request.dice_roll });
-          await chrome.tabs.update(tab.id, { active: true });
-        }
-      });
+
+      if (ommintegration) {
+        await tabs.forEach(async tab => {
+          if (tab.url && matchPatternOMM.test(tab.url)) {
+            diceWasRolledInOMM = true;
+            await chrome.tabs.sendMessage(tab.id, { dice_roll: request.dice_roll });
+            await chrome.tabs.update(tab.id, { active: true });
+          }
+        });
+      }
 
       await tabs.forEach(async tab => {
         if (tab.url && matchPatternDND.test(tab.url)) {

@@ -23,8 +23,8 @@
     "message": "Convertire le misurazioni in SI",
     "description": "Toggle the International Metrics System"
   },
-  "successSendingToOMM": {
-    "message": "Risultato inviato a OMM!",
+  "enableOMMIntegration": {
+    "message": "Invia il lancio dei dadi a OMM",
     "description": "Integration between DnD Beyond and OMM message"
   }
 }

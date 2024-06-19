@@ -8,12 +8,21 @@ document.getElementById('convertToSiInput').addEventListener('change', async (ev
   await reloadPage();
 });
 
+document.getElementById('enableOMMIntegrationInput').addEventListener('change', async (event) => {
+  chrome.storage.local.set({"ommIntegration": event.target.checked});
+});
+
 (async () => {
   const toggleState = await chrome.storage.local.get("convertUnits").then((result) => {
     return result.convertUnits ?? true;
   });
 
+  const ommintegration = await chrome.storage.local.get("ommIntegration").then((result) => {
+    return result.ommIntegration ?? false;
+  });
+
   document.getElementById('convertToSiInput').checked = toggleState;
+  document.getElementById('enableOMMIntegrationInput').checked = ommintegration;
 })();
 
 async function reloadPage() {
