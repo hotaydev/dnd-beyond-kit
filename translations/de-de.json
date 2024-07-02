@@ -1,0 +1,151 @@
+{
+  "skills": {
+    "strength": {
+      "title": "Stärke",
+      "abbr": "STÄ"
+    },
+    "dexterity": {
+      "title": "Geschick.",
+      "abbr": "GES"
+    },
+    "constitution": {
+      "title": "Konstitution",
+      "abbr": "Kon"
+    },
+    "intelligence": {
+      "title": "Intelligenz",
+      "abbr": "INT"
+    },
+    "wisdom": {
+      "title": "Weisheit",
+      "abbr": "WEI"
+    },
+    "charisma": {
+      "title": "Charisma",
+      "abbr": "CHA"
+    }
+  },
+  "subskills": {
+    "acrobatics": "Akrobatik",
+    "animal handling": "Mit Tieren umgehen",
+    "arcana": "Arkane Kunde",
+    "athletics": "Athletik",
+    "deception": "Täuschen",
+    "history": "Geschichte",
+    "insight": "Motiv erkennen",
+    "intimidation": "Einschüchtern",
+    "investigation": "Nachforschungen",
+    "medicine": "Heilkunde",
+    "nature": "Naturkunde",
+    "perception": "Wahrnehmung",
+    "performance": "Auftreten",
+    "persuasion": "Überzeugen",
+    "religion": "Religion",
+    "sleight of hand": "Fingerfertigkeit",
+    "stealth": "Heimlichkeit",
+    "survival": "Überlebenskunst",
+    "skills": "Fertigkeiten",
+    "modifier": "Modifikator",
+    "proficiency": "Übungsbonus",
+    "additionalSkills": "Zusätzliche Fertigkeiten"
+  },
+  "main": {
+    "initiative": "Initiative",
+    "proficiency": "Übungsbonus",
+    "walking": "Lauf",
+    "speed": "Tempo",
+    "inspiration": "Inspiration",
+    "life": {
+      "heal": "Heilen",
+      "damage": "Schaden",
+      "current": "Aktuell",
+      "max": "Max",
+      "temp": "Temp",
+      "hitPoints": "Trefferpunkte"
+    },
+    "rest": {
+      "long rest": "Lange Rast",
+      "short rest": "Kurze Rast"
+    },
+    "defense": {
+      "armor": "Rüstung",
+      "class": "RK"
+    },
+    "conditions": {
+      "defenses": "Schutz",
+      "conditions": "Konditionen"
+    }
+  },
+  "actions": {
+    "actions": "Aktionen",
+    "actions_types": {
+      "all": "Alle",
+      "attack": "Angriffe",
+      "action": "Aktion",
+      "bonus action": "Bonusaktion",
+      "reaction": "Reaktion",
+      "other": "Andere",
+      "limited use": "Eingeschränkte nutzung"
+    },
+    "spells": "Zauber",
+    "spells_types": {
+      "modifier": "Modifikatoren",
+      "spell attack": "Zauberangriff",
+      "save dc": "Rettungswurf SG"
+    },
+    "inventory": "Inventar",
+    "inventory_types": {
+      "weight carried:": "Getragene Last:"
+    },
+    "features & traits": "Besonderheiten und Eigenschaften",
+    "features_types": {
+      "all": "Alle",
+      "class features": "Klassen Besonderheiten",
+      "racial traits": "Rassen Eigenschaften",
+      "feats": "Talente"
+    },
+    "description": "Beschreibung",
+    "description_types": {
+      "all": "Alle",
+      "background": "Hintergrund",
+      "characteristics": "Charakteristiken",
+      "appearance": "Aussehen"
+    },
+    "notes": "Notizen",
+    "notes_types": {
+      "all": "Alle",
+      "orgs": "Organisationen",
+      "allies": "Verbündete",
+      "enemies": "Feinde",
+      "backstory": "Hintergrundgeschichte",
+      "other": "Sonstiges"
+    },
+    "extras": "Extras"
+  },
+  "proficiencies": {
+    "armor": "Rüstung",
+    "weapons": "Waffen",
+    "tools": "Werkzeuge",
+    "languages": "Sprachen",
+    "values": {
+      "None": "Keine",
+      "Light Armor": "Leichte Rüstung",
+      "Medium Armor": "Mittlere Rüstung",
+      "Heavy Armor": "Schwere Rüstung",
+      "Shields": "Shilde",
+      "Finesse": "Finesse",
+      "Draconic": "Drakonisch",
+      "Common": "Gemeinsprache",
+      "Deep Speech": "Tief Sprech",
+      "Light": "Leicht"
+    }
+  },
+  "areaTitles": {
+    "proficiencies & languages": "Übung und Sprachen",
+    "skills": "Attributswerte",
+    "senses": "Sinne",
+    "saving throws": "Rettungswürfe",
+    "savingThrowsModifiers": "Rettungswurf Modifikatore",
+    "manage": "Managen"
+  }
+}
