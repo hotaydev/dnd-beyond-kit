@@ -1,0 +1,159 @@
+
+ "skills": {
+   "strength": {
+     "title": "Síla",
+     "abbr": "SÍL"
+   },
+   "dexterity": {
+     "title": "Obratnost",
+     "abbr": "OBR"
+   },
+   "constitution": {
+     "title": "Odolnost",
+     "abbr": "ODO"
+   },
+   "intelligence": {
+     "title": "Inteligence",
+     "abbr": "INT"
+   },
+   "wisdom": {
+     "title": "Moudrost",
+     "abbr": "MOU"
+   },
+   "charisma": {
+     "title": "Charisma",
+     "abbr": "CHA"
+   }
+ },
+ "subskills": {
+   "acrobatics": "Akrobacie",
+   "animal handling": "Ovládání zvířat",
+   "arcana": "Mystika",
+   "athletics": "Atletika",
+   "deception": "Klamání",
+   "history": "Historie",
+   "insight": "Vhled",
+   "intimidation": "Zastrašování",
+   "investigation": "Pátrání",
+   "medicine": "Lékařství",
+   "nature": "Příroda",
+   "perception": "Vnímání",
+   "performance": "Umění",
+   "persuasion": "Přesvědčování",
+   "religion": "Náboženství",
+   "sleight of hand": "Čachry",
+   "stealth": "Nenápadnost",
+   "survival": "Přežití",
+   "skills": "Dovednosti",
+   "modifier": "Modifikátor",
+   "proficiency": "Zdatnost",
+   "additionalSkills": "Další Dovednosti"
+ },
+ "main": {
+   "initiative": "Iniciativa",
+   "proficiency": "Zdatnost",
+   "walking": "Chůze",
+   "speed": "Rychlost",
+   "inspiration": "Inspirace",
+   "life": {
+     "heal": "Léčit",
+     "damage": "Zranit",
+     "current": "Aktuální",
+     "max": "Max",
+     "temp": "Doč.",
+     "hitPoints": "Životy"
+   },
+   "rest": {
+     "long rest": "Důkladný odpočinek",
+     "short rest": "Krátký odpočinek"
+   },
+   "defense": {
+     "armor": "Obranné",
+     "class": "Číslo"
+   },
+   "conditions": {
+     "defenses": "Ochrana",
+     "conditions": "Stavy"
+   }
+ },
+ "actions": {
+   "actions": "Akce",
+   "actions_types": {
+     "all": "Všechny",
+     "attack": "Útok",
+     "action": "Akce",
+     "bonus action": "Bonusová akce",
+     "reaction": "Reakce",
+     "other": "Ostatní",
+     "limited use": "Omezené"
+   },
+   "spells": "Kouzla",
+   "spells_types": {
+     "modifier": "Modifikátor",
+     "spell attack": "Magický útok",
+     "save dc": "Záchranný SO"
+   },
+   "inventory": "Inventář",
+   "inventory_types": {
+     "weight carried:": "Naložení:"
+   },
+   "features & traits": "Schopnosti a Rysy",
+   "features_types": {
+     "all": "Všechny",
+     "class features": "Schopnosti povolání",
+     "species traits": "Rasové rysy",
+     "feats": "Schopnosti"
+   },
+   "background": "Zázemí",
+   "background_types": {
+     "all": "Všechny",
+     "background": "Zázemí",
+     "characteristics": "Charakteristiky",
+     "appearance": "Vzhled"
+   },
+   "notes": "Poznámky",
+   "notes_types": {
+     "all": "Všechny",
+     "orgs": "Organizace",
+     "allies": "Spojenci",
+     "enemies": "Neprátelé",
+     "backstory": "Příběh",
+     "other": "Ostatní"
+   },
+   "extras": "Extra"
+ },
+ "proficiencies": {
+   "armor": "Zbroj",
+   "weapons": "Zbraně",
+   "tools": "Pomůcky",
+   "languages": "Jazyky",
+   "values": {
+     "None": "Žádná",
+     "Light Armor": "Lehká zbroj",
+     "Medium Armor": "Střední zbroj",
+     "Heavy Armor": "Těžká zbroj",
+     "Shields": "Štíty",
+     "Finesse": "Finesse",
+     "Draconic": "Dračí řeč",
+     "Dwarvish": "Trpasličtina",
+     "Elvish": "Elfština",
+     "Common": "Obecná řeč",
+     "Deep Speech": "Tief Sprech",
+     "Light": "Lehké",
+     "Cartographer's Tools": "Kartografické pomůcky"
+   }
+ },
+ "senses": {
+   "passive perception": "Pasivní Vnímání (Moudrost)",
+   "passive investigation": "Pasivní Pátrání (Inteligence)",
+   "passive insight": "Pasivní Vhled (Moudrost)",
+   "darkvision 12 sh.": "Vidění ve tmě 12 sáhů"
+ },
+ "areaTitles": {
+   "proficiencies & training": "Zdatnosti a Jazyky",
+   "skills": "Dovednosti",
+   "senses": "Smysly",
+   "saving throws": "Záchranné hody",
+   "savingThrowsModifiers": "Modifikátory záchranného hodu",
+   "manage": "Nastavení"
+ }

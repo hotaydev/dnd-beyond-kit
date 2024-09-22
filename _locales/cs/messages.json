@@ -1,0 +1,30 @@
+{
+  "title": {
+    "message": "D&D Beyond Kit",
+    "description": "Title of the extension"
+  },
+  "choose_language": {
+    "message": "Vyberte si jazyk z níže uvedeného seznamu:",
+    "description": "Language to be used on the translation"
+  },
+  "choose_language_option": {
+    "message": "Výběr jazyka",
+    "description": "Default option of language"
+  },
+  "thanks": {
+    "message": "Děkujeme vám za používání tohoto rozšíření!",
+    "description": "Thanks message to the user"
+  },
+  "backToTop": {
+    "message": "Zpět na začátek",
+    "description": "Button to scroll to the top of page"
+  },
+  "convertToSI": {
+    "message": "Převod měrných jednotek na SI",
+    "description": "Toggle the International Metrics System"
+  },
+  "enableOMMIntegration": {
+    "message": "Odeslání hodů kostkami do OMM",
+    "description": "Integration between DnD Beyond and OMM message"
+  }
+}
