@@ -83,6 +83,24 @@ function translateProficiencies(translations) {
   });
 }
 
+function translateSenses(translations) {
+  const sensesLabels = document.querySelectorAll('.ct-senses__callout-label');
+  if (!sensesLabels) return;
+
+  sensesLabels.forEach((sense) => {
+    const senseText = sense.innerText.toLowerCase();
+    sense.innerText = translations.senses[senseText] ?? sense.innerText;
+  });
+  
+  const sensesSummary = document.querySelectorAll('.ct-senses__summary');
+  if (!sensesSummary) return;
+
+  sensesSummary.forEach((sense) => {
+    const senseText = sense.innerText.toLowerCase();
+    sense.innerText = translations.senses[senseText] ?? sense.innerText;
+  });
+}
+
 function translateAreaTitles(translations) {
   const titles = document.querySelectorAll('.ddbc-manage-icon__content');
   if (!titles) return;
@@ -271,7 +289,8 @@ async function translateContent() {
     translateHealth(translations);
     translateActions(translations);
     translateConditions(translations);
-    translateProficiencies(translations);
+    translateSenses(translations);
+	translateProficiencies(translations);
     translateAreaTitles(translations);
     tabsListener(translations);
     translateTab(translations, translations.actions.actions.toLowerCase());
