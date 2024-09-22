@@ -157,8 +157,8 @@ function translateWalkAndDefense(translations) {
   const proficiencyButton = document.querySelector('.ct-proficiency-bonus-box .ct-proficiency-bonus-box__heading');
   const walkingButton = document.querySelector('.ct-quick-info__box--speed .ct-speed-box__heading');
   const speedButton = document.querySelector('.ct-quick-info__box--speed .ct-speed-box__label');
-  const inspirationButton = document.querySelector('.ct-inspiration .ct-inspiration__label');
-  const iniciativeButton = document.querySelector('.ct-initiative-box .ct-combat__summary-label');
+  const inspirationButton = document.querySelector('.styles_label__Bj6YW');
+  const iniciativeButton = document.querySelector('div[data-testid=combat-initiative-label]');
   const armorClass = document.querySelectorAll('.ddbc-armor-class-box .ddbc-armor-class-box__label');
 
   if (restButtons) {
@@ -178,8 +178,8 @@ function translateWalkAndDefense(translations) {
   if (proficiencyButton) proficiencyButton.innerText = translations.main.proficiency;
   if (walkingButton) walkingButton.innerText = translations.main.walking;
   if (speedButton) speedButton.innerText = translations.main.speed;
-  if (inspirationButton) inspirationButton.innerText = translations.main.inspiration;
-  if (iniciativeButton) iniciativeButton.innerText = translations.main.initiative;
+  if (inspirationButton) inspirationButton.innerHTML = translations.main.inspiration;
+  if (iniciativeButton) iniciativeButton.innerHTML = translations.main.initiative;
 }
 
 function translateHealth(translations) {
