@@ -283,6 +283,13 @@ function tabsListener(translations) {
   }));
 }
 
+function actionTabsListener(translations) {
+  const tabs = document.querySelectorAll('.ddbc-tab-options__header');
+  tabs.forEach((tab) => tab.addEventListener('click', async () => {
+    setTimeout(async () => await translateActionsSubItems(translations), 50);
+  }));
+}
+
 async function translateTab(translations, tab) {
   let innerTabs;
 
@@ -290,6 +297,8 @@ async function translateTab(translations, tab) {
     case translations.actions.actions.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
       innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.actions_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+	  translateActionsSubItems(translations);
+	  actionTabsListener(translations);
       break;
     case translations.actions.spells.toLowerCase():
       innerTabs = document.querySelectorAll('.ct-spells__casting .ct-spells-level-casting__info-group .ct-spells-level-casting__info-label');
