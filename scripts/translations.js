@@ -241,7 +241,7 @@ function minifyContent() {
 function tabsListener(translations) {
   const tabs = document.querySelectorAll('.ct-primary-box menu li button');
   tabs.forEach((tab) => tab.addEventListener('click', async () => {
-    setTimeout(async () => await translateTab(translations, tab.innerText.toLowerCase()), 300);
+    setTimeout(async () => await translateTab(translations, tab.innerText.toLowerCase()), 50);
   }));
 }
 
