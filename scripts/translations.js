@@ -204,7 +204,7 @@ function translateHealth(translations) {
   if (hitPoints) hitPoints.innerText = translations.main.life.hitPoints;
 }
 
-function translateActions(translations) {
+function translateGlobalActions(translations) {
   const actions = document.querySelectorAll('.ct-primary-box menu li button');
   if (!actions) return;
 
@@ -212,6 +212,44 @@ function translateActions(translations) {
     const actionContent = action.innerText.toLowerCase();
     action.innerText = translations.actions[actionContent] ?? action.innerText;
   });
+}
+
+function translateActionsSubItems(translations) {
+  const actionsLabel = document.querySelector('.ct-actions__attacks-heading');
+  if (!actionsLabel) return;
+  
+  actionsLabel.childNodes[0].nodeValue = translations.actions.actions_items["actionsLabel"];
+  actionsLabel.childNodes[2].innerText = actionsLabel.childNodes[2].innerText.replace(/^.*?(?=:)/, translations.actions.actions_items["attacksPerAction"]);
+  
+  const attackLabel = document.querySelector('.ddbc-attack-table__col--name');
+  if (attackLabel) attackLabel.innerText = translations.actions.actions_items["attack"] ?? attackLabel.innerText;
+  
+  const rangeLabel = document.querySelector('.ddbc-attack-table__col--range');
+  if (rangeLabel) rangeLabel.innerText = translations.actions.actions_items["range"] ?? rangeLabel.innerText;
+  
+  const damageLabel = document.querySelector('.ddbc-attack-table__col--damage');
+  if (damageLabel) damageLabel.innerText = translations.actions.actions_items["damage"] ?? damageLabel.innerText;
+  
+  const hitLabel = document.querySelector('.ddbc-attack-table__col--tohit');
+  if (hitLabel) hitLabel.innerText = translations.actions.actions_items["hit"] ?? hitLabel.innerText;
+  
+  const notesLabel = document.querySelector('.ddbc-attack-table__col--notes');
+  if (notesLabel) notesLabel.innerText = translations.actions.actions_items["notes"] ?? notesLabel.innerText;
+  
+  const combatActionsLabel = document.querySelectorAll('.ct-actions-list__basic-heading ');
+  if (combatActionsLabel) {
+    combatActionsLabel.forEach((label) => {
+      label.innerText = translations.actions.actions_items["actionsInCombat"] ?? label.innerText;
+    });
+  }
+  
+  const basicActions = document.querySelectorAll('.ct-basic-actions__action');
+  if (basicActions) {
+    basicActions.forEach((action) => {
+      text = action.childNodes[0];
+	  text.nodeValue = translations.actions.actions_items[text.nodeValue.toLowerCase()] ?? text.nodeValue;
+    });
+  }
 }
 
 function translateConditions(translations) {
@@ -287,7 +325,8 @@ async function translateContent() {
     translateTopBarMainContent(translations);
     translateWalkAndDefense(translations);
     translateHealth(translations);
-    translateActions(translations);
+    translateGlobalActions(translations);
+	translateActionsSubItems(translations);
     translateConditions(translations);
     translateSenses(translations);
 	translateProficiencies(translations);
