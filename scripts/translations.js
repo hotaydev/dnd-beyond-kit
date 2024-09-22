@@ -231,32 +231,27 @@ async function translateTab(translations, tab) {
   let innerTabs;
 
   switch (tab) {
-    case "ações":
-    case "acciones":
+    case translations.actions.actions.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
       innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.actions_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
       break;
-    case "feitiços":
-    case "hechizos":
+    case translations.actions.spells.toLowerCase():
       innerTabs = document.querySelectorAll('.ct-spells__casting .ct-spells-level-casting__info-group .ct-spells-level-casting__info-label');
       innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.spells_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
       break;
-    case "inventário":
-    case "inventario":
+    case translations.actions.inventory.toLowerCase():
       innerTabs = document.querySelector('.ct-equipment-overview__weight-carried-label');
       innerTabs.innerText = translations.actions.inventory_types[innerTabs.innerText.toLowerCase()] ?? innerTabs.innerText;
       break;
-    case "características":
+    case translations.actions["features & traits"].toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
       innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.features_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
       break;
-    case "descrição":
-    case "descripción":
+    case translations.actions.background.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.description_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.background_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
       break;
-    case "notas":
-    case "notas":
+    case translations.actions.notes.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
       innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.notes_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
       break;
@@ -279,7 +274,7 @@ async function translateContent() {
     translateProficiencies(translations);
     translateAreaTitles(translations);
     tabsListener(translations);
-    translateTab(translations, 'ações');
+    translateTab(translations, translations.actions.actions.toLowerCase());
   }
 
   minifyContent();
