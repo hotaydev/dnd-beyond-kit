@@ -207,12 +207,12 @@ function translateActionsSubItems(translations) {
   if (actionsLabel) {
     replaceTextIfFound(actionsLabel.childNodes[0], translations, ['actions', 'actions_items']);
   }
-  
+
   const attacksPerAction = document.querySelector('.ct-actions__attacks-per-action');
   if (attacksPerAction) {
     replaceTextIfFound(attacksPerAction.childNodes[0], translations, ['actions', 'actions_items']);
   }
-  
+
   let columnBaseStyle = ".ddbc-attack-table__col--";
   let columnNames = ["name", "range", "damage", "tohit", "notes"];
   columnNames.forEach(name => {
@@ -220,21 +220,21 @@ function translateActionsSubItems(translations) {
     let label = document.querySelector(columnStyle);
     replaceTextIfFound(label, translations, ['actions', 'actions_items']);
   });
- 
+
   const combatActionsLabel = document.querySelectorAll('.ct-actions-list__basic-heading ');
   if (combatActionsLabel) {
     combatActionsLabel.forEach((label) => {
       replaceTextIfFound(label, translations, ['actions', 'actions_items']);
     });
   }
-  
+
   const basicActions = document.querySelectorAll('.ct-basic-actions__action');
   if (basicActions) {
     basicActions.forEach((action) => {
       replaceTextIfFound(action.childNodes[0], translations, ['actions', 'actions_items']);
     });
   }
-  
+
   const weaponsAndSpells = document.querySelectorAll('.ddbc-combat-attack__label span');
   if (weaponsAndSpells) {
     weaponsAndSpells.forEach((weaponOrSpell) => {
@@ -242,11 +242,11 @@ function translateActionsSubItems(translations) {
       replaceTextIfFound(weaponOrSpell, translations, ['spells']);
     });
   }
-  
+
   const metaItems = document.querySelectorAll('.ddbc-combat-attack__meta-item, .ddbc-note-components__component--plain');
   if (metaItems) {
     metaItems.forEach((item) => {
-	  replaceTextIfFound(item, translations, ['meta']);
+      replaceTextIfFound(item, translations, ['meta']);
     });
   }
 }
@@ -324,22 +324,22 @@ async function translateTab(translations, tab) {
 }
 
 function replaceTextIfFound(obj, dictionary, path) {
-    if (obj && typeof obj.textContent === 'string') {
-        let currentText = obj.textContent.trim().toLowerCase();
+  if (obj && typeof obj.textContent === 'string') {
+    let currentText = obj.textContent.trim().toLowerCase();
 
-        let subpart = dictionary;
-        for (let key of path) {
-            if (subpart.hasOwnProperty(key)) {
-                subpart = subpart[key];
-            } else {
-                return;
-            }
-        }
-
-        if (subpart.hasOwnProperty(currentText)) {
-            obj.textContent = subpart[currentText];
-        }
+    let subpart = dictionary;
+    for (let key of path) {
+      if (subpart.hasOwnProperty(key)) {
+        subpart = subpart[key];
+      } else {
+        return;
+      }
     }
+
+    if (subpart.hasOwnProperty(currentText)) {
+      obj.textContent = subpart[currentText];
+    }
+  }
 }
 
 async function translateContent() {
@@ -354,7 +354,7 @@ async function translateContent() {
     translateWalkAndDefense(translations);
     translateHealth(translations);
     translateGlobalActions(translations);
-	translateActionsSubItems(translations);
+    translateActionsSubItems(translations);
     translateConditions(translations);
     translateSenses(translations);
     translateProficiencies(translations);

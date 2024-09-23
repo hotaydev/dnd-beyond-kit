@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "DnD Beyond Kit",
   "description": "Translate, add common metrics, and add new features to your D&D Beyond pages.",
-  "version": "0.6.5",
+  "version": "0.7.0",
   "default_locale": "en",
   "icons": {
     "16": "images/icon-16.png",

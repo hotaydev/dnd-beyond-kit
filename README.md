@@ -30,5 +30,5 @@ To add a new language, just:
 
 ### Thanks
 
-If you liked the extension, please give us a star on Github and a good note on Google Chrome Web Store.
+If you liked the extension, please give us a star on Github and a good note on [Google Chrome Web Store](https://chromewebstore.google.com/detail/dnd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg).
 

@@ -88,6 +88,30 @@
       "other": "Otras",
       "limited use": "Uso Limitado"
     },
+    "actions_items": {
+      "actionsLabel": "Acciones •",
+      "attacksPerAction": "Ataques por turno",
+      "attack": "Ataque",
+      "range": "Alcance",
+      "damage": "Daño",
+      "hit": "Golpe/DC",
+      "notes": "Notas",
+      "actionsInCombat": "Acciones en combate",
+      "help": "Ayudar",
+      "search": "Buscar",
+      "hide": "Esconderse",
+      "dodge": "Esquivar",
+      "dash": "Correr",
+      "disengage": "Desenganchar",
+      "magic": "Lanzar hechizo",
+      "ready": "Listo",
+      "utilize": "Usar objeto",
+      "improvise": "Improvisar",
+      "study": "Estudiar",
+      "shove": "Empujar",
+      "grapple": "Agarrar",
+      "influence": "Influir"
+    },
     "spells": "Hechizos",
     "spells_types": {
       "modifier": "Modificador",
@@ -97,6 +121,7 @@
     "inventory": "Inventario",
     "inventory_types": {
       "weight carried:": "Peso transportado:",
+      "all": "Todo",
       "equipment": "Equipo",
       "backpack": "Mochila",
       "attunement": "Equipos sintonizados",

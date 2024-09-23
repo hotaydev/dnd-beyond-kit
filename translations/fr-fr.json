@@ -88,6 +88,30 @@
       "other": "Autres",
       "limited use": "Utilisation Limitée"
     },
+    "actions_items": {
+      "actionsLabel": "Actions •",
+      "attacksPerAction": "Attaques par tour",
+      "attack": "Attaque",
+      "range": "Portée",
+      "damage": "Dégâts",
+      "hit": "Toucher/DC",
+      "notes": "Notes",
+      "actionsInCombat": "Actions en combat",
+      "help": "Aider",
+      "search": "Chercher",
+      "hide": "Se cacher",
+      "dodge": "Esquive",
+      "dash": "Course",
+      "disengage": "Désengagement",
+      "magic": "Lancer un sort",
+      "ready": "Prêt",
+      "utilize": "Utiliser un objet",
+      "improvise": "Improviser",
+      "study": "Étudier",
+      "shove": "Pousser",
+      "grapple": "Saisir",
+      "influence": "Influencer"
+    },
     "spells": "Sorts",
     "spells_types": {
       "modifier": "Modificateur",
@@ -97,6 +121,7 @@
     "inventory": "Inventaire",
     "inventory_types": {
       "weight carried:": "Poids transporté :",
+      "all": "Tous",
       "equipment": "Équipement",
       "backpack": "Sac à dos",
       "attunement": "Articles réglés",
