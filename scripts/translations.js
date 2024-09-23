@@ -15,8 +15,8 @@ async function languageOfTheExtension() {
   return await chrome.storage.local.get("language").then((result) => {
 
     if (!result.language) {
-      chrome.storage.local.set({ language: "pt-br" });
-      return "pt-br";
+      chrome.storage.local.set({ language: "en-us" });
+      return "en-us";
     }
 
     return result.language;
@@ -91,7 +91,7 @@ function translateSenses(translations) {
     const senseText = sense.innerText.toLowerCase();
     sense.innerText = translations.senses[senseText] ?? sense.innerText;
   });
-  
+
   const sensesSummary = document.querySelectorAll('.ct-senses__summary');
   if (!sensesSummary) return;
 
@@ -214,66 +214,6 @@ function translateGlobalActions(translations) {
   });
 }
 
-function translateActionsSubItems(translations) {
-  const actionsLabel = document.querySelector('.ct-actions__attacks-heading');
-  if (!actionsLabel) return;
-  
-  actionsLabel.childNodes[0].nodeValue = translations.actions.actions_items["actionsLabel"];
-  actionsLabel.childNodes[2].innerText = actionsLabel.childNodes[2].innerText.replace(/^.*?(?=:)/, translations.actions.actions_items["attacksPerAction"]);
-  
-  const attackLabel = document.querySelector('.ddbc-attack-table__col--name');
-  if (attackLabel) attackLabel.innerText = translations.actions.actions_items["attack"] ?? attackLabel.innerText;
-  
-  const rangeLabel = document.querySelector('.ddbc-attack-table__col--range');
-  if (rangeLabel) rangeLabel.innerText = translations.actions.actions_items["range"] ?? rangeLabel.innerText;
-  
-  const damageLabel = document.querySelector('.ddbc-attack-table__col--damage');
-  if (damageLabel) damageLabel.innerText = translations.actions.actions_items["damage"] ?? damageLabel.innerText;
-  
-  const hitLabel = document.querySelector('.ddbc-attack-table__col--tohit');
-  if (hitLabel) hitLabel.innerText = translations.actions.actions_items["hit"] ?? hitLabel.innerText;
-  
-  const notesLabel = document.querySelector('.ddbc-attack-table__col--notes');
-  if (notesLabel) notesLabel.innerText = translations.actions.actions_items["notes"] ?? notesLabel.innerText;
-  
-  const combatActionsLabel = document.querySelectorAll('.ct-actions-list__basic-heading ');
-  if (combatActionsLabel) {
-    combatActionsLabel.forEach((label) => {
-      label.innerText = translations.actions.actions_items["actionsInCombat"] ?? label.innerText;
-    });
-  }
-  
-  const basicActions = document.querySelectorAll('.ct-basic-actions__action');
-  if (basicActions) {
-    basicActions.forEach((action) => {
-      text = action.childNodes[0];
-	  text.nodeValue = translations.actions.actions_items[text.nodeValue.toLowerCase()] ?? text.nodeValue;
-    });
-  }
-  
-  const weaponsAndSpells = document.querySelectorAll('.ddbc-combat-attack__label span');
-  if (weaponsAndSpells) {
-    weaponsAndSpells.forEach((weaponOrSpell) => {
-	  text = translations.weapons[weaponOrSpell.innerText.toLowerCase()] ?? translations.spells[weaponOrSpell.innerText.toLowerCase()]
-	  weaponOrSpell.innerText = text ?? weaponOrSpell.innerText;
-    });
-  }
-  
-  const metaItems = document.querySelectorAll('.ddbc-combat-attack__meta-item');
-  if (metaItems) {
-    metaItems.forEach((item) => {
-	  item.innerText = translations.meta[item.innerText.toLowerCase()] ?? item.innerText;
-    });
-  }
-  
-  const notes = document.querySelectorAll('.ddbc-note-components__component--plain');
-  if (notes) {
-    notes.forEach((note) => {
-	  note.innerText = translations.meta[note.innerText.toLowerCase()] ?? note.innerText;
-    });
-  }
-}
-
 function translateConditions(translations) {
   const conditions = document.querySelectorAll('.ct-combat__statuses .ct-combat__summary-label');
   if (!conditions) return;
@@ -286,7 +226,7 @@ function translateConditions(translations) {
 
 function minifyContent() {
   const footer = document.querySelector('footer');
-  const megamenu = document.querySelector('div[name=megamenu] .mm-navbar');
+  const megamenu = document.querySelector('div[name=megamenu] menu');
   const socials = document.querySelector('.site-bar__container .socials');
   const interactions = document.querySelector('.site-bar__container .user-interactions');
   const search = document.querySelector('.site-bar__container .site-search form .react-autosuggest__container');
@@ -305,13 +245,6 @@ function tabsListener(translations) {
   }));
 }
 
-function actionTabsListener(translations) {
-  const tabs = document.querySelectorAll('.ddbc-tab-options__header');
-  tabs.forEach((tab) => tab.addEventListener('click', async () => {
-    setTimeout(async () => await translateActionsSubItems(translations), 50);
-  }));
-}
-
 async function translateTab(translations, tab) {
   let innerTabs;
 
@@ -319,16 +252,16 @@ async function translateTab(translations, tab) {
     case translations.actions.actions.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
       innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.actions_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
-	  translateActionsSubItems(translations);
-	  actionTabsListener(translations);
       break;
     case translations.actions.spells.toLowerCase():
       innerTabs = document.querySelectorAll('.ct-spells__casting .ct-spells-level-casting__info-group .ct-spells-level-casting__info-label');
       innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.spells_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
       break;
     case translations.actions.inventory.toLowerCase():
-      innerTabs = document.querySelector('.ct-equipment-overview__weight-carried-label');
-      innerTabs.innerText = translations.actions.inventory_types[innerTabs.innerText.toLowerCase()] ?? innerTabs.innerText;
+      weight_carried = document.querySelector('.ct-equipment-overview__weight-carried-label');
+      weight_carried.innerText = translations.actions.inventory_types[weight_carried.innerText.toLowerCase()] ?? innerTabs.innerText;
+      innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
+      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.inventory_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
       break;
     case translations.actions["features & traits"].toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
@@ -357,10 +290,9 @@ async function translateContent() {
     translateWalkAndDefense(translations);
     translateHealth(translations);
     translateGlobalActions(translations);
-	translateActionsSubItems(translations);
     translateConditions(translations);
     translateSenses(translations);
-	translateProficiencies(translations);
+    translateProficiencies(translations);
     translateAreaTitles(translations);
     tabsListener(translations);
     translateTab(translations, translations.actions.actions.toLowerCase());

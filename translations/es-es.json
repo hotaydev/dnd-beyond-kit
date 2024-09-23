@@ -64,6 +64,7 @@
       "hitPoints": "Puntos de Vida"
     },
     "rest": {
+      "share": "Compartir",
       "long rest": "Descanso Largo",
       "short rest": "Descanso Corto"
     },
@@ -95,17 +96,21 @@
     },
     "inventory": "Inventario",
     "inventory_types": {
-      "weight carried:": "Peso transportado:"
+      "weight carried:": "Peso transportado:",
+      "equipment": "Equipo",
+      "backpack": "Mochila",
+      "attunement": "Equipos sintonizados",
+      "other possessions": "Otras posesiones"
     },
     "features & traits": "Características",
     "features_types": {
       "all": "Todas",
       "class features": "Características de clase",
-      "racial traits": "Rasgos raciales",
+      "species traits": "Rasgos raciales",
       "feats": "Habilidades"
     },
-    "description": "Descripción",
-    "description_types": {
+    "background": "Descripción",
+    "background_types": {
       "all": "Todas",
       "background": "Antecedentes / Historia",
       "characteristics": "Características",
@@ -137,15 +142,45 @@
       "Draconic": "Dracónido",
       "Common": "Común",
       "Deep Speech": "Habla de las profundidades",
-      "Light": "Armas ligeras"
+      "Light": "Armas ligeras",
+      "Dwarvish": "Lengua de los Enanos",
+      "Elvish": "Élfico",
+      "Orc": "Lengua de los Orcos",
+      "Cartographer's Tools": "Herramientas de Cartografía",
+      "Martial Weapons": "Armas Marciales",
+      "Simple Weapons": "Armas Simples",
+      "Navigator's Tools": "Herramientas de Navegación",
+      "Vehicles (Water)": "Vehículos (Agua)"
     }
   },
   "areaTitles": {
-    "proficiencies & languages": "Competencias",
+    "proficiencies & training": "Competencias",
     "skills": "Habilidades",
     "senses": "Sentidos",
     "saving throws": "Tiradas de salvación",
     "savingThrowsModifiers": "Modificadores a las Tiradas de Salvación",
     "manage": "Administrar"
+  },
+  "senses": {
+    "passive perception": "Percepción Pasiva (Sabiduría)",
+    "passive investigation": "Investigación Pasiva (Inteligencia)",
+    "passive insight": "Intuición Pasiva (Sabiduría)",
+    "darkvision": "Visión en la oscuridad"
+  },
+  "weapons": {
+    "unarmed strike": "Golpe desarmado",
+    "longbow": "Arco largo",
+    "maul": "Martillo"
+  },
+  "spells": {
+    "fire bolt": "Rayo de fuego"
+  },
+  "meta": {
+    "melee weapon": "Arma cuerpo a cuerpo",
+    "ranged weapon": "Arma a distancia",
+    "melee attack": "Ataque cuerpo a cuerpo",
+    "martial": "Marciales",
+    "heavy": "Pesadas",
+    "two-handed": "A dos manos"
   }
 }

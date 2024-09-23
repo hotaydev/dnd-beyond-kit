@@ -64,6 +64,7 @@
       "hitPoints": "Životy"
     },
     "rest": {
+      "share": "Chcete-li sdílet",
       "long rest": "Důkladný odpočinek",
       "short rest": "Krátký odpočinek"
     },
@@ -87,30 +88,6 @@
       "other": "Ostatní",
       "limited use": "Omezené"
     },
-	"actions_items": {
-		"actionsLabel": "Akce •",
-		"attacksPerAction": "Útoků za kolo",
-		"attack": "Útok",
-		"range": "Dosah",
-		"damage": "Zranění",
-		"hit": "Zásah/SO",
-		"notes": "Poznámky",
-		"actionsInCombat": "Akce v souboji",
-		"help": "Pomoc",
-		"search": "Hledání",
-		"hide": "Schování se",
-		"dodge": "Uhýbání",
-		"dash": "Sprint",
-		"disengage": "Odpoutání se",
-		"magic": "Seslání kouzla",
-		"ready": "Příprava",
-		"utilize": "Použití předmětu",
-		"improvise": "Improvizace",
-		"study": "Přemýšlení",
-		"shove": "Strčení",
-		"grapple": "Chvat",
-		"influence": "Ovlivnění"
-	},
     "spells": "Kouzla",
     "spells_types": {
       "modifier": "Modifikátor",
@@ -119,7 +96,11 @@
     },
     "inventory": "Inventář",
     "inventory_types": {
-      "weight carried:": "Naložení:"
+      "weight carried:": "Naložení:",
+      "equipment": "Equipamento",
+      "backpack": "Mochila",
+      "attunement": "Itens com Sintonia",
+      "other possessions": "Outras Possessões"
     },
     "features & traits": "Schopnosti a Rysy",
     "features_types": {
@@ -198,8 +179,8 @@
     "melee weapon": "Zbraň na blízko",
     "ranged weapon": "Zbraň na dálku",
     "melee attack": "Útok zblízka",
-	"martial": "Vojenská",
-	"heavy": "Těžká",
-	"two-handed": "Obouruční"
+    "martial": "Vojenská",
+    "heavy": "Těžká",
+    "two-handed": "Obouruční"
   }
 }
