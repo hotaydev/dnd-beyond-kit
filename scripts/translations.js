@@ -72,8 +72,7 @@ function translateProficiencies(translations) {
   if (!proficiencyLabels || !proficiencyContents) return;
 
   proficiencyLabels.forEach((proficiency) => {
-    const proficiencyText = proficiency.innerText.toLowerCase();
-    proficiency.innerText = translations.proficiencies[proficiencyText] ?? proficiency.innerText;
+    replaceTextIfFound(proficiency, translations, ['proficiencies']);
   });
 
   proficiencyContents.forEach((proficiency) => {
@@ -88,16 +87,14 @@ function translateSenses(translations) {
   if (!sensesLabels) return;
 
   sensesLabels.forEach((sense) => {
-    const senseText = sense.innerText.toLowerCase();
-    sense.innerText = translations.senses[senseText] ?? sense.innerText;
+    replaceTextIfFound(sense, translations, ['senses']);
   });
 
   const sensesSummary = document.querySelectorAll('.ct-senses__summary');
   if (!sensesSummary) return;
 
   sensesSummary.forEach((sense) => {
-    const senseText = sense.innerText.toLowerCase();
-    sense.innerText = translations.senses[senseText] ?? sense.innerText;
+    replaceTextIfFound(sense, translations, ['senses']);
   });
 }
 
@@ -106,8 +103,7 @@ function translateAreaTitles(translations) {
   if (!titles) return;
 
   titles.forEach((title) => {
-    const text = title.innerText.toLowerCase();
-    title.innerText = translations.areaTitles[text] ?? title.innerText;
+    replaceTextIfFound(title, translations, ['areaTitles']);
   });
 
   const savingThrows = document.querySelector('.ct-saving-throws-box__info .ct-saving-throws-box__modifiers');
@@ -118,7 +114,7 @@ function translateAreaTitles(translations) {
   // if (manageItems) manageItems.forEach((item) => item.setAttribute('data-original-title', translations.areaTitles.manage));
 
   const manageMainButton = document.querySelector('.ddbc-character-tidbits__menu-callout button span');
-  if (manageMainButton) manageMainButton.innerText = translations.areaTitles.manage ?? manageMainButton.innerText;
+  if (manageMainButton) replaceTextIfFound(manageMainButton, translations, ['areaTitles']);
 }
 
 function translateSubskills(translations) {
@@ -126,9 +122,7 @@ function translateSubskills(translations) {
   if (!subSkills) return;
 
   subSkills.forEach((skill) => {
-    const skillTitle = skill.innerText.toLowerCase();
-    skill.innerText = translations.subskills[skillTitle] ?? skill.innerText;
-    skill.title = skillTitle;
+    replaceTextIfFound(skill, translations, ['subskills']);
   });
 
   const skillsName = document.querySelector('.ct-skills__header .ct-skills__col--skill .ct-skills__heading');
@@ -136,7 +130,7 @@ function translateSubskills(translations) {
   const proficiency = document.querySelector('.ct-skills__header .ct-skills__col--proficiency abbr');
   const modifier = document.querySelector('.ct-skills__header .ct-skills__col--stat abbr');
 
-  if (skillsName) skillsName.innerText = translations.subskills.skills.toUpperCase();
+  if (skillsName) replaceTextIfFound(skillsName, translations, ['subskills']);
   if (additionalSkills) additionalSkills.innerText = translations.subskills.additionalSkills ?? additionalSkills.innerText;
   if (proficiency) proficiency.setAttribute('title', translations.subskills.proficiency);
   if (modifier) modifier.setAttribute('title', translations.subskills.modifier);
@@ -147,8 +141,7 @@ function translateTopBarMainContent(translations) {
   if (!restButtons) return;
 
   restButtons.forEach((button) => {
-    const buttonText = button.innerText.toLowerCase();
-    button.innerText = translations.main.rest[buttonText] ?? button.innerText;
+    replaceTextIfFound(button, translations, ['main', 'rest'])
   });
 }
 
@@ -163,23 +156,21 @@ function translateWalkAndDefense(translations) {
 
   if (restButtons) {
     restButtons.forEach((button) => {
-      const buttonText = button.innerText.toLowerCase();
-      button.innerText = translations.main.rest[buttonText] ?? button.innerText;
+      replaceTextIfFound(button, translations, ['main', 'rest']);
     });
   }
 
   if (armorClass) {
     armorClass.forEach((armor) => {
-      const text = armor.innerText.toLowerCase();
-      armor.innerText = translations.main.defense[text] ?? armor.innerText;
+      replaceTextIfFound(armor, translations, ['main', 'defense']);
     });
   }
 
-  if (proficiencyButton) proficiencyButton.innerText = translations.main.proficiency;
-  if (walkingButton) walkingButton.innerText = translations.main.walking;
-  if (speedButton) speedButton.innerText = translations.main.speed;
-  if (inspirationButton) inspirationButton.innerHTML = translations.main.inspiration;
-  if (iniciativeButton) iniciativeButton.innerHTML = translations.main.initiative;
+  if (proficiencyButton) replaceTextIfFound(proficiencyButton, translations, ['main']);
+  if (walkingButton) replaceTextIfFound(walkingButton, translations, ['main']);
+  if (speedButton) replaceTextIfFound(speedButton, translations, ['main']);
+  if (inspirationButton) replaceTextIfFound(inspirationButton, translations, ['main']);
+  if (iniciativeButton) replaceTextIfFound(iniciativeButton, translations, ['main']);
 }
 
 function translateHealth(translations) {
@@ -189,15 +180,13 @@ function translateHealth(translations) {
 
   if (buttons) {
     buttons.forEach((button) => {
-      const buttonText = button.innerText.toLowerCase();
-      button.innerText = translations.main.life[buttonText] ?? button.innerText;
+      replaceTextIfFound(button, translations, ['main', 'life']);
     });
   }
 
   if (healthText) {
     healthText.forEach((text) => {
-      const textContent = text.innerText.toLowerCase();
-      text.innerText = translations.main.life[textContent] ?? text.innerText;
+      replaceTextIfFound(text, translations, ['main', 'life']);
     });
   }
 
@@ -209,9 +198,57 @@ function translateGlobalActions(translations) {
   if (!actions) return;
 
   actions.forEach((action) => {
-    const actionContent = action.innerText.toLowerCase();
-    action.innerText = translations.actions[actionContent] ?? action.innerText;
+    replaceTextIfFound(action, translations, ['actions']);
   });
+}
+
+function translateActionsSubItems(translations) {
+  const actionsLabel = document.querySelector('.ct-actions__attacks-heading');
+  if (actionsLabel) {
+    replaceTextIfFound(actionsLabel.childNodes[0], translations, ['actions', 'actions_items']);
+  }
+  
+  const attacksPerAction = document.querySelector('.ct-actions__attacks-per-action');
+  if (attacksPerAction) {
+    replaceTextIfFound(attacksPerAction.childNodes[0], translations, ['actions', 'actions_items']);
+  }
+  
+  let columnBaseStyle = ".ddbc-attack-table__col--";
+  let columnNames = ["name", "range", "damage", "tohit", "notes"];
+  columnNames.forEach(name => {
+    let columnStyle = columnBaseStyle + name;
+    let label = document.querySelector(columnStyle);
+    replaceTextIfFound(label, translations, ['actions', 'actions_items']);
+  });
+ 
+  const combatActionsLabel = document.querySelectorAll('.ct-actions-list__basic-heading ');
+  if (combatActionsLabel) {
+    combatActionsLabel.forEach((label) => {
+      replaceTextIfFound(label, translations, ['actions', 'actions_items']);
+    });
+  }
+  
+  const basicActions = document.querySelectorAll('.ct-basic-actions__action');
+  if (basicActions) {
+    basicActions.forEach((action) => {
+      replaceTextIfFound(action.childNodes[0], translations, ['actions', 'actions_items']);
+    });
+  }
+  
+  const weaponsAndSpells = document.querySelectorAll('.ddbc-combat-attack__label span');
+  if (weaponsAndSpells) {
+    weaponsAndSpells.forEach((weaponOrSpell) => {
+      replaceTextIfFound(weaponOrSpell, translations, ['weapons']);
+      replaceTextIfFound(weaponOrSpell, translations, ['spells']);
+    });
+  }
+  
+  const metaItems = document.querySelectorAll('.ddbc-combat-attack__meta-item, .ddbc-note-components__component--plain');
+  if (metaItems) {
+    metaItems.forEach((item) => {
+	  replaceTextIfFound(item, translations, ['meta']);
+    });
+  }
 }
 
 function translateConditions(translations) {
@@ -219,8 +256,7 @@ function translateConditions(translations) {
   if (!conditions) return;
 
   conditions.forEach((condition) => {
-    const actionContent = condition.innerText.toLowerCase();
-    condition.innerText = translations.main.conditions[actionContent] ?? condition.innerText;
+    replaceTextIfFound(condition, translations, ['main', 'conditions'])
   });
 }
 
@@ -245,37 +281,65 @@ function tabsListener(translations) {
   }));
 }
 
+function actionTabsListener(translations) {
+  const tabs = document.querySelectorAll('.ddbc-tab-options__header');
+  tabs.forEach((tab) => tab.addEventListener('click', async () => {
+    setTimeout(async () => await translateActionsSubItems(translations), 50);
+  }));
+}
+
 async function translateTab(translations, tab) {
   let innerTabs;
 
   switch (tab) {
     case translations.actions.actions.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.actions_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'actions_types']));
+      translateActionsSubItems(translations);
+      actionTabsListener(translations);
       break;
     case translations.actions.spells.toLowerCase():
       innerTabs = document.querySelectorAll('.ct-spells__casting .ct-spells-level-casting__info-group .ct-spells-level-casting__info-label');
-      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.spells_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'spells_types']));
       break;
     case translations.actions.inventory.toLowerCase():
       weight_carried = document.querySelector('.ct-equipment-overview__weight-carried-label');
-      weight_carried.innerText = translations.actions.inventory_types[weight_carried.innerText.toLowerCase()] ?? innerTabs.innerText;
+      replaceTextIfFound(weight_carried, translations, ['actions', 'inventory_types'])
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.inventory_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'inventory_types']));
       break;
     case translations.actions["features & traits"].toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.features_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'features_types']));
       break;
     case translations.actions.background.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.background_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'background_types']));
       break;
     case translations.actions.notes.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.notes_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'notes_types']));
       break;
   }
+}
+
+function replaceTextIfFound(obj, dictionary, path) {
+    if (obj && typeof obj.textContent === 'string') {
+        let currentText = obj.textContent.trim().toLowerCase();
+
+        let subpart = dictionary;
+        for (let key of path) {
+            if (subpart.hasOwnProperty(key)) {
+                subpart = subpart[key];
+            } else {
+                return;
+            }
+        }
+
+        if (subpart.hasOwnProperty(currentText)) {
+            obj.textContent = subpart[currentText];
+        }
+    }
 }
 
 async function translateContent() {
@@ -290,6 +354,7 @@ async function translateContent() {
     translateWalkAndDefense(translations);
     translateHealth(translations);
     translateGlobalActions(translations);
+	translateActionsSubItems(translations);
     translateConditions(translations);
     translateSenses(translations);
     translateProficiencies(translations);

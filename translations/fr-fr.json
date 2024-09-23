@@ -44,7 +44,7 @@
     "sleight of hand": "Escamotage",
     "stealth": "Discrétion",
     "survival": "Survie",
-    "skills": "Compétences",
+    "skill": "Compétences",
     "modifier": "Modificateur",
     "proficiency": "Maîtrise",
     "additionalSkills": "Compétences supplémentaires"
@@ -54,7 +54,7 @@
     "proficiency": "Maîtrise",
     "walking": "Marche",
     "speed": "Vitesse",
-    "inspiration": "Inspiration",
+    "heroic inspiration": "Inspiration",
     "life": {
       "heal": "Soigner",
       "damage": "Dégâts",

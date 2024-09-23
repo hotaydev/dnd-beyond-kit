@@ -44,7 +44,7 @@
     "sleight of hand": "Rapidità di Mano",
     "stealth": "Furtività",
     "survival": "Sopravvivenza",
-    "skills": "Abilità",
+    "skill": "Abilità",
     "modifier": "Modificatore",
     "proficiency": "Competenza",
     "additionalSkills": "Competenza addizionali"
@@ -54,7 +54,7 @@
     "proficiency": "Competenza",
     "walking": "Velocità",
     "speed": "Camminare",
-    "inspiration": "Ispirazione",
+    "heroic inspiration": "Ispirazione",
     "life": {
       "heal": "Cura",
       "damage": "Danno",
