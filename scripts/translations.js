@@ -15,8 +15,8 @@ async function languageOfTheExtension() {
   return await chrome.storage.local.get("language").then((result) => {
 
     if (!result.language) {
-      chrome.storage.local.set({ language: "pt-br" });
-      return "pt-br";
+      chrome.storage.local.set({ language: "en-us" });
+      return "en-us";
     }
 
     return result.language;
@@ -83,6 +83,24 @@ function translateProficiencies(translations) {
   });
 }
 
+function translateSenses(translations) {
+  const sensesLabels = document.querySelectorAll('.ct-senses__callout-label');
+  if (!sensesLabels) return;
+
+  sensesLabels.forEach((sense) => {
+    const senseText = sense.innerText.toLowerCase();
+    sense.innerText = translations.senses[senseText] ?? sense.innerText;
+  });
+
+  const sensesSummary = document.querySelectorAll('.ct-senses__summary');
+  if (!sensesSummary) return;
+
+  sensesSummary.forEach((sense) => {
+    const senseText = sense.innerText.toLowerCase();
+    sense.innerText = translations.senses[senseText] ?? sense.innerText;
+  });
+}
+
 function translateAreaTitles(translations) {
   const titles = document.querySelectorAll('.ddbc-manage-icon__content');
   if (!titles) return;
@@ -139,8 +157,8 @@ function translateWalkAndDefense(translations) {
   const proficiencyButton = document.querySelector('.ct-proficiency-bonus-box .ct-proficiency-bonus-box__heading');
   const walkingButton = document.querySelector('.ct-quick-info__box--speed .ct-speed-box__heading');
   const speedButton = document.querySelector('.ct-quick-info__box--speed .ct-speed-box__label');
-  const inspirationButton = document.querySelector('.ct-inspiration .ct-inspiration__label');
-  const iniciativeButton = document.querySelector('.ct-initiative-box .ct-combat__summary-label');
+  const inspirationButton = document.querySelector('.styles_label__Bj6YW');
+  const iniciativeButton = document.querySelector('div[data-testid=combat-initiative-label]');
   const armorClass = document.querySelectorAll('.ddbc-armor-class-box .ddbc-armor-class-box__label');
 
   if (restButtons) {
@@ -160,8 +178,8 @@ function translateWalkAndDefense(translations) {
   if (proficiencyButton) proficiencyButton.innerText = translations.main.proficiency;
   if (walkingButton) walkingButton.innerText = translations.main.walking;
   if (speedButton) speedButton.innerText = translations.main.speed;
-  if (inspirationButton) inspirationButton.innerText = translations.main.inspiration;
-  if (iniciativeButton) iniciativeButton.innerText = translations.main.initiative;
+  if (inspirationButton) inspirationButton.innerHTML = translations.main.inspiration;
+  if (iniciativeButton) iniciativeButton.innerHTML = translations.main.initiative;
 }
 
 function translateHealth(translations) {
@@ -186,7 +204,7 @@ function translateHealth(translations) {
   if (hitPoints) hitPoints.innerText = translations.main.life.hitPoints;
 }
 
-function translateActions(translations) {
+function translateGlobalActions(translations) {
   const actions = document.querySelectorAll('.ct-primary-box menu li button');
   if (!actions) return;
 
@@ -208,7 +226,7 @@ function translateConditions(translations) {
 
 function minifyContent() {
   const footer = document.querySelector('footer');
-  const megamenu = document.querySelector('div[name=megamenu] .mm-navbar');
+  const megamenu = document.querySelector('div[name=megamenu] menu');
   const socials = document.querySelector('.site-bar__container .socials');
   const interactions = document.querySelector('.site-bar__container .user-interactions');
   const search = document.querySelector('.site-bar__container .site-search form .react-autosuggest__container');
@@ -223,7 +241,7 @@ function minifyContent() {
 function tabsListener(translations) {
   const tabs = document.querySelectorAll('.ct-primary-box menu li button');
   tabs.forEach((tab) => tab.addEventListener('click', async () => {
-    setTimeout(async () => await translateTab(translations, tab.innerText.toLowerCase()), 300);
+    setTimeout(async () => await translateTab(translations, tab.innerText.toLowerCase()), 50);
   }));
 }
 
@@ -231,32 +249,29 @@ async function translateTab(translations, tab) {
   let innerTabs;
 
   switch (tab) {
-    case "ações":
-    case "acciones":
+    case translations.actions.actions.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
       innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.actions_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
       break;
-    case "feitiços":
-    case "hechizos":
+    case translations.actions.spells.toLowerCase():
       innerTabs = document.querySelectorAll('.ct-spells__casting .ct-spells-level-casting__info-group .ct-spells-level-casting__info-label');
       innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.spells_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
       break;
-    case "inventário":
-    case "inventario":
-      innerTabs = document.querySelector('.ct-equipment-overview__weight-carried-label');
-      innerTabs.innerText = translations.actions.inventory_types[innerTabs.innerText.toLowerCase()] ?? innerTabs.innerText;
+    case translations.actions.inventory.toLowerCase():
+      weight_carried = document.querySelector('.ct-equipment-overview__weight-carried-label');
+      weight_carried.innerText = translations.actions.inventory_types[weight_carried.innerText.toLowerCase()] ?? innerTabs.innerText;
+      innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
+      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.inventory_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
       break;
-    case "características":
+    case translations.actions["features & traits"].toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
       innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.features_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
       break;
-    case "descrição":
-    case "descripción":
+    case translations.actions.background.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.description_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.background_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
       break;
-    case "notas":
-    case "notas":
+    case translations.actions.notes.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
       innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.notes_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
       break;
@@ -274,12 +289,13 @@ async function translateContent() {
     translateTopBarMainContent(translations);
     translateWalkAndDefense(translations);
     translateHealth(translations);
-    translateActions(translations);
+    translateGlobalActions(translations);
     translateConditions(translations);
+    translateSenses(translations);
     translateProficiencies(translations);
     translateAreaTitles(translations);
     tabsListener(translations);
-    translateTab(translations, 'ações');
+    translateTab(translations, translations.actions.actions.toLowerCase());
   }
 
   minifyContent();
