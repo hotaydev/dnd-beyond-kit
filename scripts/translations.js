@@ -258,6 +258,20 @@ function translateActionsSubItems(translations) {
 	  weaponOrSpell.innerText = text ?? weaponOrSpell.innerText;
     });
   }
+  
+  const metaItems = document.querySelectorAll('.ddbc-combat-attack__meta-item');
+  if (metaItems) {
+    metaItems.forEach((item) => {
+	  item.innerText = translations.meta[item.innerText.toLowerCase()] ?? item.innerText;
+    });
+  }
+  
+  const notes = document.querySelectorAll('.ddbc-note-components__component--plain');
+  if (notes) {
+    notes.forEach((note) => {
+	  note.innerText = translations.meta[note.innerText.toLowerCase()] ?? note.innerText;
+    });
+  }
 }
 
 function translateConditions(translations) {

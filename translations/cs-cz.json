@@ -188,9 +188,18 @@
   },
   "weapons": {
     "unarmed strike": "Úder beze zbraně",
-    "longbow": "Dlouhý luk"
+    "longbow": "Dlouhý luk",
+    "maul": "Palice"
   },
   "spells": {
     "fire bolt": "Ohnivá střela"
+  },
+  "meta": {
+    "melee weapon": "Zbraň na blízko",
+    "ranged weapon": "Zbraň na dálku",
+    "melee attack": "Útok zblízka",
+	"martial": "Vojenská",
+	"heavy": "Těžká",
+	"two-handed": "Obouruční"
   }
 }
