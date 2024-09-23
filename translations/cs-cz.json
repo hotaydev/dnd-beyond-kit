@@ -88,6 +88,30 @@
       "other": "Ostatní",
       "limited use": "Omezené"
     },
+    "actions_items": {
+        "actions •": "Akce •",
+        "attacks per action:": "Útoků za akci: ",
+        "attack": "Útok",
+        "range": "Dosah",
+        "damage": "Zranění",
+        "hit / dc": "Zásah/SO",
+        "notes": "Poznámky",
+        "actions in combat": "Akce v souboji",
+        "help": "Pomoc",
+        "search": "Hledání",
+        "hide": "Schování se",
+        "dodge": "Uhýbání",
+        "dash": "Sprint",
+        "disengage": "Odpoutání se",
+        "magic": "Seslání kouzla",
+        "ready": "Příprava",
+        "utilize": "Použití předmětu",
+        "improvise": "Improvizace",
+        "study": "Přemýšlení",
+        "shove": "Strčení",
+        "grapple": "Chvat",
+        "influence": "Ovlivnění"
+	},
     "spells": "Kouzla",
     "spells_types": {
       "modifier": "Modifikátor",
@@ -97,10 +121,12 @@
     "inventory": "Inventář",
     "inventory_types": {
       "weight carried:": "Naložení:",
-      "equipment": "Equipamento",
-      "backpack": "Mochila",
-      "attunement": "Itens com Sintonia",
-      "other possessions": "Outras Possessões"
+      "all": "Všechno",
+      "equipment": "Výbava",
+      "backpack": "Batoh",
+      "component pouch": "Brašnička na suroviny",
+      "attunement": "Sladění",
+      "other possessions": "Ostatní majetek"
     },
     "features & traits": "Schopnosti a Rysy",
     "features_types": {

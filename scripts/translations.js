@@ -214,6 +214,55 @@ function translateGlobalActions(translations) {
   });
 }
 
+function translateActionsSubItems(translations) {
+  const actionsLabel = document.querySelector('.ct-actions__attacks-heading');
+  if (actionsLabel) {
+    replaceTextIfFound(actionsLabel.childNodes[0], translations, ['actions', 'actions_items']);
+  }
+  
+  const attacksPerAction = document.querySelector('.ct-actions__attacks-per-action');
+  if (attacksPerAction) {
+    replaceTextIfFound(attacksPerAction.childNodes[0], translations, ['actions', 'actions_items']);
+  }
+  
+  let columnBaseStyle = ".ddbc-attack-table__col--";
+  let columnNames = ["name", "range", "damage", "tohit", "notes"];
+  columnNames.forEach(name => {
+    let columnStyle = columnBaseStyle + name;
+    let label = document.querySelector(columnStyle);
+    replaceTextIfFound(label, translations, ['actions', 'actions_items']);
+  });
+ 
+  const combatActionsLabel = document.querySelectorAll('.ct-actions-list__basic-heading ');
+  if (combatActionsLabel) {
+    combatActionsLabel.forEach((label) => {
+      replaceTextIfFound(label, translations, ['actions', 'actions_items']);
+    });
+  }
+  
+  const basicActions = document.querySelectorAll('.ct-basic-actions__action');
+  if (basicActions) {
+    basicActions.forEach((action) => {
+      replaceTextIfFound(action.childNodes[0], translations, ['actions', 'actions_items']);
+    });
+  }
+  
+  const weaponsAndSpells = document.querySelectorAll('.ddbc-combat-attack__label span');
+  if (weaponsAndSpells) {
+    weaponsAndSpells.forEach((weaponOrSpell) => {
+      replaceTextIfFound(weaponOrSpell, translations, ['weapons']);
+      replaceTextIfFound(weaponOrSpell, translations, ['spells']);
+    });
+  }
+  
+  const metaItems = document.querySelectorAll('.ddbc-combat-attack__meta-item, .ddbc-note-components__component--plain');
+  if (metaItems) {
+    metaItems.forEach((item) => {
+	  replaceTextIfFound(item, translations, ['meta']);
+    });
+  }
+}
+
 function translateConditions(translations) {
   const conditions = document.querySelectorAll('.ct-combat__statuses .ct-combat__summary-label');
   if (!conditions) return;
@@ -245,6 +294,13 @@ function tabsListener(translations) {
   }));
 }
 
+function actionTabsListener(translations) {
+  const tabs = document.querySelectorAll('.ddbc-tab-options__header');
+  tabs.forEach((tab) => tab.addEventListener('click', async () => {
+    setTimeout(async () => await translateActionsSubItems(translations), 50);
+  }));
+}
+
 async function translateTab(translations, tab) {
   let innerTabs;
 
@@ -252,6 +308,8 @@ async function translateTab(translations, tab) {
     case translations.actions.actions.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
       innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.actions_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      translateActionsSubItems(translations);
+      actionTabsListener(translations);
       break;
     case translations.actions.spells.toLowerCase():
       innerTabs = document.querySelectorAll('.ct-spells__casting .ct-spells-level-casting__info-group .ct-spells-level-casting__info-label');
@@ -278,6 +336,25 @@ async function translateTab(translations, tab) {
   }
 }
 
+function replaceTextIfFound(obj, dictionary, path) {
+    if (obj && typeof obj.textContent === 'string') {
+        let currentText = obj.textContent.trim().toLowerCase();
+
+        let subpart = dictionary;
+        for (let key of path) {
+            if (subpart.hasOwnProperty(key)) {
+                subpart = subpart[key];
+            } else {
+                return;
+            }
+        }
+
+        if (subpart.hasOwnProperty(currentText)) {
+            obj.textContent = subpart[currentText];
+        }
+    }
+}
+
 async function translateContent() {
   const language = await languageOfTheExtension();
   const translations = await getTranslations(language);
@@ -290,6 +367,7 @@ async function translateContent() {
     translateWalkAndDefense(translations);
     translateHealth(translations);
     translateGlobalActions(translations);
+	translateActionsSubItems(translations);
     translateConditions(translations);
     translateSenses(translations);
     translateProficiencies(translations);
