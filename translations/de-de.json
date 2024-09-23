@@ -64,6 +64,7 @@
       "hitPoints": "Trefferpunkte"
     },
     "rest": {
+      "share": "Zum Teilen",
       "long rest": "Lange Rast",
       "short rest": "Kurze Rast"
     },
@@ -95,17 +96,21 @@
     },
     "inventory": "Inventar",
     "inventory_types": {
-      "weight carried:": "Getragene Last:"
+      "weight carried:": "Getragene Last:",
+      "equipment": "Ausrüstung",
+      "backpack": "Rucksack",
+      "attunement": "Abgestimmte Artikel",
+      "other possessions": "Andere Besitztümer"
     },
     "features & traits": "Besonderheiten und Eigenschaften",
     "features_types": {
       "all": "Alle",
       "class features": "Klassen Besonderheiten",
-      "racial traits": "Rassen Eigenschaften",
+      "species traits": "Rassen Eigenschaften",
       "feats": "Talente"
     },
-    "description": "Beschreibung",
-    "description_types": {
+    "background": "Beschreibung",
+    "background_types": {
       "all": "Alle",
       "background": "Hintergrund",
       "characteristics": "Charakteristiken",
@@ -137,15 +142,45 @@
       "Draconic": "Drakonisch",
       "Common": "Gemeinsprache",
       "Deep Speech": "Tief Sprech",
-      "Light": "Leicht"
+      "Light": "Leicht",
+      "Dwarvish": "Sprache der Zwerge",
+      "Elvish": "Elbisch",
+      "Orc": "Sprache der Orks",
+      "Cartographer's Tools": "Kartografenwerkzeuge",
+      "Martial Weapons": "Kampfwaffen",
+      "Simple Weapons": "Einfache Waffen",
+      "Navigator's Tools": "Navigatorwerkzeuge",
+      "Vehicles (Water)": "Fahrzeuge (Wasser)"
     }
   },
   "areaTitles": {
-    "proficiencies & languages": "Übung und Sprachen",
+    "proficiencies & training": "Übung und Sprachen",
     "skills": "Attributswerte",
     "senses": "Sinne",
     "saving throws": "Rettungswürfe",
     "savingThrowsModifiers": "Rettungswurf Modifikatore",
     "manage": "Managen"
+  },
+  "senses": {
+    "passive perception": "Passive Wahrnehmung (Weisheit)",
+    "passive investigation": "Passive Untersuchung (Intelligenz)",
+    "passive insight": "Passive Einsicht (Weisheit)",
+    "darkvision": "Dunkelsicht"
+  },
+  "weapons": {
+    "unarmed strike": "Unbewaffneter Schlag",
+    "longbow": "Langbogen",
+    "maul": "Streitaxt"
+  },
+  "spells": {
+    "fire bolt": "Feuerblitz"
+  },
+  "meta": {
+    "melee weapon": "Nahkampfwaffe",
+    "ranged weapon": "Fernkampfwaffe",
+    "melee attack": "Nahkampfangriff",
+    "martial": "Martialisch",
+    "heavy": "Schwer",
+    "two-handed": "Zweihändig"
   }
 }

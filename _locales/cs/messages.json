@@ -22,9 +22,5 @@
   "convertToSI": {
     "message": "Převod měrných jednotek na SI",
     "description": "Toggle the International Metrics System"
-  },
-  "enableOMMIntegration": {
-    "message": "Odeslání hodů kostkami do OMM",
-    "description": "Integration between DnD Beyond and OMM message"
   }
 }

@@ -64,6 +64,7 @@
       "hitPoints": "Points de Vie"
     },
     "rest": {
+      "share": "Partager",
       "long rest": "Repos Long",
       "short rest": "Repos Court"
     },
@@ -95,17 +96,21 @@
     },
     "inventory": "Inventaire",
     "inventory_types": {
-      "weight carried:": "Poids transporté :"
+      "weight carried:": "Poids transporté :",
+      "equipment": "Équipement",
+      "backpack": "Sac à dos",
+      "attunement": "Articles réglés",
+      "other possessions": "Autres biens"
     },
     "features & traits": "Caractéristiques",
     "features_types": {
       "all": "Toutes",
       "class features": "Caractéristiques de classe",
-      "racial traits": "Traits raciaux",
+      "species traits": "Traits raciaux",
       "feats": "Dons"
     },
-    "description": "Description",
-    "description_types": {
+    "background": "Description",
+    "background_types": {
       "all": "Toutes",
       "background": "Historique",
       "characteristics": "Caractéristiques",
@@ -137,15 +142,45 @@
       "Draconic": "Draconique",
       "Common": "Commun",
       "Deep Speech": "Profond",
-      "Light": "Légères"
+      "Light": "Légères",
+      "Dwarvish": "Langue des Nains",
+      "Elvish": "Elvish",
+      "Orc": "Langue des Orques",
+      "Cartographer's Tools": "Outils de Cartographie",
+      "Martial Weapons": "Armes Martiales",
+      "Simple Weapons": "Armes Simples",
+      "Navigator's Tools": "Outils de Navigation",
+      "Vehicles (Water)": "Véhicules (Eau)"
     }
   },
   "areaTitles": {
-    "proficiencies & languages": "Compétences et Langues",
+    "proficiencies & training": "Compétences et Langues",
     "skills": "Compétences",
     "senses": "Sens",
     "saving throws": "Jets de sauvegarde",
     "savingThrowsModifiers": "Modificateurs de jets de sauvegarde",
     "manage": "Gérer"
+  },
+  "senses": {
+    "passive perception": "Perception passive (Sagesse)",
+    "passive investigation": "Investigation passive (Intelligence)",
+    "passive insight": "Intuition passive (Sagesse)",
+    "darkvision": "Vision dans le noir"
+  },
+  "weapons": {
+    "unarmed strike": "Coup désarmé",
+    "longbow": "Arc long",
+    "maul": "Marteau"
+  },
+  "spells": {
+    "fire bolt": "Éclair de feu"
+  },
+  "meta": {
+    "melee weapon": "Arme de mêlée",
+    "ranged weapon": "Arme à distance",
+    "melee attack": "Attaque de mêlée",
+    "martial": "Martiaux",
+    "heavy": "Lourdes",
+    "two-handed": "À deux mains"
   }
 }

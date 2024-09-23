@@ -24,17 +24,13 @@
     "scripting",
     "activeTab"
   ],
-  "background": {
-    "service_worker": "scripts/OMM/worker.js"
-  },
   "host_permissions": [
     "https://www.dndbeyond.com/characters/*",
     "https://www.dndbeyond.com/monsters*",
     "https://www.dndbeyond.com/equipment*",
     "https://www.dndbeyond.com/magic-items*",
     "https://www.dndbeyond.com/spells*",
-    "https://www.dndbeyond.com/homebrew/*",
-    "https://multiverse.com/verses/*/session/*"
+    "https://www.dndbeyond.com/homebrew/*"
   ],
   "content_scripts": [
     {
@@ -57,19 +53,10 @@
     },
     {
       "js": [
-        "scripts/translations.js",
-        "scripts/OMM/diceRolls.js"
+        "scripts/translations.js"
       ],
       "matches": [
         "https://www.dndbeyond.com/characters/*"
-      ]
-    },
-    {
-      "js": [
-        "scripts/OMM/omm.js"
-      ],
-      "matches": [
-        "https://multiverse.com/verses/*/session/*"
       ]
     }
   ],
@@ -81,7 +68,7 @@
         "translations/it-it.json",
         "translations/de-de.json",
         "translations/fr-fr.json",
-		"translations/cs-cz.json"
+        "translations/cs-cz.json"
       ],
       "matches": [
         "*://*/*"
