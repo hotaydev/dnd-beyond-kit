@@ -250,6 +250,14 @@ function translateActionsSubItems(translations) {
 	  text.nodeValue = translations.actions.actions_items[text.nodeValue.toLowerCase()] ?? text.nodeValue;
     });
   }
+  
+  const weaponsAndSpells = document.querySelectorAll('.ddbc-combat-attack__label span');
+  if (weaponsAndSpells) {
+    weaponsAndSpells.forEach((weaponOrSpell) => {
+	  text = translations.weapons[weaponOrSpell.innerText.toLowerCase()] ?? translations.spells[weaponOrSpell.innerText.toLowerCase()]
+	  weaponOrSpell.innerText = text ?? weaponOrSpell.innerText;
+    });
+  }
 }
 
 function translateConditions(translations) {

@@ -89,7 +89,7 @@
     },
 	"actions_items": {
 		"actionsLabel": "Akce •",
-		"attacksPerAction": "Útoků za akci",
+		"attacksPerAction": "Útoků za kolo",
 		"attack": "Útok",
 		"range": "Dosah",
 		"damage": "Zranění",
@@ -161,10 +161,15 @@
       "Draconic": "Dračí řeč",
       "Dwarvish": "Trpasličtina",
       "Elvish": "Elfština",
+      "Orc": "Orkština",
       "Common": "Obecná řeč",
       "Deep Speech": "Tief Sprech",
       "Light": "Lehké",
-      "Cartographer's Tools": "Kartografické pomůcky"
+      "Cartographer's Tools": "Kartografické pomůcky",
+      "Martial Weapons": "Vojenské zbraně",
+      "Simple Weapons": "Jednoduché zbraně",
+      "Navigator's Tools": "Navigační pomůcky",
+      "Vehicles (Water)": "Dopravní prostředky (Voda)"
     }
   },
   "senses": {
@@ -180,5 +185,12 @@
     "saving throws": "Záchranné hody",
     "savingThrowsModifiers": "Modifikátory záchranného hodu",
     "manage": "Nastavení"
+  },
+  "weapons": {
+    "unarmed strike": "Úder beze zbraně",
+    "longbow": "Dlouhý luk"
+  },
+  "spells": {
+    "fire bolt": "Ohnivá střela"
   }
 }
