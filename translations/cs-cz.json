@@ -44,7 +44,7 @@
     "sleight of hand": "Čachry",
     "stealth": "Nenápadnost",
     "survival": "Přežití",
-    "skills": "Dovednosti",
+    "skill": "Dovednost",
     "modifier": "Modifikátor",
     "proficiency": "Zdatnost",
     "additionalSkills": "Další Dovednosti"
@@ -54,7 +54,7 @@
     "proficiency": "Zdatnost",
     "walking": "Chůze",
     "speed": "Rychlost",
-    "inspiration": "Inspirace",
+    "heroic inspiration": "Inspirace",
     "life": {
       "heal": "Léčit",
       "damage": "Zranit",

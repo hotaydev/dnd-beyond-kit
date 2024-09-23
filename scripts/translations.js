@@ -72,8 +72,7 @@ function translateProficiencies(translations) {
   if (!proficiencyLabels || !proficiencyContents) return;
 
   proficiencyLabels.forEach((proficiency) => {
-    const proficiencyText = proficiency.innerText.toLowerCase();
-    proficiency.innerText = translations.proficiencies[proficiencyText] ?? proficiency.innerText;
+    replaceTextIfFound(proficiency, translations, ['proficiencies']);
   });
 
   proficiencyContents.forEach((proficiency) => {
@@ -88,16 +87,14 @@ function translateSenses(translations) {
   if (!sensesLabels) return;
 
   sensesLabels.forEach((sense) => {
-    const senseText = sense.innerText.toLowerCase();
-    sense.innerText = translations.senses[senseText] ?? sense.innerText;
+    replaceTextIfFound(sense, translations, ['senses']);
   });
 
   const sensesSummary = document.querySelectorAll('.ct-senses__summary');
   if (!sensesSummary) return;
 
   sensesSummary.forEach((sense) => {
-    const senseText = sense.innerText.toLowerCase();
-    sense.innerText = translations.senses[senseText] ?? sense.innerText;
+    replaceTextIfFound(sense, translations, ['senses']);
   });
 }
 
@@ -106,8 +103,7 @@ function translateAreaTitles(translations) {
   if (!titles) return;
 
   titles.forEach((title) => {
-    const text = title.innerText.toLowerCase();
-    title.innerText = translations.areaTitles[text] ?? title.innerText;
+    replaceTextIfFound(title, translations, ['areaTitles']);
   });
 
   const savingThrows = document.querySelector('.ct-saving-throws-box__info .ct-saving-throws-box__modifiers');
@@ -118,7 +114,7 @@ function translateAreaTitles(translations) {
   // if (manageItems) manageItems.forEach((item) => item.setAttribute('data-original-title', translations.areaTitles.manage));
 
   const manageMainButton = document.querySelector('.ddbc-character-tidbits__menu-callout button span');
-  if (manageMainButton) manageMainButton.innerText = translations.areaTitles.manage ?? manageMainButton.innerText;
+  if (manageMainButton) replaceTextIfFound(manageMainButton, translations, ['areaTitles']);
 }
 
 function translateSubskills(translations) {
@@ -126,9 +122,7 @@ function translateSubskills(translations) {
   if (!subSkills) return;
 
   subSkills.forEach((skill) => {
-    const skillTitle = skill.innerText.toLowerCase();
-    skill.innerText = translations.subskills[skillTitle] ?? skill.innerText;
-    skill.title = skillTitle;
+    replaceTextIfFound(skill, translations, ['subskills']);
   });
 
   const skillsName = document.querySelector('.ct-skills__header .ct-skills__col--skill .ct-skills__heading');
@@ -136,7 +130,7 @@ function translateSubskills(translations) {
   const proficiency = document.querySelector('.ct-skills__header .ct-skills__col--proficiency abbr');
   const modifier = document.querySelector('.ct-skills__header .ct-skills__col--stat abbr');
 
-  if (skillsName) skillsName.innerText = translations.subskills.skills.toUpperCase();
+  if (skillsName) replaceTextIfFound(skillsName, translations, ['subskills']);
   if (additionalSkills) additionalSkills.innerText = translations.subskills.additionalSkills ?? additionalSkills.innerText;
   if (proficiency) proficiency.setAttribute('title', translations.subskills.proficiency);
   if (modifier) modifier.setAttribute('title', translations.subskills.modifier);
@@ -147,8 +141,7 @@ function translateTopBarMainContent(translations) {
   if (!restButtons) return;
 
   restButtons.forEach((button) => {
-    const buttonText = button.innerText.toLowerCase();
-    button.innerText = translations.main.rest[buttonText] ?? button.innerText;
+    replaceTextIfFound(button, translations, ['main', 'rest'])
   });
 }
 
@@ -163,23 +156,21 @@ function translateWalkAndDefense(translations) {
 
   if (restButtons) {
     restButtons.forEach((button) => {
-      const buttonText = button.innerText.toLowerCase();
-      button.innerText = translations.main.rest[buttonText] ?? button.innerText;
+      replaceTextIfFound(button, translations, ['main', 'rest']);
     });
   }
 
   if (armorClass) {
     armorClass.forEach((armor) => {
-      const text = armor.innerText.toLowerCase();
-      armor.innerText = translations.main.defense[text] ?? armor.innerText;
+      replaceTextIfFound(armor, translations, ['main', 'defense']);
     });
   }
 
-  if (proficiencyButton) proficiencyButton.innerText = translations.main.proficiency;
-  if (walkingButton) walkingButton.innerText = translations.main.walking;
-  if (speedButton) speedButton.innerText = translations.main.speed;
-  if (inspirationButton) inspirationButton.innerHTML = translations.main.inspiration;
-  if (iniciativeButton) iniciativeButton.innerHTML = translations.main.initiative;
+  if (proficiencyButton) replaceTextIfFound(proficiencyButton, translations, ['main']);
+  if (walkingButton) replaceTextIfFound(walkingButton, translations, ['main']);
+  if (speedButton) replaceTextIfFound(speedButton, translations, ['main']);
+  if (inspirationButton) replaceTextIfFound(inspirationButton, translations, ['main']);
+  if (iniciativeButton) replaceTextIfFound(iniciativeButton, translations, ['main']);
 }
 
 function translateHealth(translations) {
@@ -189,15 +180,13 @@ function translateHealth(translations) {
 
   if (buttons) {
     buttons.forEach((button) => {
-      const buttonText = button.innerText.toLowerCase();
-      button.innerText = translations.main.life[buttonText] ?? button.innerText;
+      replaceTextIfFound(button, translations, ['main', 'life']);
     });
   }
 
   if (healthText) {
     healthText.forEach((text) => {
-      const textContent = text.innerText.toLowerCase();
-      text.innerText = translations.main.life[textContent] ?? text.innerText;
+      replaceTextIfFound(text, translations, ['main', 'life']);
     });
   }
 
@@ -209,8 +198,7 @@ function translateGlobalActions(translations) {
   if (!actions) return;
 
   actions.forEach((action) => {
-    const actionContent = action.innerText.toLowerCase();
-    action.innerText = translations.actions[actionContent] ?? action.innerText;
+    replaceTextIfFound(action, translations, ['actions']);
   });
 }
 
@@ -268,8 +256,7 @@ function translateConditions(translations) {
   if (!conditions) return;
 
   conditions.forEach((condition) => {
-    const actionContent = condition.innerText.toLowerCase();
-    condition.innerText = translations.main.conditions[actionContent] ?? condition.innerText;
+    replaceTextIfFound(condition, translations, ['main', 'conditions'])
   });
 }
 
@@ -307,31 +294,31 @@ async function translateTab(translations, tab) {
   switch (tab) {
     case translations.actions.actions.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.actions_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'actions_types']));
       translateActionsSubItems(translations);
       actionTabsListener(translations);
       break;
     case translations.actions.spells.toLowerCase():
       innerTabs = document.querySelectorAll('.ct-spells__casting .ct-spells-level-casting__info-group .ct-spells-level-casting__info-label');
-      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.spells_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'spells_types']));
       break;
     case translations.actions.inventory.toLowerCase():
       weight_carried = document.querySelector('.ct-equipment-overview__weight-carried-label');
-      weight_carried.innerText = translations.actions.inventory_types[weight_carried.innerText.toLowerCase()] ?? innerTabs.innerText;
+      replaceTextIfFound(weight_carried, translations, ['actions', 'inventory_types'])
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.inventory_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'inventory_types']));
       break;
     case translations.actions["features & traits"].toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.features_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'features_types']));
       break;
     case translations.actions.background.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.background_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'background_types']));
       break;
     case translations.actions.notes.toLowerCase():
       innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => innerTab.innerText = translations.actions.notes_types[innerTab.innerText.toLowerCase()] ?? innerTab.innerText);
+      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'notes_types']));
       break;
   }
 }

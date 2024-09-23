@@ -44,7 +44,7 @@
     "sleight of hand": "Juego de Manos",
     "stealth": "Sigilo",
     "survival": "Supervivencia",
-    "skills": "Habilidades",
+    "skill": "Habilidades",
     "modifier": "Modificador",
     "proficiency": "Competencia",
     "additionalSkills": "Habilidades adicionales"
@@ -54,7 +54,7 @@
     "proficiency": "Competencia",
     "walking": "Velocidad",
     "speed": "Caminar",
-    "inspiration": "Inspirado",
+    "heroic inspiration": "Inspirado",
     "life": {
       "heal": "Curar",
       "damage": "Daño",

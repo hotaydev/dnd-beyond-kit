@@ -44,7 +44,7 @@
     "sleight of hand": "Fingerfertigkeit",
     "stealth": "Heimlichkeit",
     "survival": "Überlebenskunst",
-    "skills": "Fertigkeiten",
+    "skill": "Fertigkeiten",
     "modifier": "Modifikator",
     "proficiency": "Übungsbonus",
     "additionalSkills": "Zusätzliche Fertigkeiten"
@@ -54,7 +54,7 @@
     "proficiency": "Übungsbonus",
     "walking": "Lauf",
     "speed": "Tempo",
-    "inspiration": "Inspiration",
+    "heroic inspiration": "Inspiration",
     "life": {
       "heal": "Heilen",
       "damage": "Schaden",
