@@ -45,7 +45,7 @@ function translateSensesBox(translations) {
 
 function translateProficienciesBox(translations) {
   let paragraph = document.querySelector('.ct-subsection--proficiency-groups');
-  translateTextInElements(paragraph, translations, ['proficiencies', 'tools', 'weapons']);
+  translateTextInElements(paragraph, translations, ['proficiencies', 'tools', 'weapons', 'languages']);
 }
 
 function translateSkillsBox(translations) {

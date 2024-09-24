@@ -18,7 +18,9 @@
     "other": "Ostatní",
     "background": "Zázemí",
     "characteristics": "Charakteristiky",
-    "appearance": "Vzhled"
+    "appearance": "Vzhled",
+    "name": "Jméno",
+    "active": "Aktivní"
   },
   "races": {
     "high elf": "Vznešený elf",
@@ -159,6 +161,7 @@
     "heavy": "Těžká",
     "two-handed": "Obouruční",
     "melee attack": "Útok zblízka",
+    "reach": "Dosah",
     "longbow": "Dlouhý luk",
     "maul": "Palice",
     "shield": "Štít"
@@ -178,12 +181,18 @@
   "inventory": {
     "inventory": "Inventář",
     "weight carried:": "Naložení:",
+    "weight": "Váha",
+    "cost (gp)": "Cena(zl)",
     "equipment": "Výbava",
     "backpack": "Batoh",
     "component pouch": "Brašnička na suroviny",
     "attunement": "Sladění",
     "other possessions": "Ostatní majetek",
-    "hammer": "Kladivo"
+    "hammer": "Kladivo",
+    "gear": "Vybavení",
+    "ammunition": "Munice",
+    "leather": "Kožená zbroj",
+    "arrows": "Šípy"
   },
   "languages": {
     "languages": "Jazyky",
