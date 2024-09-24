@@ -68,6 +68,11 @@ function translateActionBox(translations) {
   translateTextInElements(paragraph, translations, ['general', 'actions', 'weapons', 'spells', 'tools', 'inventory', 'features']);
 }
 
+function translateSideBar(translations) {
+  let paragraph = document.querySelector('.ct-sidebar__inner');
+  translateTextInElements(paragraph, translations, ['general', 'actions', 'weapons', 'spells', 'tools', 'inventory', 'features', 'skills', 'life']);
+}
+
 function minifyContent() {
   const footer = document.querySelector('footer');
   const megamenu = document.querySelector('div[name=megamenu] menu');
@@ -132,6 +137,10 @@ async function translateContent() {
     translateCombatDefensesConditionsBoxes(translations);
     translateActionBox(translations);
     tabsListener(translations);
+
+    document.addEventListener('click', function() {
+      translateSideBar(translations);
+    });
   }
 
   minifyContent();
