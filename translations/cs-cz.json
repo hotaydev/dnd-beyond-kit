@@ -107,8 +107,7 @@
   },
   "combat": {
     "initiative": "Iniciativa",
-    "armor": "Obranné",
-    "class": "Číslo"
+    "class": "OČ"
   },
   "defenses": {
     "defenses": "Ochrany",
