@@ -25,37 +25,37 @@ async function languageOfTheExtension() {
 
 function translateHeaderBox(translations) {
   let paragraph = document.querySelector('.ct-character-header-desktop');
-  translateTextInElements(paragraph, translations, ['general', 'races', 'rest']);
+  translateTextInElements(paragraph, translations);
 }
 
 function translateQuickInfoBar(translations) {
   let paragraph = document.querySelector('.ct-quick-info');
-  translateTextInElements(paragraph, translations, ['abilities', 'general', 'life']);
+  translateTextInElements(paragraph, translations);
 }
 
 function translateSavingThrowsBox(translations) {
   let paragraph = document.querySelector('.ct-subsection--abilities');
-  translateTextInElements(paragraph, translations, ['saving_throws', 'abilities']);
+  translateTextInElements(paragraph, translations);
 }
 
 function translateSensesBox(translations) {
   let paragraph = document.querySelector('.ct-subsection--senses');
-  translateTextInElements(paragraph, translations, ['senses']);
+  translateTextInElements(paragraph, translations);
 }
 
 function translateProficienciesBox(translations) {
   let paragraph = document.querySelector('.ct-subsection--proficiency-groups');
-  translateTextInElements(paragraph, translations, ['proficiencies', 'tools', 'weapons', 'languages']);
+  translateTextInElements(paragraph, translations);
 }
 
 function translateSkillsBox(translations) {
   let paragraph = document.querySelector('.ct-subsection--skills');
-  translateTextInElements(paragraph, translations, ['skills', 'abilities', 'general']);
+  translateTextInElements(paragraph, translations);
 }
 
 function translateCombatDefensesConditionsBoxes(translations) {
   let paragraph = document.querySelector('.ct-subsection--combat');
-  translateTextInElements(paragraph, translations, ['combat', 'defenses', 'conditions']);
+  translateTextInElements(paragraph, translations);
 }
 
 function translateActionBox(translations) {
@@ -65,12 +65,12 @@ function translateActionBox(translations) {
   }));
   
   let paragraph = document.querySelector('.ct-subsection--primary-box');
-  translateTextInElements(paragraph, translations, ['general', 'actions', 'weapons', 'spells', 'tools', 'inventory', 'features']);
+  translateTextInElements(paragraph, translations);
 }
 
 function translateSideBar(translations) {
   let paragraph = document.querySelector('.ct-sidebar__inner');
-  translateTextInElements(paragraph, translations, ['general', 'actions', 'weapons', 'spells', 'tools', 'inventory', 'features', 'skills', 'life']);
+  translateTextInElements(paragraph, translations);
 }
 
 function minifyContent() {
@@ -94,16 +94,13 @@ function tabsListener(translations) {
   }));
 }
 
-function translateTextInElements(parentElement, dictionary, parts) {
+function translateTextInElements(parentElement, dictionary) {
   let elements = getTextNodes(parentElement);
   elements.forEach(element => {
     let text = element.textContent.trim().toLowerCase();
-    for (let part of parts) {
-      if (dictionary.hasOwnProperty(part)) {
-        let partDictionary = dictionary[part];
-        if (partDictionary.hasOwnProperty(text)) {
-          element.textContent = partDictionary[text];
-        }
+    for (let value of Object.values(dictionary)) {
+      if (value.hasOwnProperty(text)) {
+        element.textContent = value[text];
       }
     }
   });
