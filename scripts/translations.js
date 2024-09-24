@@ -137,6 +137,7 @@ async function translateContent() {
 
     document.addEventListener('click', function() {
       translateSideBar(translations);
+      translateActionBox(translations);
     });
   }
 
