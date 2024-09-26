@@ -22,11 +22,25 @@
     "appearance": "Vzhled",
     "name": "Jméno",
     "active": "Aktivní",
-    "capacity": "Kapacita"
+    "capacity": "Kapacita",
+    "gender": "Pohlaví",
+    "hair": "Vlasy",
+    "skin": "Pokožka",
+    "eyes": "Oči",
+    "size": "Velikost",
+    "age": "Věk",
+    "height": "Výška",
+    "weight": "Váha",
+    "alignment": "Přesvědčení",
+    "faith": "Víra",
+    "push, drag, or lift": "Tlačení, vlečení nebo zvedání",
+    "grassland": "Pláně",
+    "carrying capacity": "Nosnost"
   },
   "races": {
     "high elf": "Vznešený elf",
-    "half-orc": "Půlork"
+    "half-orc": "Půlork",
+    "human": "Člověk"
   },
   "classes": {
     "fighter": "Bojovník",
@@ -158,14 +172,26 @@
     "unarmed strike": "Úder beze zbraně",
     "melee weapon": "Zbraň na blízko",
     "ranged weapon": "Zbraň na dálku",
+    "simple": "Jednoduch8",
     "martial": "Vojenská",
     "heavy": "Těžká",
+    "slow": "Pomalá",
     "two-handed": "Obouruční",
+    "finesse": "Vytříbený",
     "melee attack": "Útok zblízka",
     "reach": "Dosah",
     "longbow": "Dlouhý luk",
     "maul": "Palice",
-    "shield": "Štít"
+    "shield": "Štít",
+    "crossbow, light": "Lehká kuše",
+    "dart": "Šipka",
+    "sling": "Prak",
+    "shortbow": "Krátký luk",
+    "quarterstaff": "Hůl",
+    "longsword": "Dlouhý meč",
+    "shortsword": "Krátký meč",
+    "club": "Kyj",
+    "dagger": "Dýka"
   },
   "spells": {
     "spells": "Kouzla",
@@ -177,12 +203,12 @@
   "tools": {
     "tools": "Pomůcky",
     "cartographer's tools": "Kartografické pomůcky",
-    "navigator's tools": "Navigační pomůcky"
+    "navigator's tools": "Navigační pomůcky",
+    "flute": "Flétna"
   },
   "inventory": {
     "inventory": "Inventář",
     "weight carried:": "Naložení:",
-    "weight": "Váha",
     "cost (gp)": "Cena(zl)",
     "equipment": "Výbava",
     "backpack": "Batoh",
@@ -193,22 +219,69 @@
     "gear": "Vybavení",
     "ammunition": "Munice",
     "leather": "Kožená zbroj",
-    "arrows": "Šípy"
+    "arrows": "Šípy",
+    "ac": "OČ",
+    "spellbook": "Kniha kouzel",
+    "shovel": "Lopata",
+    "pot, iron": "Železný kotlík",
+    "book": "Kniha",
+    "ink (1 ounce bottle)": "Lahev inkoustu",
+    "ink pen": "Inkoustové pero",
+    "little bag of sand": "Pytlik písku",
+    "parchment (one sheet)": "List pergamenu",
+    "small knife": "Nožík",
+    "tinderbox": "Křesadlo",
+    "torch": "Pochodeň",
+    "waterskin": "Měch na vodu",
+    "piton": "Skoba",
+    "crowbar": "Páčidlo",
+    "bedroll": "Karimatka",
+    "mess kit": "Nádobíčko",
+    "rations (1 day)": "Zásoby na den",
+    "rope, hempen (10 sh)": "Konopné lano (10 sh)",
+    "rope, silk (10 sh)": "Hedvábné lano (10 sh)",
+    "hunting trap": "Lovecká past",
+    "staff": "Berla",
+    "clothes, traveler's": "Cestovní oblečení",
+    "adventuring gear": "Dobrodružné vybavení",
+    "clothes, common": "Obyčejné oblečení"
   },
   "languages": {
+    "language": "Jazyk",
     "languages": "Jazyky",
     "draconic": "Dračí řeč",
     "orc": "Orkština",
     "dwarvish": "Trpasličtina",
     "elvish": "Elfština",
     "common": "Obecná řeč",
+    "gnomish": "Gnómština",
     "deep speech": "Tief Sprech"
   },
   "features": {
+    "features": "Schopnosti",
+    "traits": "Rysy",
     "features & traits": "Schopnosti a Rysy",
     "class features": "Schopnosti povolání",
     "species traits": "Rasové rysy",
-    "feats": "Schopnosti"
+    "feats": "Schopnosti",
+    "darkvision": "Vidění ve tmě",
+    "menacing": "Hrozivý",
+    "relentless endurance": "Zarytá houževnatost",
+    "savage attacks": "Divoké útoky",
+    "fighting style": "Bojový styl",
+    "defense": "Obrana",
+    "second wind": "Druhý dech",
+    "keen senses": "Bystré smysly",
+    "fey ancestry": "Vílí původ",
+    "trance": "Trans",
+    "elf weapon training": "Elfí výcvik se zbraněmi",
+    "cantrip": "Trik",
+    "extra language": "Jazyk navíc",
+    "arcane recovery": "Zotavení mystiky",
+    "ability score increase": "Zvýšení hodnot vlastností",
+    "favored enemy": "Úhlavní nepřítel",
+    "natural explorer": "Rozený průzkumník",
+    "spellcasting": "Sesílání kouzel"
   },
   "money": {
     "cost": "Cena",
@@ -237,5 +310,8 @@
     "comfortable (2gp)": "Pohodový (2zl)",
     "wealthy (4gp)": "Zámožný (4zl)",
     "aristocratic (10gp minimum)": "Šlechtický (10zl minimum)"
+  },
+  "monsters": {
+    "beasts": "Zvířata"
   }
 }
