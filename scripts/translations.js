@@ -1,10 +1,12 @@
+// `currentBrowser` is defined in ./metrics.js
+
 async function getTranslations(lang) {
 
   if (lang === 'en-us') {
     return null;
   }
 
-  const jsonUrl = chrome.runtime.getURL(`translations/${lang}.json`);
+  const jsonUrl = currentBrowser.runtime.getURL(`translations/${lang}.json`);
 
   return await fetch(jsonUrl)
     .then(res => res.json())
@@ -12,10 +14,10 @@ async function getTranslations(lang) {
 }
 
 async function languageOfTheExtension() {
-  return await chrome.storage.local.get("language").then((result) => {
+  return await currentBrowser.storage.local.get("language").then((result) => {
 
     if (!result.language) {
-      chrome.storage.local.set({ language: "en-us" });
+      currentBrowser.storage.local.set({ language: "en-us" });
       return "en-us";
     }
 

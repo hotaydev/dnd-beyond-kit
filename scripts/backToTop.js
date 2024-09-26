@@ -1,3 +1,5 @@
+// `currentBrowser` is defined in ./metrics.js
+
 (() => {
   let scrollShown = false;
   let scroller;
@@ -26,7 +28,7 @@
 
   window.addEventListener('scroll', checkScroll);
   scroller = document.createElement('button');
-  scroller.innerText = chrome.i18n.getMessage("backToTop");
+  scroller.innerText = currentBrowser.i18n.getMessage("backToTop");
   scroller.classList.add('scrollToTop');
 
   scroller.addEventListener('click', scrollToTop);

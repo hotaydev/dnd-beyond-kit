@@ -36,6 +36,11 @@ To add a new language, just:
 2. Add the path of the translation on `web_accessible_resources[0].resources`, in the `manifest.json` file;
 3. Add the language at the end of the HTML select list, on `popup/popup.html`, line 20 and the following ones.
 
+### Browser support
+
+Actually we support Firefox and chrome-based browsers, such as Google Chrome, Brave, Opera, and others.
+We use the same `manifest.json` for both platforms.
+
 ### Thanks
 
 If you liked the extension, please give us a star on Github and a good note on [Google Chrome Web Store](https://chromewebstore.google.com/detail/dnd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg).

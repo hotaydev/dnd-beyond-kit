@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "DnD Beyond Kit",
   "description": "Translate, add common metrics, and add new features to your D&D Beyond pages.",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "default_locale": "en",
   "icons": {
     "16": "images/icon-16.png",
@@ -37,7 +37,9 @@
       "js": [
         "scripts/metrics.js",
         "scripts/backToTop.js",
-        "scripts/lazyLoad.js"
+        "scripts/lazyLoad.js",
+        "scripts/lazyLoad.js",
+        "scripts/libs/purify.min.js"
       ],
       "css": [
         "scripts/styles.css"
@@ -74,6 +76,5 @@
         "*://*/*"
       ]
     }
-  ],
-  "minimum_chrome_version": "100"
+  ]
 }
