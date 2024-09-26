@@ -97,13 +97,29 @@ function tabsListener(translations) {
 function translateTextInElements(parentElement, dictionary) {
   let elements = getTextNodes(parentElement);
   elements.forEach(element => {
-    let text = element.textContent.trim().toLowerCase();
-    for (let value of Object.values(dictionary)) {
-      if (value.hasOwnProperty(text)) {
-        element.textContent = value[text];
+    let originalText = element.textContent;
+    let translatedString = translateWord(originalText, dictionary);
+    if (originalText == translatedString) {
+      let matches = translatedString.match(/[A-Za-z]+(?:[ '\u2019][A-Za-z]+|-[A-Za-z]+)*/g);
+      if (matches) {
+        matches.forEach(originalWord => {
+            let translatedWord = translateWord(originalWord, dictionary);
+            translatedString = translatedString.replace(originalWord, translatedWord);
+        });
       }
     }
+    element.textContent = translatedString;
   });
+}
+
+function translateWord(word, dictionary) {
+  let lowerWord = word.toLowerCase();
+  for (let value of Object.values(dictionary)) {
+    if (value.hasOwnProperty(lowerWord)) {
+      return value[lowerWord];
+    }
+  }
+  return word;  
 }
 
 function getTextNodes(parentElement) {

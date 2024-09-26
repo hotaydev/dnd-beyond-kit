@@ -35,15 +35,20 @@
     "faith": "Víra",
     "push, drag, or lift": "Tlačení, vlečení nebo zvedání",
     "grassland": "Pláně",
+    "water": "Voda",
+    "dc": "SO",
     "carrying capacity": "Nosnost"
   },
   "races": {
     "high elf": "Vznešený elf",
     "half-orc": "Půlork",
+    "lightfoot halfling": "Hobit Tichošlápek",
     "human": "Člověk"
   },
   "classes": {
     "fighter": "Bojovník",
+    "roque": "Tulák",
+    "ranger": "Hraničář",
     "wizard": "Kouzelník"
   },
   "abilities": {
@@ -109,11 +114,11 @@
     "light": "Lehké",
     "martial weapons": "Vojenské zbraně",
     "simple weapons": "Jednoduché zbraně",
-    "vehicles (water)": "Dopravní prostředky (Voda)"
+    "vehicles": "Dopravní prostředky"
   },
   "life": {
-    "heal": "Léčit",
-    "damage": "Zranit",
+    "heal": "Léčení",
+    "damage": "Zranění",
     "current": "Aktuální",
     "max": "Max",
     "temp": "Doč.",
@@ -126,6 +131,9 @@
   "defenses": {
     "defenses": "Ochrany",
     "resistances, immunities, or vulnerabilities": "Odolnosti, imunity nebo zranitelnosti",
+    "resistances": "Odolnosti",
+    "immunities": "Imunity",
+    "Vulnerabilities": "Zranitelnosti",
     "magical sleep": "Vílí původ"
   },
   "conditions": {
@@ -145,8 +153,7 @@
     "reaction": "Reakce",
     "other": "Ostatní",
     "limited use": "Omezené",
-    "actions •": "Akce •",
-    "attacks per action:": "Útoků za akci: ",
+    "attacks per action": "Útoků za akci",
     "attack": "Útok",
     "range": "Dosah",
     "damage": "Zranění",
@@ -172,7 +179,7 @@
     "unarmed strike": "Úder beze zbraně",
     "melee weapon": "Zbraň na blízko",
     "ranged weapon": "Zbraň na dálku",
-    "simple": "Jednoduch8",
+    "simple": "Jednoduchá",
     "martial": "Vojenská",
     "heavy": "Těžká",
     "slow": "Pomalá",
@@ -208,8 +215,7 @@
   },
   "inventory": {
     "inventory": "Inventář",
-    "weight carried:": "Naložení:",
-    "cost (gp)": "Cena(zl)",
+    "weight carried": "Naložení",
     "equipment": "Výbava",
     "backpack": "Batoh",
     "component pouch": "Brašnička na suroviny",
@@ -225,10 +231,12 @@
     "shovel": "Lopata",
     "pot, iron": "Železný kotlík",
     "book": "Kniha",
-    "ink (1 ounce bottle)": "Lahev inkoustu",
+    "ink": "Inkoust",
+    "ounce bottle": "Lahev",
     "ink pen": "Inkoustové pero",
     "little bag of sand": "Pytlik písku",
-    "parchment (one sheet)": "List pergamenu",
+    "parchment": "Pergamen",
+    "one sheet": "1 list",
     "small knife": "Nožík",
     "tinderbox": "Křesadlo",
     "torch": "Pochodeň",
@@ -238,12 +246,15 @@
     "bedroll": "Karimatka",
     "mess kit": "Nádobíčko",
     "rations (1 day)": "Zásoby na den",
-    "rope, hempen (10 sh)": "Konopné lano (10 sh)",
-    "rope, silk (10 sh)": "Hedvábné lano (10 sh)",
+    "rope": "Lano",
+    "silk": "Hedvábné",
+    "hempen": "Konopné",
     "hunting trap": "Lovecká past",
     "staff": "Berla",
     "clothes, traveler's": "Cestovní oblečení",
     "adventuring gear": "Dobrodružné vybavení",
+    "utility": "Nástroj",
+    "consumable": "Spotřební",
     "clothes, common": "Obyčejné oblečení"
   },
   "languages": {
@@ -260,7 +271,6 @@
   "features": {
     "features": "Schopnosti",
     "traits": "Rysy",
-    "features & traits": "Schopnosti a Rysy",
     "class features": "Schopnosti povolání",
     "species traits": "Rasové rysy",
     "feats": "Schopnosti",
@@ -285,15 +295,11 @@
   },
   "money": {
     "cost": "Cena",
-    "platinum (pp)": "Platiňák (pl)",
-    "gold (gp)": "Zlaťák (zl)",
-    "electrum (ep)": "Élektron (el)",
-    "silver (sp)": "Stříbrňák (st)",
-    "copper (cp)": "Méďák (md)",
-    "1 pp = 10 gp": "1 pl = 10 zl",
-    "1 gp = 10 sp": "1 zl = 10 st",
-    "1 gp = 100 cp": "1 zl = 100 md",
-    "1 gp = 2 ep": "1 zl = 2 el",
+    "platinum": "Platiňák",
+    "gold": "Zlaťák",
+    "electrum": "Élektron",
+    "silver": "Stříbrňák",
+    "copper": "Méďák",
     "total (in gp)": "Celkem (zl)",
     "pp": "pl",
     "gp": "zl",
@@ -304,12 +310,12 @@
     "manage coin": "Správa mincí",
     "lifestyle expenses": "Životní náklady",
     "wretched": "Ubohý",
-    "squalid (1sp)": "Mizerný (1st)",
-    "poor (2sp)": "Chudý (2st)",
-    "modest (1gp)": "Střídmý (1zl)",
-    "comfortable (2gp)": "Pohodový (2zl)",
-    "wealthy (4gp)": "Zámožný (4zl)",
-    "aristocratic (10gp minimum)": "Šlechtický (10zl minimum)"
+    "squalid": "Mizerný",
+    "poor": "Chudý",
+    "modest": "Střídmý",
+    "comfortable": "Pohodový",
+    "wealthy": "Zámožný",
+    "aristocratic": "Šlechtický"
   },
   "monsters": {
     "beasts": "Zvířata"
