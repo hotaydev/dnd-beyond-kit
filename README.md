@@ -16,7 +16,15 @@ This extension is used to:
 
 ### Languages
 
-Currently we have translations to Brazilian Portuguese and Spanish. These translations aren't complete, they just have the main content, such as skills and proficiencies (the content that is usually more difficult to read).
+Currently we have translations to the following languages:
+
+- Brazilian Portuguese (Português)
+- Spanish (Español)
+- English (Only metric system changes)
+- Italian (Italiano)
+- French (Français)
+- German (Deutsch)
+- Czech (Čeština)
 
 ### Contributing
 
@@ -25,8 +33,8 @@ Feel free to add more translations to the existing languages.
 To add a new language, just:
 
 1. Add the translation file on the `translations` folder, following the JSON structure of the other files;
-2. Add the path of the translation on `web_accessible_resources[0].resources`;
-3. Add the language at the end of the HTML select list, on `popup/popup.html`, line 14 and the following ones.
+2. Add the path of the translation on `web_accessible_resources[0].resources`, in the `manifest.json` file;
+3. Add the language at the end of the HTML select list, on `popup/popup.html`, line 20 and the following ones.
 
 ### Thanks
 
