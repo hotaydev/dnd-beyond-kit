@@ -63,7 +63,7 @@ function translateActionBox(translations) {
   tabs.forEach((tab) => tab.addEventListener('click', async () => {
     setTimeout(() => translateActionBox(translations), 50);
   }));
-  
+
   let paragraph = document.querySelector('.ct-subsection--primary-box');
   translateTextInElements(paragraph, translations);
 }
@@ -103,8 +103,8 @@ function translateTextInElements(parentElement, dictionary) {
       let matches = translatedString.match(/[A-Za-z]+(?:[ '\u2019][A-Za-z]+|-[A-Za-z]+)*/g);
       if (matches) {
         matches.forEach(originalWord => {
-            let translatedWord = translateWord(originalWord, dictionary);
-            translatedString = translatedString.replace(originalWord, translatedWord);
+          let translatedWord = translateWord(originalWord, dictionary);
+          translatedString = translatedString.replace(originalWord, translatedWord);
         });
       }
     }
@@ -119,7 +119,7 @@ function translateWord(word, dictionary) {
       return value[lowerWord];
     }
   }
-  return word;  
+  return word;
 }
 
 function getTextNodes(parentElement) {
@@ -151,10 +151,15 @@ async function translateContent() {
     translateActionBox(translations);
     tabsListener(translations);
 
-    document.addEventListener('click', function() {
-      translateSideBar(translations);
-      translateActionBox(translations);
-    });
+    document.addEventListener('click', function () {
+      setTimeout(() => { // Wait till the sidebar is open, then translate it
+        const sidebarIsOpen = document.querySelector('.ct-sidebar__portal .ct-sidebar__inner .ct-sidebar__header');
+        if (sidebarIsOpen) {
+          translateSideBar(translations);
+          translateActionBox(translations);
+        }
+      }, 100);
+    }, true); // Don't remove this "true"
   }
 
   minifyContent();

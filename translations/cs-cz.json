@@ -99,7 +99,8 @@
     "passive perception": "Pasivní Vnímání (Moudrost)",
     "passive investigation": "Pasivní Pátrání (Inteligence)",
     "passive insight": "Pasivní Vhled (Moudrost)",
-    "darkvision 12 sh.": "Vidění ve tmě 12 sáhů"
+    "darkvision 12 sh.": "Vidění ve tmě 12 sáhů",
+    "darkvision 18 sh.": "Vidění ve tmě 18 sáhů"
   },
   "proficiencies": {
     "training": "Jazyky",

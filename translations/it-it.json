@@ -1,211 +1,324 @@
 {
-  "skills": {
-    "strength": {
-      "title": "Forza",
-      "abbr": "FOR"
-    },
-    "dexterity": {
-      "title": "Destrezza",
-      "abbr": "DES"
-    },
-    "constitution": {
-      "title": "Costituzione",
-      "abbr": "CON"
-    },
-    "intelligence": {
-      "title": "Intelligenza",
-      "abbr": "INT"
-    },
-    "wisdom": {
-      "title": "Saggezza",
-      "abbr": "SAG"
-    },
-    "charisma": {
-      "title": "Carisma",
-      "abbr": "CAR"
-    }
+  "general": {
+    "female": "Donna",
+    "male": "Uomo",
+    "manage": "Configurazione",
+    "proficiency": "Competenza",
+    "proficiencies": "Competenze",
+    "walking": "Camminata",
+    "speed": "Velocità",
+    "heroic inspiration": "Ispirazione",
+    "modifier": "Modificatore",
+    "all": "Tutti",
+    "extras": "Extra",
+    "notes": "Note",
+    "orgs": "Organizzazioni",
+    "allies": "Alleati",
+    "enemies": "Nemici",
+    "backstory": "Storia",
+    "other": "Altro",
+    "background": "Storia",
+    "characteristics": "Caratteristiche",
+    "appearance": "Aspetto",
+    "name": "Nome",
+    "active": "Attivo",
+    "capacity": "Capacità",
+    "gender": "Genere",
+    "hair": "Capelli",
+    "skin": "Pelle",
+    "eyes": "Occhi",
+    "size": "Taglia",
+    "age": "Età",
+    "height": "Altezza",
+    "weight": "Peso",
+    "alignment": "Allineamento",
+    "faith": "Fede",
+    "push, drag, or lift": "Spingere, trascinare o sollevare",
+    "grassland": "Prateria",
+    "water": "Acqua",
+    "dc": "DC",
+    "day": "Giorno",
+    "carrying capacity": "Capacità di carico"
   },
-  "subskills": {
+  "races": {
+    "high elf": "Elfo Alto",
+    "half-orc": "Mezzorco",
+    "lightfoot halfling": "Halfling Piedeleggero",
+    "human": "Umano"
+  },
+  "classes": {
+    "fighter": "Guerriero",
+    "roque": "Ladro",
+    "ranger": "Ranger",
+    "wizard": "Mago"
+  },
+  "abilities": {
+    "strength": "Forza",
+    "str": "FOR",
+    "dexterity": "Destrezza",
+    "dex": "DES",
+    "constitution": "Costituzione",
+    "con": "COS",
+    "intelligence": "Intelligenza",
+    "int": "INT",
+    "wisdom": "Saggezza",
+    "wis": "SAG",
+    "charisma": "Carisma",
+    "cha": "CAR"
+  },
+  "skills": {
+    "skills": "Abilità",
     "acrobatics": "Acrobazia",
     "animal handling": "Addestrare Animali",
     "arcana": "Arcano",
-    "athletics": "Atletismo",
+    "athletics": "Atletica",
     "deception": "Inganno",
     "history": "Storia",
-    "insight": "Percezione",
-    "intimidation": "Intimidire",
-    "investigation": "Investigare",
+    "insight": "Intuizione",
+    "intimidation": "Intimidazione",
+    "investigation": "Indagine",
     "medicine": "Medicina",
     "nature": "Natura",
     "perception": "Percezione",
-    "performance": "Intrattenere",
+    "performance": "Recitazione",
     "persuasion": "Persuasione",
     "religion": "Religione",
     "sleight of hand": "Rapidità di Mano",
     "stealth": "Furtività",
     "survival": "Sopravvivenza",
     "skill": "Abilità",
-    "modifier": "Modificatore",
-    "proficiency": "Competenza",
-    "additionalSkills": "Competenza addizionali"
+    "additional skills": "Abilità aggiuntive",
+    "prof": "Comp"
   },
-  "main": {
+  "saving_throws": {
+    "saving throws": "Tiri salvezza",
+    "saving throw modifiers": "Modificatori di tiri salvezza"
+  },
+  "senses": {
+    "senses": "Sensi",
+    "passive perception": "Percezione Passiva (Saggezza)",
+    "passive investigation": "Indagine Passiva (Intelligenza)",
+    "passive insight": "Intuizione Passiva (Saggezza)",
+    "darkvision 12 m.": "Scurovisione 12 m",
+    "darkvision 18 m.": "Scurovisione 18 m"
+  },
+  "proficiencies": {
+    "training": "Lingue",
+    "armor": "Armatura",
+    "weapons": "Armi",
+    "none": "Nessuna",
+    "light armor": "Armatura Leggera",
+    "medium armor": "Armatura Media",
+    "heavy armor": "Armatura Pesante",
+    "shields": "Scudi",
+    "finesse": "Finesse",
+    "light": "Leggera",
+    "martial weapons": "Armi Marziali",
+    "simple weapons": "Armi Semplici",
+    "vehicles": "Veicoli"
+  },
+  "life": {
+    "heal": "Cura",
+    "damage": "Danno",
+    "current": "Attuale",
+    "max": "Massimo",
+    "temp": "Temp.",
+    "hit points": "Punti Ferita"
+  },
+  "combat": {
     "initiative": "Iniziativa",
-    "proficiency": "Competenza",
-    "walking": "Velocità",
-    "speed": "Camminare",
-    "heroic inspiration": "Ispirazione",
-    "life": {
-      "heal": "Cura",
-      "damage": "Danno",
-      "current": "Attuali",
-      "max": "Max",
-      "temp": "Temp",
-      "hitPoints": "Punti Vita"
-    },
-    "rest": {
-      "share": "Condividere",
-      "long rest": "Riposo Lungo",
-      "short rest": "Riposo Corto"
-    },
-    "defense": {
-      "armor": "Armatura",
-      "class": "AC"
-    },
-    "conditions": {
-      "defenses": "Difese",
-      "conditions": "Condizioni"
-    }
+    "class": "AC"
+  },
+  "defenses": {
+    "defenses": "Difese",
+    "resistances, immunities, or vulnerabilities": "Resistenze, immunità o vulnerabilità",
+    "resistances": "Resistenze",
+    "immunities": "Immunità",
+    "Vulnerabilities": "Vulnerabilità",
+    "magical sleep": "Sonno magico"
+  },
+  "conditions": {
+    "conditions": "Condizioni",
+    "add active conditions": "Aggiungi condizioni attive",
+    "blinded": "Accecato"
+  },
+  "rest": {
+    "share": "Condividi",
+    "long rest": "Riposo Lungo",
+    "short rest": "Riposo Breve"
   },
   "actions": {
     "actions": "Azioni",
-    "actions_types": {
-      "all": "Tutto",
-      "attack": "Attacchi",
-      "action": "Azioni",
-      "bonus action": "Azione Bonus",
-      "reaction": "Reazione",
-      "other": "Altro",
-      "limited use": "Uso limitato"
-    },
-    "actions_items": {
-      "actionsLabel": "Azioni •",
-      "attacksPerAction": "Attacchi per turno",
-      "attack": "Attacco",
-      "range": "Portata",
-      "damage": "Danno",
-      "hit": "Colpire/DC",
-      "notes": "Note",
-      "actionsInCombat": "Azioni in combattimento",
-      "help": "Aiutare",
-      "search": "Cercare",
-      "hide": "Nascondersi",
-      "dodge": "Schivare",
-      "dash": "Scatto",
-      "disengage": "Disimpegno",
-      "magic": "Lanciare un incantesimo",
-      "ready": "Pronto",
-      "utilize": "Usare un oggetto",
-      "improvise": "Improvvisare",
-      "study": "Studiare",
-      "shove": "Spingere",
-      "grapple": "Afferrare",
-      "influence": "Influenzare"
-    },
-    "spells": "Incantesimi",
-    "spells_types": {
-      "modifier": "Modificatori",
-      "spell attack": "Attacco Incantesimo",
-      "save dc": "Tiro Salvezza"
-    },
-    "inventory": "Inventario",
-    "inventory_types": {
-      "weight carried:": "Peso trasportato:",
-      "all": "Tutto",
-      "equipment": "Attrezzatura",
-      "backpack": "Zaino",
-      "attunement": "Elementi ottimizzati",
-      "other possessions": "Altri possedimenti"
-    },
-    "features & traits": "Caratteristiche",
-    "features_types": {
-      "all": "Tutto",
-      "class features": "Caratteristiche di classe",
-      "species traits": "Tratti Raziali",
-      "feats": "Abilità"
-    },
-    "background": "Descrizione",
-    "background_types": {
-      "all": "Tutto",
-      "background": "Storia",
-      "characteristics": "Caratteristiche",
-      "appearance": "Apparenza"
-    },
+    "action": "Azione",
+    "bonus action": "Azione Bonus",
+    "reaction": "Reazione",
+    "other": "Altro",
+    "limited use": "Uso Limitato",
+    "attacks per action": "Attacchi per Azione",
+    "attack": "Attacco",
+    "range": "Raggio",
+    "damage": "Danno",
+    "hit / dc": "Colpire / DC",
     "notes": "Note",
-    "notes_types": {
-      "all": "Tutto",
-      "orgs": "Organizzazione",
-      "allies": "Alleati",
-      "enemies": "Nemici",
-      "backstory": "Storia Passata",
-      "other": "Altro"
-    },
-    "extras": "Extras"
-  },
-  "proficiencies": {
-    "armor": "Armatura",
-    "weapons": "Armi",
-    "tools": "Utensili",
-    "languages": "Lingue",
-    "values": {
-      "None": "Nessuno",
-      "Light Armor": "Armatura leggera",
-      "Medium Armor": "Armatura media",
-      "Heavy Armor": "Armatura pesante",
-      "Shields": "Scudi",
-      "Finesse": "Armi agili (Finesse)",
-      "Draconic": "Draconico",
-      "Common": "Comune",
-      "Deep Speech": "Discorso profondo",
-      "Light": "Armi leggere",
-      "Dwarvish": "Lingua dei Nani",
-      "Elvish": "Elfico",
-      "Orc": "Lingua degli Orchi",
-      "Cartographer's Tools": "Strumenti di Cartografia",
-      "Martial Weapons": "Armi Marziali",
-      "Simple Weapons": "Armi Semplici",
-      "Navigator's Tools": "Strumenti di Navigazione",
-      "Vehicles (Water)": "Veicoli (Acqua)"
-    }
-  },
-  "areaTitles": {
-    "proficiencies & training": "Competenze",
-    "skills": "Capacità",
-    "senses": "Sensi",
-    "saving throws": "Prove di resistenza",
-    "savingThrowsModifiers": "Modificatori del Prove di resistenza",
-    "manage": "Gestire"
-  },
-  "senses": {
-    "passive perception": "Percezione Passiva (Saggezza)",
-    "passive investigation": "Investigazione Passiva (Intelligenza)",
-    "passive insight": "Intuizione Passiva (Saggezza)",
-    "darkvision": "Visione nel buio"
+    "actions in combat": "Azioni in combattimento",
+    "help": "Aiuto",
+    "search": "Cerca",
+    "hide": "Nascondersi",
+    "dodge": "Schivata",
+    "dash": "Scatto",
+    "disengage": "Disimpegno",
+    "magic": "Lanciare Incantesimi",
+    "ready": "Prepararsi",
+    "utilize": "Usare Oggetto",
+    "improvise": "Improvvisare",
+    "study": "Studiare",
+    "shove": "Spinta",
+    "grapple": "Lotta",
+    "influence": "Influenza"
   },
   "weapons": {
-    "unarmed strike": "Colpo disarmato",
-    "longbow": "Arco lungo",
-    "maul": "Martello"
+    "unarmed strike": "Colpo Senz'Armi",
+    "melee weapon": "Arma da Mischia",
+    "ranged weapon": "Arma a Distanza",
+    "simple": "Semplice",
+    "martial": "Marziale",
+    "heavy": "Pesante",
+    "slow": "Lenta",
+    "two-handed": "A Due Mani",
+    "finesse": "Finesse",
+    "melee attack": "Attacco in Mischia",
+    "reach": "Portata",
+    "longbow": "Arco Lungo",
+    "maul": "Maglio",
+    "shield": "Scudo",
+    "crossbow, light": "Balestra Leggera",
+    "dart": "Dardo",
+    "sling": "Fionda",
+    "shortbow": "Arco Corto",
+    "quarterstaff": "Bastone Ferrato",
+    "longsword": "Spada Lunga",
+    "shortsword": "Spada Corta",
+    "club": "Clava",
+    "dagger": "Pugnale"
   },
   "spells": {
-    "fire bolt": "Dardo di fuoco"
+    "spells": "Incantesimi",
+    "modifier": "Modificatore",
+    "spell attack": "Attacco Magico",
+    "save dc": "DC di Incantesimo",
+    "fire bolt": "Dardo di Fuoco"
   },
-  "meta": {
-    "melee weapon": "Arma da mischia",
-    "ranged weapon": "Arma a distanza",
-    "melee attack": "Attacco da mischia",
-    "martial": "Marziali",
-    "heavy": "Pesanti",
-    "two-handed": "A due mani"
+  "tools": {
+    "tools": "Strumenti",
+    "cartographer's tools": "Strumenti da Cartografo",
+    "navigator's tools": "Strumenti da Navigatore",
+    "flute": "Flauto"
+  },
+  "inventory": {
+    "inventory": "Inventario",
+    "weight carried": "Peso trasportato",
+    "equipment": "Equipaggiamento",
+    "backpack": "Zaino",
+    "component pouch": "Sacca per componenti",
+    "attunement": "Sintonizzazione",
+    "other possessions": "Altri possedimenti",
+    "hammer": "Martello",
+    "gear": "Equipaggiamento",
+    "ammunition": "Munizioni",
+    "leather": "Armatura di cuoio",
+    "arrows": "Frecce",
+    "ac": "AC",
+    "spellbook": "Libro degli incantesimi",
+    "shovel": "Pala",
+    "pot, iron": "Pentola di ferro",
+    "book": "Libro",
+    "ink": "Inchiostro",
+    "ounce bottle": "Fiaschetta",
+    "ink pen": "Penna d'inchiostro",
+    "little bag of sand": "Sacchetto di sabbia",
+    "parchment": "Pergamena",
+    "one sheet": "1 foglio",
+    "small knife": "Coltello piccolo",
+    "tinderbox": "Acciarino",
+    "torch": "Torcia",
+    "waterskin": "Borraccia",
+    "piton": "Chiodo da roccia",
+    "crowbar": "Piede di porco",
+    "bedroll": "Sacco a pelo",
+    "mess kit": "Kit da cucina",
+    "rations": "Razioni",
+    "rope": "Corda",
+    "silk": "Seta",
+    "hempen": "Canapa",
+    "hunting trap": "Trappola da caccia",
+    "staff": "Bastone",
+    "clothes, traveler's": "Vestiti da viaggiatore",
+    "adventuring gear": "Equipaggiamento da avventura",
+    "utility": "Strumento",
+    "consumable": "Consumabile",
+    "clothes, common": "Vestiti comuni"
+  },
+  "languages": {
+    "language": "Lingua",
+    "languages": "Lingue",
+    "draconic": "Draconico",
+    "orc": "Orchesco",
+    "dwarvish": "Nanico",
+    "elvish": "Elfico",
+    "common": "Comune",
+    "gnomish": "Gnomico",
+    "deep speech": "Linguaggio Profondo"
+  },
+  "features": {
+    "features": "Caratteristiche",
+    "traits": "Tratti",
+    "class features": "Caratteristiche di classe",
+    "species traits": "Tratti razziali",
+    "feats": "Talenti",
+    "darkvision": "Scurovisione",
+    "menacing": "Minaccioso",
+    "relentless endurance": "Resistenza implacabile",
+    "savage attacks": "Attacchi selvaggi",
+    "fighting style": "Stile di combattimento",
+    "defense": "Difesa",
+    "second wind": "Secondo soffio",
+    "keen senses": "Sensi acuti",
+    "fey ancestry": "Ascendenza fatata",
+    "trance": "Trance",
+    "elf weapon training": "Addestramento armi elfiche",
+    "cantrip": "Trucchetto",
+    "extra language": "Lingua aggiuntiva",
+    "arcane recovery": "Recupero arcano",
+    "ability score increase": "Aumento del punteggio di caratteristica",
+    "favored enemy": "Nemico favorito",
+    "natural explorer": "Esploratore naturale",
+    "spellcasting": "Lancio di incantesimi"
+  },
+  "money": {
+    "cost": "Costo",
+    "platinum": "Platino",
+    "gold": "Oro",
+    "electrum": "Elettrum",
+    "silver": "Argento",
+    "copper": "Rame",
+    "total (in gp)": "Totale (in mo)",
+    "pp": "mp",
+    "gp": "mo",
+    "ep": "me",
+    "sp": "ma",
+    "cp": "mr",
+    "my coin": "Le mie monete",
+    "manage coin": "Gestisci monete",
+    "lifestyle expenses": "Spese di stile di vita",
+    "wretched": "Miserabile",
+    "squalid": "Squallido",
+    "poor": "Povero",
+    "modest": "Modesto",
+    "comfortable": "Confortevole",
+    "wealthy": "Ricco",
+    "aristocratic": "Aristocratico"
+  },
+  "monsters": {
+    "beasts": "Bestie"
   }
 }
