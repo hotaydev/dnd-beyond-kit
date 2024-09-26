@@ -23,241 +23,54 @@ async function languageOfTheExtension() {
   });
 }
 
-function translateSkills(translations) {
-  const skillBoxes = document.querySelectorAll('.ct-quick-info__abilities .ddbc-ability-summary__heading span');
-  const skillsShort = document.querySelectorAll('.ddbc-saving-throws-summary__ability-name abbr');
-  const skillsInList = document.querySelectorAll('.ct-skills__item .ct-skills__col--stat');
-
-  if (skillBoxes) {
-    skillBoxes.forEach((skill) => {
-      const skillTitle = skill.innerText.toLowerCase();
-
-      if (skillTitle.length > 3) {
-        skill.innerText = (translations.skills[skillTitle].title ?? skill.innerText).toUpperCase();
-      } else {
-        Object.keys(translations.skills).forEach((singleSkill) => {
-          if (skillTitle == singleSkill.substring(0, 3)) {
-            skill.innerText = (translations.skills[singleSkill].abbr ?? skill.innerText).toUpperCase();
-          }
-        })
-      }
-    });
-  }
-
-  if (skillsInList) {
-    skillsShort.forEach((skill) => {
-      const skillTitle = skill.title.toLowerCase();
-      skill.innerText = (translations.skills[skillTitle].abbr ?? skill.innerText).toUpperCase();
-      skill.title = translations.skills[skillTitle].title ?? skill.title;
-      skill.parentElement.style.zIndex = "100"
-    });
-  }
-
-
-  if (skillsInList) {
-    skillsInList.forEach((skill) => {
-      const skillAbbr = skill.innerText.toLowerCase();
-      Object.keys(translations.skills).forEach((singleSkill) => {
-        if (skillAbbr == singleSkill.substring(0, 3)) {
-          skill.innerText = (translations.skills[singleSkill].abbr ?? skill.innerText).toUpperCase();
-        }
-      })
-    });
-  }
+function translateHeaderBox(translations) {
+  let paragraph = document.querySelector('.ct-character-header-desktop');
+  translateTextInElements(paragraph, translations);
 }
 
-function translateProficiencies(translations) {
-  const proficiencyLabels = document.querySelectorAll('.ct-proficiency-groups__group-label');
-  const proficiencyContents = document.querySelectorAll('.ct-proficiency-groups__group-items');
-  if (!proficiencyLabels || !proficiencyContents) return;
-
-  proficiencyLabels.forEach((proficiency) => {
-    replaceTextIfFound(proficiency, translations, ['proficiencies']);
-  });
-
-  proficiencyContents.forEach((proficiency) => {
-    Object.keys(translations.proficiencies.values).forEach((value) => {
-      proficiency.innerText = proficiency.innerText.replaceAll(value, translations.proficiencies.values[value]);
-    });
-  });
+function translateQuickInfoBar(translations) {
+  let paragraph = document.querySelector('.ct-quick-info');
+  translateTextInElements(paragraph, translations);
 }
 
-function translateSenses(translations) {
-  const sensesLabels = document.querySelectorAll('.ct-senses__callout-label');
-  if (!sensesLabels) return;
-
-  sensesLabels.forEach((sense) => {
-    replaceTextIfFound(sense, translations, ['senses']);
-  });
-
-  const sensesSummary = document.querySelectorAll('.ct-senses__summary');
-  if (!sensesSummary) return;
-
-  sensesSummary.forEach((sense) => {
-    replaceTextIfFound(sense, translations, ['senses']);
-  });
+function translateSavingThrowsBox(translations) {
+  let paragraph = document.querySelector('.ct-subsection--abilities');
+  translateTextInElements(paragraph, translations);
 }
 
-function translateAreaTitles(translations) {
-  const titles = document.querySelectorAll('.ddbc-manage-icon__content');
-  if (!titles) return;
-
-  titles.forEach((title) => {
-    replaceTextIfFound(title, translations, ['areaTitles']);
-  });
-
-  const savingThrows = document.querySelector('.ct-saving-throws-box__info .ct-saving-throws-box__modifiers');
-  if (savingThrows && savingThrows.innerText == "Saving Throw Modifiers") savingThrows.innerText = translations.areaTitles.savingThrowsModifiers ?? savingThrows.innerText;
-
-  // Not actually working due to way D&D Beyond handle the tooltips.
-  // const manageItems = document.querySelectorAll('.ddbc-tooltip[data-original-title="Manage"]');
-  // if (manageItems) manageItems.forEach((item) => item.setAttribute('data-original-title', translations.areaTitles.manage));
-
-  const manageMainButton = document.querySelector('.ddbc-character-tidbits__menu-callout button span');
-  if (manageMainButton) replaceTextIfFound(manageMainButton, translations, ['areaTitles']);
+function translateSensesBox(translations) {
+  let paragraph = document.querySelector('.ct-subsection--senses');
+  translateTextInElements(paragraph, translations);
 }
 
-function translateSubskills(translations) {
-  const subSkills = document.querySelectorAll('.ct-skills__item .ct-skills__col--skill');
-  if (!subSkills) return;
-
-  subSkills.forEach((skill) => {
-    replaceTextIfFound(skill, translations, ['subskills']);
-  });
-
-  const skillsName = document.querySelector('.ct-skills__header .ct-skills__col--skill .ct-skills__heading');
-  const additionalSkills = document.querySelector('.ct-skills__additional');
-  const proficiency = document.querySelector('.ct-skills__header .ct-skills__col--proficiency abbr');
-  const modifier = document.querySelector('.ct-skills__header .ct-skills__col--stat abbr');
-
-  if (skillsName) replaceTextIfFound(skillsName, translations, ['subskills']);
-  if (additionalSkills) additionalSkills.innerText = translations.subskills.additionalSkills ?? additionalSkills.innerText;
-  if (proficiency) proficiency.setAttribute('title', translations.subskills.proficiency);
-  if (modifier) modifier.setAttribute('title', translations.subskills.modifier);
+function translateProficienciesBox(translations) {
+  let paragraph = document.querySelector('.ct-subsection--proficiency-groups');
+  translateTextInElements(paragraph, translations);
 }
 
-function translateTopBarMainContent(translations) {
-  const restButtons = document.querySelectorAll('.ct-character-header-desktop__button-label');
-  if (!restButtons) return;
-
-  restButtons.forEach((button) => {
-    replaceTextIfFound(button, translations, ['main', 'rest'])
-  });
+function translateSkillsBox(translations) {
+  let paragraph = document.querySelector('.ct-subsection--skills');
+  translateTextInElements(paragraph, translations);
 }
 
-function translateWalkAndDefense(translations) {
-  const restButtons = document.querySelectorAll('.ct-character-header-desktop__button-label');
-  const proficiencyButton = document.querySelector('.ct-proficiency-bonus-box .ct-proficiency-bonus-box__heading');
-  const walkingButton = document.querySelector('.ct-quick-info__box--speed .ct-speed-box__heading');
-  const speedButton = document.querySelector('.ct-quick-info__box--speed .ct-speed-box__label');
-  const inspirationButton = document.querySelector('.styles_label__Bj6YW');
-  const iniciativeButton = document.querySelector('div[data-testid=combat-initiative-label]');
-  const armorClass = document.querySelectorAll('.ddbc-armor-class-box .ddbc-armor-class-box__label');
-
-  if (restButtons) {
-    restButtons.forEach((button) => {
-      replaceTextIfFound(button, translations, ['main', 'rest']);
-    });
-  }
-
-  if (armorClass) {
-    armorClass.forEach((armor) => {
-      replaceTextIfFound(armor, translations, ['main', 'defense']);
-    });
-  }
-
-  if (proficiencyButton) replaceTextIfFound(proficiencyButton, translations, ['main']);
-  if (walkingButton) replaceTextIfFound(walkingButton, translations, ['main']);
-  if (speedButton) replaceTextIfFound(speedButton, translations, ['main']);
-  if (inspirationButton) replaceTextIfFound(inspirationButton, translations, ['main']);
-  if (iniciativeButton) replaceTextIfFound(iniciativeButton, translations, ['main']);
+function translateCombatDefensesConditionsBoxes(translations) {
+  let paragraph = document.querySelector('.ct-subsection--combat');
+  translateTextInElements(paragraph, translations);
 }
 
-function translateHealth(translations) {
-  const buttons = document.querySelectorAll('.ct-health-summary__hp-group .ct-health-summary__adjuster-action button span');
-  const healthText = document.querySelectorAll('.ct-health-summary__hp-group .ct-health-summary__hp-item-label');
-  const hitPoints = document.querySelector('.ct-health-summary #ct-health-summary-label');
-
-  if (buttons) {
-    buttons.forEach((button) => {
-      replaceTextIfFound(button, translations, ['main', 'life']);
-    });
-  }
-
-  if (healthText) {
-    healthText.forEach((text) => {
-      replaceTextIfFound(text, translations, ['main', 'life']);
-    });
-  }
-
-  if (hitPoints) hitPoints.innerText = translations.main.life.hitPoints;
+function translateActionBox(translations) {
+  const tabs = document.querySelectorAll('.ddbc-tab-options__header');
+  tabs.forEach((tab) => tab.addEventListener('click', async () => {
+    setTimeout(() => translateActionBox(translations), 50);
+  }));
+  
+  let paragraph = document.querySelector('.ct-subsection--primary-box');
+  translateTextInElements(paragraph, translations);
 }
 
-function translateGlobalActions(translations) {
-  const actions = document.querySelectorAll('.ct-primary-box menu li button');
-  if (!actions) return;
-
-  actions.forEach((action) => {
-    replaceTextIfFound(action, translations, ['actions']);
-  });
-}
-
-function translateActionsSubItems(translations) {
-  const actionsLabel = document.querySelector('.ct-actions__attacks-heading');
-  if (actionsLabel) {
-    replaceTextIfFound(actionsLabel.childNodes[0], translations, ['actions', 'actions_items']);
-  }
-
-  const attacksPerAction = document.querySelector('.ct-actions__attacks-per-action');
-  if (attacksPerAction) {
-    replaceTextIfFound(attacksPerAction.childNodes[0], translations, ['actions', 'actions_items']);
-  }
-
-  let columnBaseStyle = ".ddbc-attack-table__col--";
-  let columnNames = ["name", "range", "damage", "tohit", "notes"];
-  columnNames.forEach(name => {
-    let columnStyle = columnBaseStyle + name;
-    let label = document.querySelector(columnStyle);
-    replaceTextIfFound(label, translations, ['actions', 'actions_items']);
-  });
-
-  const combatActionsLabel = document.querySelectorAll('.ct-actions-list__basic-heading ');
-  if (combatActionsLabel) {
-    combatActionsLabel.forEach((label) => {
-      replaceTextIfFound(label, translations, ['actions', 'actions_items']);
-    });
-  }
-
-  const basicActions = document.querySelectorAll('.ct-basic-actions__action');
-  if (basicActions) {
-    basicActions.forEach((action) => {
-      replaceTextIfFound(action.childNodes[0], translations, ['actions', 'actions_items']);
-    });
-  }
-
-  const weaponsAndSpells = document.querySelectorAll('.ddbc-combat-attack__label span');
-  if (weaponsAndSpells) {
-    weaponsAndSpells.forEach((weaponOrSpell) => {
-      replaceTextIfFound(weaponOrSpell, translations, ['weapons']);
-      replaceTextIfFound(weaponOrSpell, translations, ['spells']);
-    });
-  }
-
-  const metaItems = document.querySelectorAll('.ddbc-combat-attack__meta-item, .ddbc-note-components__component--plain');
-  if (metaItems) {
-    metaItems.forEach((item) => {
-      replaceTextIfFound(item, translations, ['meta']);
-    });
-  }
-}
-
-function translateConditions(translations) {
-  const conditions = document.querySelectorAll('.ct-combat__statuses .ct-combat__summary-label');
-  if (!conditions) return;
-
-  conditions.forEach((condition) => {
-    replaceTextIfFound(condition, translations, ['main', 'conditions'])
-  });
+function translateSideBar(translations) {
+  let paragraph = document.querySelector('.ct-sidebar__inner');
+  translateTextInElements(paragraph, translations);
 }
 
 function minifyContent() {
@@ -277,90 +90,71 @@ function minifyContent() {
 function tabsListener(translations) {
   const tabs = document.querySelectorAll('.ct-primary-box menu li button');
   tabs.forEach((tab) => tab.addEventListener('click', async () => {
-    setTimeout(async () => await translateTab(translations, tab.innerText.toLowerCase()), 50);
+    setTimeout(() => translateActionBox(translations), 50);
   }));
 }
 
-function actionTabsListener(translations) {
-  const tabs = document.querySelectorAll('.ddbc-tab-options__header');
-  tabs.forEach((tab) => tab.addEventListener('click', async () => {
-    setTimeout(async () => await translateActionsSubItems(translations), 50);
-  }));
-}
-
-async function translateTab(translations, tab) {
-  let innerTabs;
-
-  switch (tab) {
-    case translations.actions.actions.toLowerCase():
-      innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'actions_types']));
-      translateActionsSubItems(translations);
-      actionTabsListener(translations);
-      break;
-    case translations.actions.spells.toLowerCase():
-      innerTabs = document.querySelectorAll('.ct-spells__casting .ct-spells-level-casting__info-group .ct-spells-level-casting__info-label');
-      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'spells_types']));
-      break;
-    case translations.actions.inventory.toLowerCase():
-      weight_carried = document.querySelector('.ct-equipment-overview__weight-carried-label');
-      replaceTextIfFound(weight_carried, translations, ['actions', 'inventory_types'])
-      innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'inventory_types']));
-      break;
-    case translations.actions["features & traits"].toLowerCase():
-      innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'features_types']));
-      break;
-    case translations.actions.background.toLowerCase():
-      innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'background_types']));
-      break;
-    case translations.actions.notes.toLowerCase():
-      innerTabs = document.querySelectorAll('.ddbc-tab-options .ddbc-tab-options__nav .ddbc-tab-options__header-heading');
-      innerTabs.forEach((innerTab) => replaceTextIfFound(innerTab, translations, ['actions', 'notes_types']));
-      break;
-  }
-}
-
-function replaceTextIfFound(obj, dictionary, path) {
-  if (obj && typeof obj.textContent === 'string') {
-    let currentText = obj.textContent.trim().toLowerCase();
-
-    let subpart = dictionary;
-    for (let key of path) {
-      if (subpart.hasOwnProperty(key)) {
-        subpart = subpart[key];
-      } else {
-        return;
+function translateTextInElements(parentElement, dictionary) {
+  let elements = getTextNodes(parentElement);
+  elements.forEach(element => {
+    let originalText = element.textContent;
+    let translatedString = translateWord(originalText, dictionary);
+    if (originalText == translatedString) {
+      let matches = translatedString.match(/[A-Za-z]+(?:[ '\u2019][A-Za-z]+|-[A-Za-z]+)*/g);
+      if (matches) {
+        matches.forEach(originalWord => {
+            let translatedWord = translateWord(originalWord, dictionary);
+            translatedString = translatedString.replace(originalWord, translatedWord);
+        });
       }
     }
+    element.textContent = translatedString;
+  });
+}
 
-    if (subpart.hasOwnProperty(currentText)) {
-      obj.textContent = subpart[currentText];
+function translateWord(word, dictionary) {
+  let lowerWord = word.toLowerCase();
+  for (let value of Object.values(dictionary)) {
+    if (value.hasOwnProperty(lowerWord)) {
+      return value[lowerWord];
     }
   }
+  return word;  
+}
+
+function getTextNodes(parentElement) {
+  let textNodes = [];
+
+  function findTextNodes(node) {
+    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+      textNodes.push(node);
+    }
+    node.childNodes.forEach(child => findTextNodes(child));
+  }
+  findTextNodes(parentElement);
+
+  return textNodes;
 }
 
 async function translateContent() {
   const language = await languageOfTheExtension();
   const translations = await getTranslations(language);
 
-  // Translations:
   if (translations) {
-    translateSkills(translations);
-    translateSubskills(translations);
-    translateTopBarMainContent(translations);
-    translateWalkAndDefense(translations);
-    translateHealth(translations);
-    translateGlobalActions(translations);
-    translateActionsSubItems(translations);
-    translateConditions(translations);
-    translateSenses(translations);
-    translateProficiencies(translations);
-    translateAreaTitles(translations);
+    translateHeaderBox(translations);
+    translateQuickInfoBar(translations);
+    translateSavingThrowsBox(translations);
+    translateSensesBox(translations);
+    translateProficienciesBox(translations);
+    translateSkillsBox(translations);
+    translateCombatDefensesConditionsBoxes(translations);
+    translateActionBox(translations);
     tabsListener(translations);
-    translateTab(translations, translations.actions.actions.toLowerCase());
+
+    document.addEventListener('click', function() {
+      translateSideBar(translations);
+      translateActionBox(translations);
+    });
   }
 
   minifyContent();
