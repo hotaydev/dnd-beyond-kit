@@ -1,7 +1,7 @@
 # D&D Beyond Kit
 
 [Link for Chrome Web Store](https://chromewebstore.google.com/detail/dd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg)
-Link for Mozilla Firefox (On approval process)
+[Link for Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/dnd-beyond-kit/)
 
 This extension is used to:
 - Traslate your D&D Beyond character sheet page to your language;
