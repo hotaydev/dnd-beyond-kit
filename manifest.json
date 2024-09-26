@@ -76,5 +76,11 @@
         "*://*/*"
       ]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{9490fa16-7c34-11ef-b344-3e7bf1c93a1f}",
+      "strict_min_version": "109.0"
+    }
+  }
 }
