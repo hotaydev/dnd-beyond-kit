@@ -37,6 +37,7 @@
     "grassland": "Pláně",
     "water": "Voda",
     "dc": "SO",
+    "day": "den",
     "carrying capacity": "Nosnost"
   },
   "races": {
@@ -101,7 +102,6 @@
     "darkvision 12 sh.": "Vidění ve tmě 12 sáhů"
   },
   "proficiencies": {
-    "proficiencies &": "Zdatnosti a",
     "training": "Jazyky",
     "armor": "Zbroj",
     "weapons": "Zbraně",
@@ -245,7 +245,7 @@
     "crowbar": "Páčidlo",
     "bedroll": "Karimatka",
     "mess kit": "Nádobíčko",
-    "rations (1 day)": "Zásoby na den",
+    "rations": "Zásoby",
     "rope": "Lano",
     "silk": "Hedvábné",
     "hempen": "Konopné",
