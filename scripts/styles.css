@@ -26,13 +26,21 @@
 
 .scrollToTop {
   position: fixed;
-  bottom: 0;
-  left: 10px;
-  border-radius: 3px 3px 0 0;
+  bottom: 8px;
+  right: 18px;
+  border-radius: 5px;
   margin: 0;
   color: #26282a;
   border: 1px solid #a5afba;
-  border-bottom: none;
+  background-color: #eeeeee;
   font-size: 14px;
   padding: 8px;
+  transition: all ease .3s;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, .2);
+  cursor: pointer;
+}
+
+.scrollToTop:hover {
+  bottom: 12px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, .3);
 }

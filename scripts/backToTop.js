@@ -5,13 +5,16 @@
   let scroller;
 
   function scrollToTop() {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
   function checkScroll() {
-    if (window.scrollY >= 600 && !scrollShown) {
+    if (window.scrollY >= 500 && !scrollShown) {
       showScroll();
-    } else if (window.scrollY < 600 && scrollShown) {
+    } else if (window.scrollY < 500 && scrollShown) {
       hideScroll();
     }
   }

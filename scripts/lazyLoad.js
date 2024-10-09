@@ -1,4 +1,6 @@
-(function () {
+// TODO: when lazy loaded, the new added list items don't have the "onclick" event
+
+(async () => {
   const LIST = document.getElementsByClassName("listing")[0];
   const PAGING = document.getElementsByClassName("b-pagination")[1];
   const FOOTER = document.getElementById("footer-push");
@@ -31,16 +33,16 @@
     checkScroll();
   }
 
-  function checkScroll() {
+  async function checkScroll() {
     if (currentPage >= maxPage) { return }
     var distanceFromBottom = LIST.getBoundingClientRect().bottom - document.body.getBoundingClientRect().height;
 
     if (!loading && distanceFromBottom < 200) {
-      loadNextPage();
+      await loadNextPage();
     }
   }
 
-  function loadNextPage() {
+  async function loadNextPage() {
     var urlWithoutPage = document.location.href.replace(/page=[0-9]+/, '');
     currentPage++;
 
@@ -49,17 +51,17 @@
 
     loading = true;
     FOOTER.appendChild(loadingIcon);
-    fetch(url)
+    await fetch(url)
       .then((body) => {
         body.text().then((html) => {
           var parser = new DOMParser();
           var doc = parser.parseFromString(html, "text/html");
 
-          var nodes = doc.querySelectorAll('.listing .info, .listing > li');
+          var nodes = doc.querySelectorAll('.listing .info');
 
           Array.prototype.forEach.call(nodes, (node) => {
             LIST.appendChild(node);
-          })
+          });
 
           loading = false;
           loadingIcon.remove();
