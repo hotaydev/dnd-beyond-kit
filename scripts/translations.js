@@ -121,6 +121,7 @@ function translateWord(word, dictionary) {
     return dictionary[lowerWord];
   }
 
+  // console.log("Untranslated word: ", word);
   return word;
 }
 
