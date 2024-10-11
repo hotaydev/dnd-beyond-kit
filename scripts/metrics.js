@@ -480,10 +480,10 @@ function observe_when_ready() {
 }
 
 function load_and_run(result) {
-  if (!result.convertUnits) {
+  const convertUnitsEnabled = result.convertUnits ?? true;
+  if (!convertUnitsEnabled) {
     console.log("D&D Beyond Kit: Metric system conversion is disabled");
-  }
-  else {
+  } else {
     observe_when_ready();
   }
 }

@@ -116,11 +116,11 @@ function translateTextInElements(parentElement, dictionary) {
 
 function translateWord(word, dictionary) {
   let lowerWord = word.toLowerCase();
-  for (let value of Object.values(dictionary)) {
-    if (value.hasOwnProperty(lowerWord)) {
-      return value[lowerWord];
-    }
+
+  if (dictionary.hasOwnProperty(lowerWord)) {
+    return dictionary[lowerWord];
   }
+
   return word;
 }
 
