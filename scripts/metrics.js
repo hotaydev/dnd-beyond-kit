@@ -17,7 +17,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-const currentBrowser = typeof chrome === 'undefined' ? browser : chrome;
+let currentBrowser = typeof chrome === 'undefined' ? browser : chrome;
 
 
 const fractionMap = [
