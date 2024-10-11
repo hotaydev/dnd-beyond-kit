@@ -1,4 +1,4 @@
-let currentBrowser = typeof chrome === 'undefined' ? browser : chrome;
+// `currentBrowser` is defined in ./script.js
 
 const title       = document.getElementById('title');
 const choose_lang = document.getElementById('choose_language');

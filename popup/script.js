@@ -1,4 +1,4 @@
-let currentBrowser = typeof chrome === 'undefined' ? browser : chrome;
+const currentBrowser = typeof chrome === 'undefined' ? browser : chrome;
 
 document.getElementById('languageSelect').addEventListener('change', async (event) => {
   currentBrowser.storage.local.set({ "language": event.target.value });

@@ -1,4 +1,4 @@
-let currentBrowser = typeof chrome === 'undefined' ? browser : chrome;
+// `currentBrowser` is defined in ./metrics.js
 
 async function getTranslations(lang) {
 
