@@ -104,7 +104,8 @@ async function translateContent() {
       // Wait some time after click to also translate content after opening the sidebar and after changing tabs
       setTimeout(() => {
         translateTextInElements(document.querySelector("main"), translations);
-        translateTextInElements(document.querySelector(".ct-sidebar__portal"), translations);
+        translateTextInElements(document.querySelector(".ct-sidebar__portal"), translations); // General side menu
+        translateTextInElements(document.querySelector("dialog"), translations); // Mobile menu
       }, 100);
     }, true); // Don't remove this "true"
   }
@@ -117,7 +118,7 @@ async function translateContent() {
 }
 
 async function runWhenPageReady() {
-  if (document.querySelector(".ct-quick-info")) {
+  if (document.querySelectorAll("[class^='ct-character-header-']:is(.ct-character-header-mobile, .ct-character-header-desktop)").length > 0) {
     await translateContent();
   } else {
     setTimeout(runWhenPageReady, 500);
