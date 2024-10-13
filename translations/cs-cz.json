@@ -127,7 +127,7 @@
   "attacks per action": "Útoků za akci",
   "attack": "Útok",
   "range": "Dosah",
-  "hit / dc": "Zásah/SO",
+  "hit / dc": "Zás./SO",
   "actions in combat": "Akce v souboji",
   "help": "Pomoc",
   "search": "Hledání",
@@ -439,5 +439,6 @@
   "thieves’ cant": " Zlodějská hantýrka",
   "dice set": "Sada kostek",
   "playing card set": "Balíček karet",
-  "against being charmed": "proti zmámení"
+  "against being charmed": "proti zmámení",
+  "cantrips": "Triky"
 }
