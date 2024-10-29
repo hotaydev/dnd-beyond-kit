@@ -37,7 +37,7 @@ body {
   gap: 5px;
 }
 
-#convertToSI {
+.convert_units p {
   margin-bottom: 10px;
 }
 
@@ -181,4 +181,15 @@ input:checked+.slider:before {
 
 .title-area {
   gap: 10px;
+}
+
+.title-area img {
+  transition: all ease .2s;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.title-area img:hover {
+  background-color: #ebebeb;
+  border-radius: 20px;
 }

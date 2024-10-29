@@ -1,11 +1,14 @@
 const currentBrowser = typeof chrome === 'undefined' ? browser : chrome;
 
-document.getElementById('languageSelect').addEventListener('change', async (event) => {
+const languageSelectorElement = document.getElementById('languageSelect');
+const convertToSiInputElement = document.getElementById('convertToSiInput');
+
+if (languageSelectorElement) languageSelectorElement.addEventListener('change', async (event) => {
   currentBrowser.storage.local.set({ "language": event.target.value });
   await reloadPage();
 });
 
-document.getElementById('convertToSiInput').addEventListener('change', async (event) => {
+if (convertToSiInputElement) convertToSiInputElement.addEventListener('change', async (event) => {
   currentBrowser.storage.local.set({ "convertUnits": event.target.checked });
   await reloadPage();
 });
@@ -19,8 +22,8 @@ document.getElementById('convertToSiInput').addEventListener('change', async (ev
     return result.language ?? "en-us";
   });
 
-  document.getElementById('languageSelect').value = selectedLanguage;
-  document.getElementById('convertToSiInput').checked = toggleState;
+  if (languageSelectorElement) languageSelectorElement.value = selectedLanguage;
+  if (convertToSiInputElement) convertToSiInputElement.checked = toggleState;
 })();
 
 async function reloadPage() {
