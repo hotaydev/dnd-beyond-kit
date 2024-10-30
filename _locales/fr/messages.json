@@ -34,5 +34,9 @@
   "moreSettingsQuestion": {
     "message": "Besoin de plus de paramètres ? Faites une demande sur GitHub !",
     "description": "More configurations message to GitHub"
+  },
+  "cleanInterface": {
+    "message": "Effacer les distractions de l'interface",
+    "description": "Remove distractions from the interface"
   }
 }

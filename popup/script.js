@@ -3,6 +3,7 @@ const currentBrowser = typeof chrome === 'undefined' ? browser : chrome;
 const languageSelectorElement = document.getElementById('languageSelect');
 const convertToSiInputElement = document.getElementById('convertToSiInput');
 const translateSpellInput = document.getElementById('translateSpellNamesInput');
+const cleanInterfaceInput = document.getElementById('cleanInterfaceInput');
 
 if (languageSelectorElement) languageSelectorElement.addEventListener('change', async (event) => {
   currentBrowser.storage.local.set({ "language": event.target.value });
@@ -19,6 +20,11 @@ if (translateSpellInput) translateSpellInput.addEventListener('change', async (e
   await reloadPage();
 });
 
+if (cleanInterfaceInput) cleanInterfaceInput.addEventListener('change', async (event) => {
+  currentBrowser.storage.local.set({ "cleanInterface": event.target.checked });
+  await reloadPage();
+});
+
 (async () => {
   const convertToSiState = await currentBrowser.storage.local.get("convertUnits").then((result) => {
     return result.convertUnits ?? true;
@@ -28,6 +34,10 @@ if (translateSpellInput) translateSpellInput.addEventListener('change', async (e
     return result.translateSpellNames ?? true;
   });
 
+  const cleanInterfaceState = await currentBrowser.storage.local.get("cleanInterface").then((result) => {
+    return result.cleanInterface ?? true;
+  });
+
   const selectedLanguage = await currentBrowser.storage.local.get("language").then((result) => {
     return result.language ?? "en-us";
   });
@@ -35,6 +45,7 @@ if (translateSpellInput) translateSpellInput.addEventListener('change', async (e
   if (languageSelectorElement) languageSelectorElement.value = selectedLanguage;
   if (convertToSiInputElement) convertToSiInputElement.checked = convertToSiState;
   if (translateSpellInput) translateSpellInput.checked = translateSpellNamesState;
+  if (cleanInterfaceInput) cleanInterfaceInput.checked = cleanInterfaceState;
 })();
 
 async function reloadPage() {

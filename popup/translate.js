@@ -9,6 +9,7 @@ const version     = document.getElementById('extension-version');
 const settings    = document.getElementById('settingsTitle');
 const spells      = document.getElementById('translateSpells');
 const githubSetti = document.getElementById('moreSettingsQuestion');
+const interface   = document.getElementById('cleanInterface');
 
 if (title)       title.innerText       = currentBrowser.i18n.getMessage("title");
 if (choose_lang) choose_lang.innerText = currentBrowser.i18n.getMessage("choose_language");
@@ -19,3 +20,4 @@ if (version)     version.innerText     = `v${currentBrowser.runtime.getManifest(
 if (settings)    settings.innerText    = currentBrowser.i18n.getMessage("settingsTitle");
 if (spells)      spells.innerText      = currentBrowser.i18n.getMessage("translateSpells");
 if (githubSetti) githubSetti.innerText = currentBrowser.i18n.getMessage("moreSettingsQuestion");
+if (interface)   interface.innerText   = currentBrowser.i18n.getMessage("cleanInterface");

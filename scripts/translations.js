@@ -44,7 +44,15 @@ async function languageOfTheExtension() {
   });
 }
 
-function minifyContent() {
+async function minifyContent() {
+  const cleanInterface = await currentBrowser.storage.local.get("cleanInterface").then((result) => {
+    return result.cleanInterface ?? true;
+  });
+
+  if (!cleanInterface) {
+    return;
+  }
+
   const footer = document.querySelector('footer');
   const megamenu = document.querySelector('div[name=megamenu] menu');
   const socials = document.querySelector('.site-bar__container .socials');
@@ -91,6 +99,10 @@ function getTextNodes(parentElement) {
   let textNodes = [];
 
   function findTextNodes(node) {
+    if (!node) {
+      return;
+    }
+
     if (node.nodeType === Node.TEXT_NODE) {
       const trimmedText = node.textContent.trim();
 
@@ -129,7 +141,7 @@ async function translateContent() {
     }, true); // Don't remove this "true"
   }
 
-  minifyContent();
+  await minifyContent();
   setInterval(() => {
     const splittedTitle = document.title.split('\'s');
     if (splittedTitle.length > 1) document.title = splittedTitle[0] + " | D&D Beyond";
