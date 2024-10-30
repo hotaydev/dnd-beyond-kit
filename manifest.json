@@ -70,7 +70,13 @@
         "translations/it-it.json",
         "translations/de-de.json",
         "translations/fr-fr.json",
-        "translations/cs-cz.json"
+        "translations/cs-cz.json",
+        "translations/spells/pt-br.json",
+        "translations/spells/es-es.json",
+        "translations/spells/it-it.json",
+        "translations/spells/de-de.json",
+        "translations/spells/fr-fr.json",
+        "translations/spells/cs-cz.json"
       ],
       "matches": [
         "https://www.dndbeyond.com/*"

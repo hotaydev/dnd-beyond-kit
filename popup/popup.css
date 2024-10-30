@@ -33,12 +33,36 @@ body {
   border-radius: 5px;
 }
 
-.convert_units {
+.switch_section {
   gap: 5px;
 }
 
-.convert_units p {
+.mb-10px {
   margin-bottom: 10px;
+}
+
+.mb-5px {
+  margin-bottom: 5px;
+}
+
+.switches-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.switches-area .switch_section {
+  justify-content: space-between !important;
+  min-width: 265px;
+  border-bottom: 1px solid #dddddd;
+}
+
+small {
+  padding: 2px 4px;
+  background-color: #e2e2e2;
+  border-radius: 20px;
+  cursor: help;
 }
 
 .switch {
@@ -192,4 +216,12 @@ input:checked+.slider:before {
 .title-area img:hover {
   background-color: #ebebeb;
   border-radius: 20px;
+}
+
+.message-area {
+  text-decoration: none;
+}
+
+.message-area:hover {
+  text-decoration: underline;
 }

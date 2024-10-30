@@ -22,5 +22,17 @@
   "convertToSI": {
     "message": "Převod měrných jednotek na SI",
     "description": "Toggle the International Metrics System"
+  },
+  "settingsTitle": {
+    "message": "Nastavení",
+    "description": "Title of Settings tab"
+  },
+  "translateSpells": {
+    "message": "Přeložte názvy kouzel",
+    "description": "Translate spells name configuration"
+  },
+  "moreSettingsQuestion": {
+    "message": "Potřebujete další nastavení? Žádost na GitHubu!",
+    "description": "More configurations message to GitHub"
   }
 }

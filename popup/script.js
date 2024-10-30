@@ -2,6 +2,7 @@ const currentBrowser = typeof chrome === 'undefined' ? browser : chrome;
 
 const languageSelectorElement = document.getElementById('languageSelect');
 const convertToSiInputElement = document.getElementById('convertToSiInput');
+const translateSpellInput = document.getElementById('translateSpellNamesInput');
 
 if (languageSelectorElement) languageSelectorElement.addEventListener('change', async (event) => {
   currentBrowser.storage.local.set({ "language": event.target.value });
@@ -13,9 +14,18 @@ if (convertToSiInputElement) convertToSiInputElement.addEventListener('change', 
   await reloadPage();
 });
 
+if (translateSpellInput) translateSpellInput.addEventListener('change', async (event) => {
+  currentBrowser.storage.local.set({ "translateSpellNames": event.target.checked });
+  await reloadPage();
+});
+
 (async () => {
-  const toggleState = await currentBrowser.storage.local.get("convertUnits").then((result) => {
+  const convertToSiState = await currentBrowser.storage.local.get("convertUnits").then((result) => {
     return result.convertUnits ?? true;
+  });
+
+  const translateSpellNamesState = await currentBrowser.storage.local.get("translateSpellNames").then((result) => {
+    return result.translateSpellNames ?? true;
   });
 
   const selectedLanguage = await currentBrowser.storage.local.get("language").then((result) => {
@@ -23,7 +33,8 @@ if (convertToSiInputElement) convertToSiInputElement.addEventListener('change', 
   });
 
   if (languageSelectorElement) languageSelectorElement.value = selectedLanguage;
-  if (convertToSiInputElement) convertToSiInputElement.checked = toggleState;
+  if (convertToSiInputElement) convertToSiInputElement.checked = convertToSiState;
+  if (translateSpellInput) translateSpellInput.checked = translateSpellNamesState;
 })();
 
 async function reloadPage() {

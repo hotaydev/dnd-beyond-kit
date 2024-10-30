@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&D Beyond Kit</title>
+  <link rel="stylesheet" href="./popup.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="title-area flex">
+      <img src="./dice.svg" width="40" height="40" alt="DnD Dice" />
+      <h1 id="settingsTitle"></h1>
+    </div>
+
+    <div class="switches-area">
+      <div class="switch_section flex">
+        <p id="convertToSI" class="mb-5px"></p>
+        <label class="switch">
+          <input id="convertToSiInput" type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="switch_section flex">
+        <p id="translateSpells" class="mb-5px"></p>
+        <label class="switch">
+          <input id="translateSpellNamesInput" type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <a href="https://github.com/hotaydev/dnd-beyond-kit" target="_blank" class="message-area">
+      <p class="message" id="moreSettingsQuestion"></p>
+    </a>
+
+    <div class="separator flex">
+      <div class="inner-separator"></div>
+    </div>
+
+    <div id="extension-version"></div>
+  </div>
+
+  <script src="./script.js"></script>
+  <script src="./translate.js"></script>
+</body>
+
+</html>

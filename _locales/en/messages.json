@@ -22,5 +22,17 @@
   "convertToSI": {
     "message": "Convert measurements to SI",
     "description": "Toggle the International Metrics System"
+  },
+  "settingsTitle": {
+    "message": "Settings",
+    "description": "Title of Settings tab"
+  },
+  "translateSpells": {
+    "message": "Translate spell names",
+    "description": "Translate spells name configuration"
+  },
+  "moreSettingsQuestion": {
+    "message": "Need more configuration? Request on GitHub!",
+    "description": "More configurations message to GitHub"
   }
 }
