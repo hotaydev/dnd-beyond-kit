@@ -10,6 +10,6 @@ We respect your privacy. D&D Beyond Translate Chrome Extension is committed to s
 
 4. **License:** This extension is developed under the MIT license, allowing anyone to contribute to the development or create other extensions on top - or based - on this extension.
 
-By using D&D Beyond Translate, you acknowledge and agree to the terms outlined in this privacy policy. If you have any questions, please contact us at [taylor@hotay.dev](mailto:taylor@hotay.dev).
+By using D&D Beyond Translate, you acknowledge and agree to the terms outlined in this privacy policy. If you have any questions, please contact us at [hi@hotay.dev](mailto:hi@hotay.dev).
 
 *Last Updated: 04 of January, 2024*
