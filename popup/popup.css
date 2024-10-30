@@ -207,13 +207,13 @@ input:checked+.slider:before {
   gap: 10px;
 }
 
-.title-area img {
+.title-area .settings-img {
   transition: all ease .2s;
   padding: 4px;
   cursor: pointer;
 }
 
-.title-area img:hover {
+.title-area .settings-img:hover {
   background-color: #ebebeb;
   border-radius: 20px;
 }
