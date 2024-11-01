@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Beyond Kit</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Base styles */
+        body {
+            font-family: "Merriweather", serif;
+            transition: background-color 0.3s, color 0.3s;
+            padding: 8px;
+            font-size: 1.125rem;
+        }
+
+        /* Dark Theme */
+        .dark-theme {
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+        }
+
+        /* Light Theme */
+        .light-theme {
+            background-color: #f5f5f5;
+            color: #1e1e1e;
+        }
+
+        /* Common Styles */
+        h1,
+        h2,
+        h3 {
+            font-family: "Cinzel", serif;
+            color: #e53e3e;
+        }
+
+        .button-dnd {
+            font-family: "Cinzel", serif;
+            background-color: #e53e3e;
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.375rem;
+            border: 2px solid #a02727;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-dnd:hover {
+            background-color: #c53030;
+            border-color: #922424;
+        }
+
+        .card {
+            background-color: #2d2d2d;
+            border: 1px solid #a02727;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: background-color 0.3s;
+        }
+
+        .dark-theme .card {
+            background-color: #2d2d2d;
+        }
+
+        .light-theme .card {
+            background-color: #fff;
+            color: #1e1e1e;
+            border: 1px solid #ccc;
+        }
+
+        .important-box {
+            background-color: #e53e3e;
+            color: #f5f5f5;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #c53030;
+        }
+
+        .light-theme .important-box {
+            background-color: #ffdddd;
+            color: #1e1e1e;
+            border-left-color: #e53e3e;
+        }
+    </style>
+</head>
+
+<body id="page-content" class="min-h-screen light-theme">
+    <div class="max-w-4xl mx-auto text-center">
+        <!-- Logo placeholder: D&D Beyond Kit logo -->
+        <img src="./dice.svg" id="theme-toggle" alt="D&D Beyond Kit Logo" class="mx-auto mb-4" style="width: 5rem;">
+        <h1 class="text-4xl mb-4">D&D Beyond Kit</h1>
+
+        <!-- Main card section -->
+        <div class="card mb-6">
+            <h2 class="text-2xl mb-4">Available Stores</h2>
+            <p class="mb-4">Install D&D Beyond Kit on your preferred browser:</p>
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="https://chromewebstore.google.com/detail/dd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg"
+                    target="_blank" class="button-dnd">Chrome Web Store</a>
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/dnd-beyond-kit/" target="_blank"
+                    class="button-dnd">Mozilla Firefox</a>
+            </div>
+            <p class="text-sm italic">Explore the code on <a href="https://github.com/hotaydev/dnd-beyond-kit"
+                    target="_blank" class="underline text-blue-400">GitHub</a>.</p>
+        </div>
+
+        <!-- Features and details card -->
+        <div class="card mb-6">
+            <h3 class="text-2xl mb-2">Features</h3>
+            <ul class="list-disc list-inside text-left space-y-1">
+                <li>Translate D&D Beyond character sheets to your language.</li>
+                <li>Display metrics using the International Unit System (SI).</li>
+                <li>Streamline the character sheet interface, reducing visual clutter.</li>
+                <li>Add a "Skip to the top" button for long pages.</li>
+                <li>Enable autoload on listing pages like monsters and spells.</li>
+            </ul>
+        </div>
+
+        <!-- Important message box -->
+        <div class="important-box mb-6">
+            <p>This extension simplifies the character sheet for users who need translations and
+                easier navigation.</p>
+        </div>
+
+        <!-- Languages section -->
+        <div class="card mb-6">
+            <h3 class="text-2xl mb-2">Supported Languages</h3>
+            <ul class="list-disc list-inside text-left space-y-1">
+                <li>Brazilian Portuguese (Português)</li>
+                <li>Spanish (Español)</li>
+                <li>English (Metric System changes only)</li>
+                <li>Italian (Italiano)</li>
+                <li>French (Français)</li>
+                <li>German (Deutsch)</li>
+                <li>Czech (Čeština)</li>
+            </ul>
+        </div>
+
+        <!-- Contributing section -->
+        <div class="card">
+            <h3 class="text-2xl mb-2">Contributing</h3>
+            <p>Want to have more translations, a new language or a new feature?</p>
+            <p>As we a re an Open Source project, <a href="https://github.com/hotaydev/dnd-beyond-kit/issues/new"
+                    target="_blank" class="underline text-blue-400">you can open an issue on GitHub</a>! There's better
+                descriptions of
+                ways
+                to contribute.</p>
+            <p class="italic">We apprecite all kinds of contributions!</p>
+        </div>
+
+        <footer class="mt-6 text-sm">
+            <p>If you like the extension, please <a href="https://github.com/hotaydev/dnd-beyond-kit" target="_blank"
+                    class="underline text-blue-400">star us on GitHub</a> and leave a positive rating in your browser’s
+                store!</p>
+        </footer>
+    </div>
+
+    <script>
+        // Set theme based on local storage or system preference
+        const content = document.getElementById('page-content');
+        const themeToggle = document.getElementById('theme-toggle');
+
+        // Apply saved theme or system preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme && savedTheme == 'dark-theme') {
+            content.classList.remove('light-theme');
+            content.classList.add('dark-theme');
+        }
+
+        // Toggle theme and save preference
+        themeToggle.addEventListener('click', () => {
+            const isDark = content.classList.contains('dark-theme');
+            content.classList.toggle('dark-theme', !isDark);
+            content.classList.toggle('light-theme', isDark);
+            localStorage.setItem('theme', isDark ? 'light-theme' : 'dark-theme');
+        });
+    </script>
+</body>
+
+</html>

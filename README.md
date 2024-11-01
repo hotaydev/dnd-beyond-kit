@@ -33,9 +33,16 @@ Feel free to add more translations to the existing languages.
 
 To add a new language, just:
 
-1. Add the translation file on the `translations` folder, following the JSON structure of the other files;
+1. Add the translation file in the `translations` folder, following the JSON structure of the other files;
 2. Add the path of the translation on `web_accessible_resources[0].resources`, in the `manifest.json` file;
-3. Add the language at the end of the HTML select list, on `popup/popup.html`, line 20 and the following ones.
+3. Add the language at the end of the HTML select list, on `popup/popup.html`, line 21 and the following ones.
+
+To add more translations of a language:
+
+1. Edit the JSON file of the language you want to contribute to, in the `translations` folder;
+2. The keys in the JSON file are the original texts, and the values are the translations;
+  2.1 Example: If you want to translate "outerwear" to portuguese, add a line like the folowing to the `./translations/pt-br.json` file: `"outerwear": "Agasalho",`.
+3. If you want to translate a spell name, please edit in the JSON files inside `translations/spells` since there's a specific configuration to conditionally translate spells.
 
 ### Browser support
 
