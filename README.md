@@ -1,5 +1,9 @@
-# D&D Beyond Kit
+<div align="center">
+  <img src="https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/main/website/dice.svg" width="80" alt="d20 dice" />
+  <h1>D&D Beyond Kit</h1>
+</div>
 
+- [Webite](https://dnd-beyond-kit.hotay.dev)
 - [Link for Chrome Web Store](https://chromewebstore.google.com/detail/dd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg)
 - [Link for Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/dnd-beyond-kit/)
 
