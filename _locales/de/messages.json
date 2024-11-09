@@ -38,5 +38,13 @@
   "cleanInterface": {
     "message": "Klare Ablenkungen durch die Benutzeroberfläche",
     "description": "Remove distractions from the interface"
+  },
+  "likingInterface": {
+    "message": "Abenteurer, gefällt dir die Erweiterung?",
+    "description": "Question to the user if they like the extension"
+  },
+  "leaveAReview": {
+    "message": "Hinterlasse deine Bewertung!",
+    "description": "Ask the user to leave a review"
   }
 }

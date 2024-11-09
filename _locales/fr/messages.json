@@ -38,5 +38,13 @@
   "cleanInterface": {
     "message": "Effacer les distractions de l'interface",
     "description": "Remove distractions from the interface"
+  },
+  "likingInterface": {
+    "message": "Voyageur, tu aimes l'extension ?",
+    "description": "Question to the user if they like the extension"
+  },
+  "leaveAReview": {
+    "message": "Laisse ton avis !",
+    "description": "Ask the user to leave a review"
   }
 }

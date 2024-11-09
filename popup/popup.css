@@ -225,3 +225,96 @@ input:checked+.slider:before {
 .message-area:hover {
   text-decoration: underline;
 }
+
+.d-none {
+  display: none !important;
+}
+
+.review-banner {
+  position: relative;
+  width: 100%;
+  height: 22px;
+  background-color: rgb(177, 15, 15);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 14px;
+  font-family: "Times New Roman", Georgia, "Garamond", "Courier New", serif;
+}
+
+.review-banner.top {
+  padding-top: 5px;
+}
+
+.review-banner.bottom {
+  padding-bottom: 5px;
+}
+
+.review-banner a {
+  text-decoration: underline;
+  color: white;
+  font-weight: bold;
+}
+
+.review-banner::before,
+.review-banner::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.review-banner.top::before {
+  top: -10px;
+  left: -10px;
+}
+
+.review-banner.top::after {
+  top: -10px;
+  right: -10px;
+}
+
+.review-banner.bottom::before {
+  bottom: -10px;
+  left: -10px;
+}
+
+.review-banner.bottom::after {
+  bottom: -10px;
+  right: -10px;
+}
+
+.close-area {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.close {
+  position: relative;
+  bottom: 41px;
+  right: 6px;
+  padding: 5px;
+  text-align: end;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  z-index: 1000;
+}
+
+.go-back {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.go-back a {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
