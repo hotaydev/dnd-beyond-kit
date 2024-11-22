@@ -1,7 +1,7 @@
 const currentBrowser = typeof chrome === 'undefined' ? browser : chrome;
 
-const chromeExtensionLink = "https://chromewebstore.google.com/detail/dnd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg";
-const firefoxExtensionLink = "https://addons.mozilla.org/en-US/firefox/addon/dnd-beyond-kit/";
+const chromeExtensionLink = "https://chromewebstore.google.com/detail/dnd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg?utm_source=extension&utm_campaign=please-rate-me";
+const firefoxExtensionLink = "https://addons.mozilla.org/en-US/firefox/addon/dnd-beyond-kit/?utm_source=extension&utm_campaign=please-rate-me";
 
 const languageSelectorElement = document.getElementById('languageSelect');
 const convertToSiInputElement = document.getElementById('convertToSiInput');

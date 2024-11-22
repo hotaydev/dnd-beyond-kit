@@ -4,8 +4,8 @@
 </div>
 
 - [Webite](https://dnd-beyond-kit.hotay.dev)
-- [Link for Chrome Web Store](https://chromewebstore.google.com/detail/dd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg)
-- [Link for Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/dnd-beyond-kit/)
+- [Link for Chrome Web Store](https://chromewebstore.google.com/detail/dd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg?utm_source=github)
+- [Link for Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/dnd-beyond-kit/?utm_source=github)
 
 ### This extension is used to:
 - Traslate your D&D Beyond character sheet page to your language;
@@ -55,5 +55,4 @@ We use the same `manifest.json` for both platforms.
 
 ### Thanks
 
-If you liked the extension, please give us a star on Github and a good note on [Google Chrome Web Store](https://chromewebstore.google.com/detail/dnd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg).
-
+If you liked the extension, please give us a star on Github and a good review on [Google Chrome Web Store](https://chromewebstore.google.com/detail/dnd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg?utm_source=github).
