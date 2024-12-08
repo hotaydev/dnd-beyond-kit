@@ -37,20 +37,35 @@ Feel free to add more translations to the existing languages.
 
 To add a new language, just:
 
-1. Add the translation file in the `translations` folder, following the JSON structure of the other files;
+1. Add the translation file in the `translations/` folder, following the JSON structure of the other files;
 2. Add the path of the translation on `web_accessible_resources[0].resources`, in the `manifest.json` file;
 3. Add the language at the end of the HTML select list, on `popup/popup.html`, line 21 and the following ones.
 
 To add more translations of a language:
 
-1. Edit the JSON file of the language you want to contribute to, in the `translations` folder;
+1. Edit the JSON file of the language you want to contribute to, in the `translations/` folder;
 2. The keys in the JSON file are the original texts, and the values are the translations;
   2.1 Example: If you want to translate "outerwear" to portuguese, add a line like the folowing to the `./translations/pt-br.json` file: `"outerwear": "Agasalho",`.
 3. If you want to translate a spell name, please edit in the JSON files inside `translations/spells` since there's a specific configuration to conditionally translate spells.
 
+#### Comparing translations
+
+In the `translations/` folder we have a script called `compare-translations.sh`, that can be invoked running `./compare-translations.sh <file1>.json <file2>.json`. For example, to compare Brazilian Portuguese translations and Czech translations, we can use:
+
+```bash
+./compare-translations.sh pt-br.json cs-cz.json
+```
+Note: The two files can be placed on any order, this doesn't matter to the script.
+
+Usually thw files with more translations are the Brazilian portuguese ones, so you can use it as a base for comparison.
+
+Please, help us with translations.
+
+Note: This script runs well in any Linux distro, on macOS and on Windows [using WSL](https://learn.microsoft.com/windows/wsl/install).
+
 ### Browser support
 
-Actually we support Firefox and chrome-based browsers, such as Google Chrome, Brave, Opera, and others.
+Actually we support Firefox and chromium-based browsers, such as Google Chrome, Brave, Opera, and others.
 We use the same `manifest.json` for both platforms.
 
 ### Thanks
