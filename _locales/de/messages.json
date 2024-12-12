@@ -27,10 +27,6 @@
     "message": "Einstellungen",
     "description": "Title of Settings tab"
   },
-  "translateSpells": {
-    "message": "Zaubernamen übersetzen",
-    "description": "Translate spells name configuration"
-  },
   "moreSettingsQuestion": {
     "message": "Benötigen Sie weitere Einstellungen? Anfrage auf GitHub!",
     "description": "More configurations message to GitHub"
@@ -38,6 +34,10 @@
   "cleanInterface": {
     "message": "Klare Ablenkungen durch die Benutzeroberfläche",
     "description": "Remove distractions from the interface"
+  },
+  "periodicallySendMissingTranslations": {
+    "message": "Unübersetzte Texte erkennen helfen",
+    "description": "Help detect missing translations"
   },
   "likingInterface": {
     "message": "Abenteurer, gefällt dir die Erweiterung?",

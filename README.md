@@ -6,6 +6,7 @@
 - [Webite](https://dnd-beyond-kit.hotay.dev)
 - [Link for Chrome Web Store](https://chromewebstore.google.com/detail/dd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg?utm_source=github)
 - [Link for Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/dnd-beyond-kit/?utm_source=github)
+- [Translation Tool (Help us translating!)](https://dnd-beyond-kit.hotay.dev/translate)
 
 ### This extension is used to:
 - Traslate your D&D Beyond character sheet page to your language;
@@ -31,37 +32,17 @@ Currently we have translations to the following languages:
 - German (Deutsch)
 - Czech (Čeština)
 
+Want to help us translating D&D Beyond content? We created a [Translation Tool)](https://dnd-beyond-kit.hotay.dev/translate) to make this process easier!!
+
 ### Contributing
 
-Feel free to add more translations to the existing languages.
+To **edit the current existent translations or to translate more content** from the languages that we currently support, have a look at out [Translation Tool)](https://dnd-beyond-kit.hotay.dev/translate).
 
-To add a new language, just:
+You can also manually help us translating the content by editing the JSON files located in `translations/` folder.
+To do this manually, just add the text you want to edit/translate in lowercase as the **key** of the JSON, and the translate text as the **value** of the JSON.
 
-1. Add the translation file in the `translations/` folder, following the JSON structure of the other files;
-2. Add the path of the translation on `web_accessible_resources[0].resources`, in the `manifest.json` file;
-3. Add the language at the end of the HTML select list, on `popup/popup.html`, line 21 and the following ones.
-
-To add more translations of a language:
-
-1. Edit the JSON file of the language you want to contribute to, in the `translations/` folder;
-2. The keys in the JSON file are the original texts, and the values are the translations;
-  2.1 Example: If you want to translate "outerwear" to portuguese, add a line like the folowing to the `./translations/pt-br.json` file: `"outerwear": "Agasalho",`.
-3. If you want to translate a spell name, please edit in the JSON files inside `translations/spells` since there's a specific configuration to conditionally translate spells.
-
-#### Comparing translations
-
-In the `translations/` folder we have a script called `compare-translations.sh`, that can be invoked running `./compare-translations.sh <file1>.json <file2>.json`. For example, to compare Brazilian Portuguese translations and Czech translations, we can use:
-
-```bash
-./compare-translations.sh pt-br.json cs-cz.json
-```
-Note: The two files can be placed on any order, this doesn't matter to the script.
-
-Usually thw files with more translations are the Brazilian portuguese ones, so you can use it as a base for comparison.
-
-Please, help us with translations.
-
-Note: This script runs well in any Linux distro, on macOS and on Windows [using WSL](https://learn.microsoft.com/windows/wsl/install).
+If you **want to add a new language**, then you can create a new JSON file in the `translations/` folder, with the name lik `<lang>-<country_code>.json`, for example: Brazilian Portuguese is called `pt-br.json`.
+in this case we need also to add this configuration to the `popup/popup.html` file and to `manifest.json`. For more details, [open an Issue](https://github.com/hotaydev/dnd-beyond-kit/issues/new) and we will help you in this process.
 
 ### Browser support
 

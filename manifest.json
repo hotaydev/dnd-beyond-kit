@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "DnD Beyond Kit",
   "description": "Translate, add common metrics, and add new features to your D&D Beyond pages.",
-  "version": "0.10.4",
+  "version": "0.11.0",
   "default_locale": "en",
   "icons": {
     "16": "images/icon-16.png",
@@ -55,7 +55,8 @@
     },
     {
       "js": [
-        "scripts/translations.js"
+        "scripts/translations.js",
+        "scripts/checkMissingTranslations.js"
       ],
       "matches": [
         "https://www.dndbeyond.com/characters/*"
@@ -70,13 +71,7 @@
         "translations/it-it.json",
         "translations/de-de.json",
         "translations/fr-fr.json",
-        "translations/cs-cz.json",
-        "translations/spells/pt-br.json",
-        "translations/spells/es-es.json",
-        "translations/spells/it-it.json",
-        "translations/spells/de-de.json",
-        "translations/spells/fr-fr.json",
-        "translations/spells/cs-cz.json"
+        "translations/cs-cz.json"
       ],
       "matches": [
         "https://www.dndbeyond.com/*"

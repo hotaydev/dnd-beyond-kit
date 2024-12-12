@@ -27,10 +27,6 @@
     "message": "Configurações",
     "description": "Title of Settings tab"
   },
-  "translateSpells": {
-    "message": "Traduzir nomes dos feitiços",
-    "description": "Translate spells name configuration"
-  },
   "moreSettingsQuestion": {
     "message": "Precisa de mais configurações? Solicite no GitHub!",
     "description": "More configurations message to GitHub"
@@ -38,6 +34,10 @@
   "cleanInterface": {
     "message": "Limpar distrações da interface",
     "description": "Remove distractions from the interface"
+  },
+  "periodicallySendMissingTranslations": {
+    "message": "Ajudar a detectar textos não traduzidos",
+    "description": "Help detect missing translations"
   },
   "likingInterface": {
     "message": "Aventureiro, gostando da extensão?",

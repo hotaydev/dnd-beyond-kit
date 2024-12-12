@@ -372,39 +372,33 @@
       }
     };
 
-    const baseGithubTranslationLink = "https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/refs/heads/main/translations";
+    const baseGithubTranslationLink = "https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/main/translations";
     const defaultTextsForTranslation = `${baseGithubTranslationLink}/base.json`;
 
     const translations = {
       'pt-br': {
         name: "Portuguese (Português)",
-        main: `${baseGithubTranslationLink}/pt-br.json`,
-        spells: `${baseGithubTranslationLink}/spells/pt-br.json`
+        file: `${baseGithubTranslationLink}/pt-br.json`,
       },
       'cs-cz': {
         name: "Czech (Čeština)",
-        main: `${baseGithubTranslationLink}/cs-cz.json`,
-        spells: `${baseGithubTranslationLink}/spells/cs-cz.json`
+        file: `${baseGithubTranslationLink}/cs-cz.json`,
       },
       'it-it': {
         name: "Italian (Italiano)",
-        main: `${baseGithubTranslationLink}/it-it.json`,
-        spells: `${baseGithubTranslationLink}/spells/it-it.json`
+        file: `${baseGithubTranslationLink}/it-it.json`,
       },
       'fr-fr': {
         name: "French (Français)",
-        main: `${baseGithubTranslationLink}/fr-fr.json`,
-        spells: `${baseGithubTranslationLink}/spells/fr-fr.json`
+        file: `${baseGithubTranslationLink}/fr-fr.json`,
       },
       'es-es': {
         name: "Spanish (Español)",
-        main: `${baseGithubTranslationLink}/es-es.json`,
-        spells: `${baseGithubTranslationLink}/spells/es-es.json`
+        file: `${baseGithubTranslationLink}/es-es.json`,
       },
       'de-de': {
         name: "German (Deutsch)",
-        main: `${baseGithubTranslationLink}/de-de.json`,
-        spells: `${baseGithubTranslationLink}/spells/de-de.json`
+        file: `${baseGithubTranslationLink}/de-de.json`,
       },
     };
 
@@ -434,7 +428,7 @@
       try {
         const [defaultDataArray, translatedData] = await Promise.all([
           fetch(defaultTextsForTranslation).then(res => res.json()),
-          fetch(translations[language].main).then(res => res.json())
+          fetch(translations[language].file).then(res => res.json())
         ]);
 
         const defaultData = Object.fromEntries(

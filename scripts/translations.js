@@ -7,28 +7,11 @@ async function getTranslations(lang) {
   }
 
   const jsonUrl = currentBrowser.runtime.getURL(`translations/${lang}.json`);
-  const jsonSpellsUrl = currentBrowser.runtime.getURL(`translations/spells/${lang}.json`);
-
-  const translateSpellNames = await currentBrowser.storage.local.get("translateSpellNames").then((result) => {
-    return result.translateSpellNames ?? true;
-  });
 
   return await fetch(jsonUrl)
     .then(res => res.json())
     .then(async (data) => {
-      if (translateSpellNames) {
-        return await fetch(jsonSpellsUrl)
-          .then(res2 => res2.json())
-          .then(spellNames => {
-            // merge spellNames and data
-            return {
-              ...data,
-              ...spellNames
-            };
-          });
-      } else {
-        return data;
-      }
+      return data;
     });
 }
 

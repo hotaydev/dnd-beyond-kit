@@ -5,8 +5,8 @@ const firefoxExtensionLink = "https://addons.mozilla.org/en-US/firefox/addon/dnd
 
 const languageSelectorElement = document.getElementById('languageSelect');
 const convertToSiInputElement = document.getElementById('convertToSiInput');
-const translateSpellInput = document.getElementById('translateSpellNamesInput');
 const cleanInterfaceInput = document.getElementById('cleanInterfaceInput');
+const sendMissingTranslations = document.getElementById('periodicallySendMissingTranslationsInput');
 const leaveAReviewLink = document.getElementById('leaveAReview');
 const closeReviewQuestion = document.querySelector('.close-area .close');
 const reviewArea = document.getElementById('review-area');
@@ -21,13 +21,13 @@ if (convertToSiInputElement) convertToSiInputElement.addEventListener('change', 
   await reloadPage();
 });
 
-if (translateSpellInput) translateSpellInput.addEventListener('change', async (event) => {
-  currentBrowser.storage.local.set({ "translateSpellNames": event.target.checked });
+if (cleanInterfaceInput) cleanInterfaceInput.addEventListener('change', async (event) => {
+  currentBrowser.storage.local.set({ "cleanInterface": event.target.checked });
   await reloadPage();
 });
 
-if (cleanInterfaceInput) cleanInterfaceInput.addEventListener('change', async (event) => {
-  currentBrowser.storage.local.set({ "cleanInterface": event.target.checked });
+if (sendMissingTranslations) sendMissingTranslations.addEventListener('change', async (event) => {
+  currentBrowser.storage.local.set({ "sendMissingTranslations": event.target.checked });
   await reloadPage();
 });
 
@@ -41,12 +41,12 @@ if (closeReviewQuestion) closeReviewQuestion.addEventListener('click', async (ev
     return result.convertUnits ?? true;
   });
 
-  const translateSpellNamesState = await currentBrowser.storage.local.get("translateSpellNames").then((result) => {
-    return result.translateSpellNames ?? true;
-  });
-
   const cleanInterfaceState = await currentBrowser.storage.local.get("cleanInterface").then((result) => {
     return result.cleanInterface ?? true;
+  });
+
+  const sendMissingTranslationsState = await currentBrowser.storage.local.get("sendMissingTranslations").then((result) => {
+    return result.sendMissingTranslations ?? false; // Deactivated by default
   });
 
   const selectedLanguage = await currentBrowser.storage.local.get("language").then((result) => {
@@ -66,8 +66,8 @@ if (closeReviewQuestion) closeReviewQuestion.addEventListener('click', async (ev
 
   if (languageSelectorElement) languageSelectorElement.value = selectedLanguage;
   if (convertToSiInputElement) convertToSiInputElement.checked = convertToSiState;
-  if (translateSpellInput) translateSpellInput.checked = translateSpellNamesState;
   if (cleanInterfaceInput) cleanInterfaceInput.checked = cleanInterfaceState;
+  if (sendMissingTranslations) sendMissingTranslations.checked = sendMissingTranslationsState;
   if (leaveAReviewLink) leaveAReviewLink.href = typeof chrome === 'undefined' ? firefoxExtensionLink : chromeExtensionLink;
 })();
 

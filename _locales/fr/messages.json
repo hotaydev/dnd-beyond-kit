@@ -27,17 +27,17 @@
     "message": "Paramètres",
     "description": "Title of Settings tab"
   },
-  "translateSpells": {
-    "message": "Traduire les noms de sorts",
-    "description": "Translate spells name configuration"
-  },
   "moreSettingsQuestion": {
-    "message": "Besoin de plus de paramètres ? Faites une demande sur GitHub !",
+    "message": "Besoin de plus de paramètres ? Faites une demande sur GitHub !",
     "description": "More configurations message to GitHub"
   },
   "cleanInterface": {
     "message": "Effacer les distractions de l'interface",
     "description": "Remove distractions from the interface"
+  },
+  "periodicallySendMissingTranslations": {
+    "message": "Aide à détecter le texte non traduit",
+    "description": "Help detect missing translations"
   },
   "likingInterface": {
     "message": "Voyageur, tu aimes l'extension ?",
