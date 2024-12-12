@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Translate D&D Beyond Kit</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #6200ea;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+
+    main {
+      padding: 2em;
+    }
+
+    select,
+    button {
+      padding: 0.5em;
+      margin: 0.5em 0;
+      font-size: 1em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+      table-layout: fixed;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      padding: 0.5em;
+      text-align: left;
+    }
+
+    th {
+      background-color: #6200ea;
+      color: white;
+      user-select: none;
+    }
+
+    th.resizable {
+      position: relative;
+    }
+
+    th.resizable:nth-child(1) {
+      cursor: col-resize;
+    }
+
+    th.resizable::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 0.5em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+      box-sizing: border-box;
+      resize: none;
+      overflow: hidden;
+      min-height: 30px;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #6200ea;
+      box-shadow: 0 0 3px #6200ea;
+    }
+
+    .status-complete {
+      background-color: #9de19f;
+    }
+
+    .status-incomplete {
+      background-color: #f09098;
+    }
+
+    .translations-area {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="headerTitle">Translate D&D Beyond Kit</h1>
+  </header>
+
+  <main>
+    <div class="translations-area">
+      <div><label for="languageSelect" id="contentLanguageLabel">Choose Content Language:</label>
+        <select id="languageSelect"></select>
+
+        <!-- <button id="newLanguage">Create New Language</button> -->
+      </div>
+
+      <div>
+        <label for="uiLanguageSelect" id="uiLanguageLabel">Interface Language:</label>
+        <select id="uiLanguageSelect"></select>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="resizable" style="width: 25%;" id="defaultTextColumn">Default Text</th>
+          <th class="resizable"><span id="translationColumn">Translation</span>&nbsp;<span
+              id="translationCompletude"></span>
+          </th>
+          <th style="width: 10%;" id="statusColumn">Status</th>
+        </tr>
+      </thead>
+      <tbody id="translationTable">
+        <!-- Dynamically populated -->
+      </tbody>
+    </table>
+  </main>
+
+  <script>
+    const uiTranslations = {
+      "en": {
+        languageName: "English",
+        headerTitle: "Translate D&D Beyond Kit",
+        uiLanguageLabel: "Interface Language:",
+        contentLanguageLabel: "Language to translate:",
+        defaultTextColumn: "Default Text (English)",
+        translationColumn: "Translation",
+        statusColumn: "Status",
+        newLanguageButton: "Add New Language",
+        complete: "Complete",
+        incomplete: "Incomplete"
+      },
+      "pt": {
+        languageName: "Português",
+        headerTitle: "Traduzir D&D Beyond Kit",
+        uiLanguageLabel: "Idioma da Interface:",
+        contentLanguageLabel: "Idioma para tradução:",
+        defaultTextColumn: "Texto Padrão (Inglês)",
+        translationColumn: "Tradução",
+        statusColumn: "Status",
+        newLanguageButton: "Adicionar Novo Idioma",
+        complete: "Completo",
+        incomplete: "Incompleto"
+      },
+      "fr": {
+        languageName: "Français",
+        headerTitle: "Traduire le D&D Beyond Kit",
+        uiLanguageLabel: "Langue de l'interface :",
+        contentLanguageLabel: "Langue à traduire :",
+        defaultTextColumn: "Texte par défaut (Anglais)",
+        translationColumn: "Traduction",
+        statusColumn: "Statut",
+        newLanguageButton: "Ajouter une nouvelle langue",
+        complete: "Complet",
+        incomplete: "Incomplet"
+      },
+      "it": {
+        languageName: "Italiano",
+        headerTitle: "Traduci D&D Beyond Kit",
+        uiLanguageLabel: "Lingua dell'interfaccia:",
+        contentLanguageLabel: "Lingua da tradurre:",
+        defaultTextColumn: "Testo di default (Inglese)",
+        translationColumn: "Traduzione",
+        statusColumn: "Stato",
+        newLanguageButton: "Aggiungi Nuova Lingua",
+        complete: "Completo",
+        incomplete: "Incompleto"
+      },
+      "es": {
+        languageName: "Español",
+        headerTitle: "Traducir D&D Beyond Kit",
+        uiLanguageLabel: "Idioma de la interfaz:",
+        contentLanguageLabel: "Idioma para traducir:",
+        defaultTextColumn: "Texto por defecto (Inglés)",
+        translationColumn: "Traducción",
+        statusColumn: "Estado",
+        newLanguageButton: "Agregar Nuevo Idioma",
+        complete: "Completo",
+        incomplete: "Incompleto"
+      },
+      "de": {
+        languageName: "Deutsch",
+        headerTitle: "Übersetzen des D&D Beyond Kit",
+        uiLanguageLabel: "Schnittstellensprache:",
+        contentLanguageLabel: "Sprache zu übersetzen:",
+        defaultTextColumn: "Standardtext (Englisch)",
+        translationColumn: "Übersetzung",
+        statusColumn: "Status",
+        newLanguageButton: "Neue Sprache hinzufügen",
+        complete: "Vervollständigt",
+        incomplete: "Unvollständig"
+      },
+      "cz": {
+        languageName: "Čeština",
+        headerTitle: "Přeložit D&D Beyond Kit",
+        uiLanguageLabel: "Jazyk rozhraní:",
+        contentLanguageLabel: "Jazyk k překladu:",
+        defaultTextColumn: "Výchozí text (anglicky)",
+        translationColumn: "Překlad",
+        statusColumn: "Status",
+        newLanguageButton: "Přidat nový jazyk",
+        complete: "Dokončeno",
+        incomplete: "Nedokončeno"
+      }
+    };
+
+    const baseGithubTranslationLink = "https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/refs/heads/main/translations";
+    const defaultTextsForTranslation = `${baseGithubTranslationLink}/base.json`;
+
+    const translations = {
+      'pt-br': {
+        name: "Portuguese (Português)",
+        main: `${baseGithubTranslationLink}/pt-br.json`,
+        spells: `${baseGithubTranslationLink}/spells/pt-br.json`
+      },
+      'cs-cz': {
+        name: "Czech (Čeština)",
+        main: `${baseGithubTranslationLink}/cs-cz.json`,
+        spells: `${baseGithubTranslationLink}/spells/cs-cz.json`
+      },
+      'it-it': {
+        name: "Italian (Italiano)",
+        main: `${baseGithubTranslationLink}/it-it.json`,
+        spells: `${baseGithubTranslationLink}/spells/it-it.json`
+      },
+      'fr-fr': {
+        name: "French (Français)",
+        main: `${baseGithubTranslationLink}/fr-fr.json`,
+        spells: `${baseGithubTranslationLink}/spells/fr-fr.json`
+      },
+      'es-es': {
+        name: "Spanish (Español)",
+        main: `${baseGithubTranslationLink}/es-es.json`,
+        spells: `${baseGithubTranslationLink}/spells/es-es.json`
+      },
+      'de-de': {
+        name: "German (Deutsch)",
+        main: `${baseGithubTranslationLink}/de-de.json`,
+        spells: `${baseGithubTranslationLink}/spells/de-de.json`
+      },
+    };
+
+    const languageSelect = document.getElementById("languageSelect");
+    const translationTable = document.getElementById("translationTable");
+    const uiLanguageSelect = document.getElementById("uiLanguageSelect");
+
+    const populateLanguageOptions = () => {
+      for (const lang in translations) {
+        const option = document.createElement("option");
+        option.value = lang;
+        option.textContent = translations[lang].name;
+        languageSelect.appendChild(option);
+      }
+    };
+
+    const populateUILanguageOptions = () => {
+      for (const lang in uiTranslations) {
+        const option = document.createElement("option");
+        option.value = lang;
+        option.textContent = uiTranslations[lang].languageName;
+        uiLanguageSelect.appendChild(option);
+      }
+    };
+
+    const loadTranslations = async (language) => {
+      try {
+        const [defaultDataArray, translatedData] = await Promise.all([
+          fetch(defaultTextsForTranslation).then(res => res.json()),
+          fetch(translations[language].main).then(res => res.json())
+        ]);
+
+        const defaultData = Object.fromEntries(
+          defaultDataArray.map(text => [text.toLowerCase(), text])
+        );
+
+        renderTranslationTable(defaultData, translatedData);
+      } catch (error) {
+        console.error("Error loading translations: ", error);
+      }
+    };
+
+    const renderTranslationTable = (defaultData, translatedData) => {
+      translationTable.innerHTML = "";
+
+      const defaultDataKeys = Object.keys(defaultData);
+      const uniqueData = defaultDataKeys.filter((a, b) => defaultDataKeys.indexOf(a) === b);
+
+      const rows = uniqueData.map(key => {
+        const row = document.createElement("tr");
+
+        const defaultTextCell = document.createElement("td");
+        defaultTextCell.textContent = defaultData[key];
+        row.appendChild(defaultTextCell);
+
+        const translationCell = document.createElement("td");
+        const textarea = document.createElement("textarea");
+        textarea.value = translatedData[key] || "";
+
+        // Auto-resize textarea based on content
+        textarea.style.height = "auto";
+        textarea.style.height = textarea.scrollHeight + "px";
+
+        textarea.addEventListener("input", (e) => {
+          e.target.style.height = "auto";
+          e.target.style.height = e.target.scrollHeight + "px";
+        });
+
+        translationCell.appendChild(textarea);
+        row.appendChild(translationCell);
+
+        const statusCell = document.createElement("td");
+        statusCell.textContent = translatedData[key] ? "Complete" : "Incomplete";
+        statusCell.classList.add(translatedData[key] ? "status-complete" : "status-incomplete");
+        row.appendChild(statusCell);
+
+        return { row, isComplete: !!translatedData[key] };
+      });
+
+      rows.sort((a, b) => b.isComplete - a.isComplete);
+      rows.forEach(({ row }) => translationTable.appendChild(row));
+
+      const translatedRows = rows.filter(({ isComplete }) => isComplete).length;
+      const percentageDone = ((translatedRows * 100) / rows.length).toFixed(2);
+
+      document.getElementById("translationCompletude").textContent = `(${percentageDone}%)`;
+
+      const lastUsedlang = localStorage.getItem('uiLanguage');
+      uiLanguageSelect.value = lastUsedlang ?? "en";
+      translateUI(lastUsedlang ?? "en");
+    };
+
+    const handleLanguageChange = () => {
+      const selectedLanguage = languageSelect.value;
+      localStorage.setItem('editingLanguage', selectedLanguage);
+      loadTranslations(selectedLanguage);
+    };
+
+    languageSelect.addEventListener("change", handleLanguageChange);
+
+    populateLanguageOptions();
+    populateUILanguageOptions();
+
+    // Automatically load the first language on page load
+    document.addEventListener("DOMContentLoaded", () => {
+      const lastEditedlang = localStorage.getItem('editingLanguage');
+      const firstLanguage = Object.keys(translations)[0];
+
+      if (lastEditedlang) {
+        languageSelect.value = lastEditedlang;
+        loadTranslations(lastEditedlang);
+      } else if (firstLanguage) {
+        languageSelect.value = firstLanguage;
+        loadTranslations(firstLanguage);
+      }
+    });
+
+    const translateUI = (language) => {
+      const translations = uiTranslations[language];
+      document.getElementById("headerTitle").textContent = translations.headerTitle;
+      document.getElementById("uiLanguageLabel").textContent = translations.uiLanguageLabel;
+      document.getElementById("contentLanguageLabel").textContent = translations.contentLanguageLabel;
+      document.getElementById("defaultTextColumn").textContent = translations.defaultTextColumn;
+      document.getElementById("translationColumn").textContent = translations.translationColumn;
+      document.getElementById("statusColumn").textContent = translations.statusColumn;
+      // document.getElementById("newLanguage").textContent = translations.newLanguageButton;
+      document.querySelectorAll(".status-complete").forEach(element => element.textContent = translations.complete);
+      document.querySelectorAll(".status-incomplete").forEach(element => element.textContent = translations.incomplete);
+    };
+
+    uiLanguageSelect.addEventListener("change", (e) => {
+      localStorage.setItem('uiLanguage', e.target.value);
+      translateUI(e.target.value);
+    });
+
+    // Make the first column resizable
+    const firstHeader = document.querySelector("th.resizable:first-of-type");
+    let startX, startWidth, minWidth = 100;
+
+    const onMouseMove = (e) => {
+      const width = Math.max(minWidth, startWidth + (e.clientX - startX));
+      firstHeader.style.width = `${width}px`;
+      document.querySelector("th.resizable:nth-of-type(2)").style.width = `calc(100% - ${width}px - 200px)`; // Adjust the second column
+    };
+
+    const onMouseUp = () => {
+      document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mouseup", onMouseUp);
+    };
+
+    firstHeader.addEventListener("mousedown", (e) => {
+      startX = e.clientX;
+      startWidth = firstHeader.offsetWidth;
+      document.addEventListener("mousemove", onMouseMove);
+      document.addEventListener("mouseup", onMouseUp);
+    });
+  </script>
+</body>
+
+</html>
