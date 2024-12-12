@@ -32,11 +32,11 @@ Currently we have translations to the following languages:
 - German (Deutsch)
 - Czech (Čeština)
 
-Want to help us translating D&D Beyond content? We created a [Translation Tool)](https://dnd-beyond-kit.hotay.dev/translate) to make this process easier!!
+Want to help us translating D&D Beyond content? We created a [Translation Tool](https://dnd-beyond-kit.hotay.dev/translate) to make this process easier!!
 
 ### Contributing
 
-To **edit the current existent translations or to translate more content** from the languages that we currently support, have a look at out [Translation Tool)](https://dnd-beyond-kit.hotay.dev/translate).
+To **edit the current existent translations or to translate more content** from the languages that we currently support, have a look at out [Translation Tool](https://dnd-beyond-kit.hotay.dev/translate).
 
 You can also manually help us translating the content by editing the JSON files located in `translations/` folder.
 To do this manually, just add the text you want to edit/translate in lowercase as the **key** of the JSON, and the translate text as the **value** of the JSON.
