@@ -172,6 +172,13 @@
       cursor: pointer;
     }
 
+    .popup a {
+      text-decoration: none;
+      color: #281e35;
+      cursor: pointer;
+      font-size: 0.7rem;
+    }
+
     #overlay {
       position: fixed;
       top: 0;
@@ -272,7 +279,7 @@
         save: "Save",
         instructions: "Instructions for translation",
         instructionsLong: `<h2>Translation Instructions</h2><div><strong>Page Editing Structure:</strong><ul><li>Choose the <strong>language to be translated</strong> in the top left corner.</li><li>Choose the <strong>interface language</strong> in the top right corner.</li><li>Table: <ul><li><strong>Standard Text</strong>: Original text in English</li><li><strong>Translation</strong>: Translation in the chosen language and the translation completeness percentage</li><li><strong>Status</strong>: Indicates if there is already a translation</li></ul></li></ul></div><div><strong>How to use:</strong><ul><li>Fill in the fields of the "Translation" column with the respective translation for the chosen language.</li><li>Once you have finished the translations/edits you want to make, click the "Save" button at the bottom right corner.</li><li>After clicking the button, fill in your name and email (optional, if you want credits on the extension page).</li><li>Finally, click "Submit Translations." We will receive them and include them in the extension as soon as possible.</li></ul></div><div class="close-area"><button onclick="closePopUp()">Close</button></div>`,
-        sendForm: `<h2>Send Translations</h2><p>The information below is optional. If provided, we will add your translation credits to the extension’s page.</p><label for="name">Name (Optional): </label><input type="text" id="name" name="name"><br><label for="email">E-mail (Optional): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Send Translations</button>`,
+        sendForm: `<h2>Send Translations</h2><p>The information below is optional. If provided, we will add your translation credits to the extension’s page.</p><label for="name">Name (Optional): </label><input type="text" id="name" name="name"><br><label for="email">E-mail (Optional): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Send Translations</button><br/><a href="#" onclick="downloadTranslationsFile()" style="margin-top: 5px;">Just download the JSON file</a>`,
       },
       "pt": {
         languageName: "Português",
@@ -288,7 +295,7 @@
         save: "Salvar",
         instructions: "Instruções de tradução",
         instructionsLong: `<h2>Instruções de Tradução</h2><div><strong>Estrutura da página de edição:</strong><ul><li>Escolha do <strong>idioma a ser traduzido</strong> no canto superior esquerdo.</li><li>Escolha do <strong>idioma da interface</strong> no canto superior direito.</li><li>Tabela:<ul><li><strong>Texto padrão</strong>: Texto original no Inglês</li><li><strong>Tradução</strong>: Tradução no idioma escolhido e a porcentagem de completude das traduções</li><li><strong>Status</strong>: Indica se já existe uma tradução</li></ul></li></ul></div><div><strong>Como utilizar:</strong><ul><li>Preencha os campos da coluna "Tradução" com a respectiva tradução para o idioma escolhido.</li><li>Ao finalizar as traduções/edições que gostaria de fazer, clique no botão "Salvar" no canto inferior direito.</li><li>Após clicar no botão, preencha seu nome e e-mail (opcionais, caso queira créditos na página da extensão).</li><li>Por fim, clique em "Enviar traduções". Nós vamos recebê-las e incluir na extensão o quanto antes possível.</li></ul></div><div class="close-area"><button onclick="closePopUp()">Fechar</button></div>`,
-        sendForm: `<h2>Enviar traduções</h2><p>Os dados a baixo são opcionais. Se forem informados, vamos adicionar seus créditos da tradução na página da extensão.</p><label for="name">Nome (Opcional): </label><input type="text" id="name" name="name"><br><label for="email">E-mail (Opcional): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Enviar Traduções</button>`,
+        sendForm: `<h2>Enviar traduções</h2><p>Os dados a baixo são opcionais. Se forem informados, vamos adicionar seus créditos da tradução na página da extensão.</p><label for="name">Nome (Opcional): </label><input type="text" id="name" name="name"><br><label for="email">E-mail (Opcional): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Enviar Traduções</button><br/><a href="#" onclick="downloadTranslationsFile()" style="margin-top: 5px;">Apenas baixar o arquivo JSON</a>`,
       },
       "fr": {
         languageName: "Français",
@@ -304,7 +311,7 @@
         save: "Sauvegarder",
         instructions: "Instructions pour la traduction",
         instructionsLong: `<h2>Instructions de Traduction</h2><div><strong>Structure de la page d'édition :</strong><ul><li>Choisissez la <strong>langue à traduire</strong> en haut à gauche.</li><li>Choisissez la <strong>langue de l'interface</strong> en haut à droite.</li><li>Tableau : <ul><li><strong>Texte standard</strong> : Texte original en anglais</li><li><strong>Traduction</strong> : Traduction dans la langue choisie et le pourcentage de complétion des traductions</li><li><strong>Statut</strong> : Indique si une traduction existe déjà</li></ul></li></ul></div><div><strong>Comment utiliser :</strong><ul><li>Remplissez les champs de la colonne "Traduction" avec la traduction respective pour la langue choisie.</li><li>Lorsque vous avez terminé les traductions/éditions que vous souhaitez effectuer, cliquez sur le bouton "Enregistrer" en bas à droite.</li><li>Après avoir cliqué sur le bouton, remplissez votre nom et votre email (optionnels, si vous souhaitez des crédits sur la page de l'extension).</li><li>Enfin, cliquez sur "Soumettre les traductions". Nous les recevrons et les inclurons dans l'extension dès que possible.</li></ul></div><div class="close-area"><button onclick="closePopUp()">Fermer</button></div>`,
-        sendForm: `<h2>Envoyer des traductions</h2><p>Les informations ci-dessous sont facultatives. Si elles sont fournies, nous ajouterons vos crédits de traduction à la page de l'extension.</p><label for="name">Nom (Optionnel) :</label><input type="text" id="name" name="name"><br><label for="email">E-mail (Optionnel) :</label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Envoyer les traductions</button>`,
+        sendForm: `<h2>Envoyer des traductions</h2><p>Les informations ci-dessous sont facultatives. Si elles sont fournies, nous ajouterons vos crédits de traduction à la page de l'extension.</p><label for="name">Nom (Optionnel) :</label><input type="text" id="name" name="name"><br><label for="email">E-mail (Optionnel) :</label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Envoyer les traductions</button><br/><a href="#" onclick="downloadTranslationsFile()" style="margin-top: 5px;">Il suffit de télécharger le fichier JSON</a>`,
       },
       "it": {
         languageName: "Italiano",
@@ -320,7 +327,7 @@
         save: "Salva",
         instructions: "Istruzioni per la traduzione",
         instructionsLong: `<h2>Istruzioni di Traduzione</h2><div><strong>Struttura della pagina di modifica:</strong><ul><li>Scegli la <strong>lingua da tradurre</strong> nell'angolo in alto a sinistra.</li><li>Scegli la <strong>lingua dell'interfaccia</strong> nell'angolo in alto a destra.</li><li>Tabella: <ul><li><strong>Testo standard</strong>: Testo originale in inglese</li><li><strong>Traduzione</strong>: Traduzione nella lingua scelta e il percentuale di completezza delle traduzioni</li><li><strong>Stato</strong>: Indica se esiste già una traduzione</li></ul></li></ul></div><div><strong>Come utilizzare:</strong><ul><li>Compila i campi della colonna "Traduzione" con la rispettiva traduzione per la lingua scelta.</li><li>Una volta terminato le traduzioni/modifiche che desideri fare, clicca sul pulsante "Salva" nell'angolo in basso a destra.</li><li>Dopo aver cliccato sul pulsante, compila il tuo nome e email (opzionali, se desideri i crediti nella pagina dell'estensione).</li><li>Infine, clicca su "Invia traduzioni". Le riceveremo e le includeremo nell'estensione il prima possibile.</li></ul></div><div class="close-area"><button onclick="closePopUp()">Chiudi</button></div>`,
-        sendForm: `<h2>Invia Traduzioni</h2><p>I dati qui sotto sono facoltativi. Se forniti, aggiungeremo i crediti della tua traduzione alla pagina dell'estensione.</p><label for="name">Nome (Opzionale): </label><input type="text" id="name" name="name"><br><label for="email">E-mail (Opzionale): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Invia Traduzioni</button>`,
+        sendForm: `<h2>Invia Traduzioni</h2><p>I dati qui sotto sono facoltativi. Se forniti, aggiungeremo i crediti della tua traduzione alla pagina dell'estensione.</p><label for="name">Nome (Opzionale): </label><input type="text" id="name" name="name"><br><label for="email">E-mail (Opzionale): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Invia Traduzioni</button><br/><a href="#" onclick="downloadTranslationsFile()" style="margin-top: 5px;">Basta scaricare il file JSON</a>`,
       },
       "es": {
         languageName: "Español",
@@ -336,7 +343,7 @@
         save: "Ahorrar",
         instructions: "Instrucciones para la traducción",
         instructionsLong: `<h2>Instrucciones de Traducción</h2><div><strong>Estructura de la página de edición:</strong><ul><li>Elige el <strong>idioma a traducir</strong> en la esquina superior izquierda.</li><li>Elige el <strong>idioma de la interfaz</strong> en la esquina superior derecha.</li><li>Tabla: <ul><li><strong>Texto estándar</strong>: Texto original en inglés</li><li><strong>Traducción</strong>: Traducción en el idioma elegido y el porcentaje de completitud de las traducciones</li><li><strong>Estado</strong>: Indica si ya existe una traducción</li></ul></li></ul></div><div><strong>Cómo utilizar:</strong><ul><li>Llenar los campos de la columna "Traducción" con la traducción respectiva para el idioma elegido.</li><li>Al finalizar las traducciones/ediciones que deseas hacer, haz clic en el botón "Guardar" en la esquina inferior derecha.</li><li>Después de hacer clic en el botón, completa tu nombre y correo electrónico (opcional, si deseas créditos en la página de la extensión).</li><li>Finalmente, haz clic en "Enviar traducciones". Las recibiremos e incluiremos en la extensión lo antes posible.</li></ul></div><div class="close-area"><button onclick="closePopUp()">Cerrar</button></div>`,
-        sendForm: `<h2>Enviar Traducciones</h2><p>Los datos a continuación son opcionales. Si se proporcionan, añadiremos tus créditos de traducción a la página de la extensión.</p><label for="name">Nombre (Opcional): </label><input type="text" id="name" name="name"><br><label for="email">Correo electrónico (Opcional): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Enviar Traducciones</button>`,
+        sendForm: `<h2>Enviar Traducciones</h2><p>Los datos a continuación son opcionales. Si se proporcionan, añadiremos tus créditos de traducción a la página de la extensión.</p><label for="name">Nombre (Opcional): </label><input type="text" id="name" name="name"><br><label for="email">Correo electrónico (Opcional): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Enviar Traducciones</button><br/><a href="#" onclick="downloadTranslationsFile()" style="margin-top: 5px;">Solo descargar el archivo JSON</a>`,
       },
       "de": {
         languageName: "Deutsch",
@@ -352,7 +359,7 @@
         save: "Speichern",
         instructions: "Anleitung zur Übersetzung",
         instructionsLong: `<h2>Übersetzungsanweisungen</h2><div><strong>Aufbau der Bearbeitungsseite:</strong><ul><li>Wählen Sie die <strong>Sprache, die übersetzt werden soll</strong>, in der oberen linken Ecke.</li><li>Wählen Sie die <strong>Sprache der Benutzeroberfläche</strong> in der oberen rechten Ecke.</li><li>Tabelle: <ul><li><strong>Standardtext</strong>: Originaltext auf Englisch</li><li><strong>Übersetzung</strong>: Übersetzung in die gewählte Sprache und der Prozentsatz der Abschlussrate der Übersetzungen</li><li><strong>Status</strong>: Gibt an, ob es bereits eine Übersetzung gibt</li></ul></li></ul></div><div><strong>So verwenden Sie es:</strong><ul><li>Füllen Sie die Felder der Spalte "Übersetzung" mit der jeweiligen Übersetzung in die gewählte Sprache aus.</li><li>Wenn Sie die gewünschten Übersetzungen/Änderungen abgeschlossen haben, klicken Sie auf die Schaltfläche "Speichern" in der unteren rechten Ecke.</li><li>Nach dem Klicken auf die Schaltfläche, füllen Sie Ihren Namen und Ihre E-Mail-Adresse aus (optional, wenn Sie Credits auf der Erweiterungsseite möchten).</li><li>Schließlich klicken Sie auf "Übersetzungen einreichen". Wir erhalten sie und fügen sie so schnell wie möglich zur Erweiterung hinzu.</li></ul></div><div class="close-area"><button onclick="closePopUp()">Schließen</button></div>`,
-        sendForm: `<h2>Übersetzungen senden</h2><p>Die unten stehenden Daten sind optional. Wenn sie bereitgestellt werden, fügen wir Ihre Übersetzungs-Credits zur Erweiterungsseite hinzu.</p><label for="name">Name (Optional): </label><input type="text" id="name" name="name"><br><label for="email">E-Mail (Optional): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Übersetzungen senden</button>`,
+        sendForm: `<h2>Übersetzungen senden</h2><p>Die unten stehenden Daten sind optional. Wenn sie bereitgestellt werden, fügen wir Ihre Übersetzungs-Credits zur Erweiterungsseite hinzu.</p><label for="name">Name (Optional): </label><input type="text" id="name" name="name"><br><label for="email">E-Mail (Optional): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Übersetzungen senden</button><br/><a href="#" onclick="downloadTranslationsFile()" style="margin-top: 5px;">Einfach die JSON-Datei herunterladen</a>`,
       },
       "cz": {
         languageName: "Čeština",
@@ -368,7 +375,7 @@
         save: "Uložit",
         instructions: "Návod k překladu",
         instructionsLong: `<h2>Pokyny pro překlad</h2><div><strong>Struktura editační stránky:</strong><ul><li>Vyberte <strong>jazyk, který chcete přeložit</strong>, v levém horním rohu.</li><li>Vyberte <strong>jazyk rozhraní</strong> v pravém horním rohu.</li><li>Tabulka: <ul><li><strong>Standardní text</strong>: Původní text v angličtině</li><li><strong>Překlad</strong>: Překlad do zvoleného jazyka a procento úplnosti překladů</li><li><strong>Status</strong>: Indikuje, zda již existuje překlad</li></ul></li></ul></div><div><strong>Jak používat:</strong><ul><li>Vyplňte pole sloupce "Překlad" s odpovídajícím překladem do zvoleného jazyka.</li><li>Po dokončení překladů/úprav, které chcete provést, klikněte na tlačítko "Uložit" v pravém dolním rohu.</li><li>Po kliknutí na tlačítko vyplňte své jméno a e-mail (volitelné, pokud chcete získat kredity na stránce rozšíření).</li><li>Nakonec klikněte na "Odeslat překlady". Dostaneme je a co nejdříve je přidáme do rozšíření.</li></ul></div><div class="close-area"><button onclick="closePopUp()">Zavřít</button></div>`,
-        sendForm: `<h2>Odeslat překlady</h2><p>Níže uvedené údaje jsou volitelné. Pokud budou poskytnuty, přidáme vaše překladatelské kredity na stránku rozšíření.</p><label for="name">Jméno (volitelné): </label><input type="text" id="name" name="name"><br><label for="email">E-mail (volitelné): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Odeslat překlady</button>`,
+        sendForm: `<h2>Odeslat překlady</h2><p>Níže uvedené údaje jsou volitelné. Pokud budou poskytnuty, přidáme vaše překladatelské kredity na stránku rozšíření.</p><label for="name">Jméno (volitelné): </label><input type="text" id="name" name="name"><br><label for="email">E-mail (volitelné): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Odeslat překlady</button><br/><a href="#" onclick="downloadTranslationsFile()" style="margin-top: 5px;">Stačí stáhnout soubor JSON</a>`,
       }
     };
 
@@ -574,6 +581,36 @@
       document.getElementById('fullInstructions').style.display = 'none';
       document.getElementById('sendTranslations').style.display = 'none';
       document.getElementById('overlay').style.display = 'none';
+    }
+
+    function downloadTranslationsFile() {
+      const finalEditedTranslations = {};
+      const fileName = `${languageSelect.value}.json`;
+
+      document.querySelectorAll('tbody tr').forEach((row) => {
+        const td = row.querySelectorAll('td');
+        const key = td[0].textContent.toLowerCase();
+        const value = td[1].querySelector('textarea').value;
+
+        if (value.trim() === '') return;
+
+        finalEditedTranslations[key] = value;
+      });
+
+      const blob = new Blob([JSON.stringify(finalEditedTranslations)], { type: "application/json" });
+
+      if (window.navigator.msSaveOrOpenBlob) {
+        window.navigator.msSaveBlob(blob, fileName);
+      } else {
+        const elem = window.document.createElement('a');
+        elem.href = window.URL.createObjectURL(blob, { oneTimeOnly: true });
+        elem.download = fileName;
+        elem.style.display = 'none';
+        document.body.appendChild(elem);
+        elem.click();
+        document.body.removeChild(elem);
+      }
+      closePopUp();
     }
 
     function sendTranslations() {
