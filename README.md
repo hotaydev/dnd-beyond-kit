@@ -49,6 +49,14 @@ in this case we need also to add this configuration to the `popup/popup.html` fi
 Actually we support Firefox and chromium-based browsers, such as Google Chrome, Brave, Opera, and others.
 We use the same `manifest.json` for both platforms.
 
+### People who helped translating this extension <3
+
+- [Taylor](https://github.com/taylorho) - Creator and main developer
+- [mlynarp](https://github.com/mlynarp) - Many Czech translations and development help
+- [MrProditio](https://github.com/MrProditio) - Spanish translations
+- [vgauther](https://github.com/vgauther) and [Ins0mniakk](https://github.com/Ins0mniakk) - French translations
+- [Gabriele](mailto:we@improve.games) and [bembe83](https://github.com/bembe83) - Italian translations
+
 ### Thanks
 
 If you liked the extension, please give us a star on Github and a good review on [Google Chrome Web Store](https://chromewebstore.google.com/detail/dnd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg?utm_source=github).
