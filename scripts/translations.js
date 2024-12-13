@@ -61,7 +61,6 @@ function translateTextInElements(parentElement, dictionary) {
 
     let translatedString = translateWord(originalText, dictionary);
     if (originalText == translatedString) {
-      // let matches = translatedString.match(/[A-Za-zÀ-ÖØ-öø-ÿ]+(?:[ '\u2019][A-Za-zÀ-ÖØ-öø-ÿ]+|-[A-Za-zÀ-ÖØ-öø-ÿ]+)*(?=[^&•\\]*)/g);
       let matches = translatedString.match(/[A-Za-zÀ-ž]+(?:[ '\u2019][A-Za-zÀ-ž]+|-[A-Za-zÀ-ž]+)*/g);
       if (matches) {
         matches.forEach(originalWord => {
