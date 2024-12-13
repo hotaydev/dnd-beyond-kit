@@ -46,5 +46,9 @@
   "leaveAReview": {
     "message": "Nech svůj názor!",
     "description": "Ask the user to leave a review"
+  },
+  "helpUsTranslating": {
+    "message": "Pomozte nám přeložit D&D Beyond!",
+    "description": "Help us translating D&D Beyond"
   }
 }

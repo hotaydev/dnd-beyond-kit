@@ -51,21 +51,37 @@ async function minifyContent() {
 
 function translateTextInElements(parentElement, dictionary) {
   let elements = getTextNodes(parentElement);
+  const untranslatedContent = [];
+
   elements.forEach(element => {
     let originalText = element.textContent;
+
+    // Avoid CSS Classes
+    if (originalText.includes('.prefix__')) return;
+
     let translatedString = translateWord(originalText, dictionary);
     if (originalText == translatedString) {
-      // console.log(originalText); // Untranslated text
-      let matches = translatedString.match(/[A-Za-z]+(?:[ '\u2019][A-Za-z]+|-[A-Za-z]+)*/g);
+      // let matches = translatedString.match(/[A-Za-zÀ-ÖØ-öø-ÿ]+(?:[ '\u2019][A-Za-zÀ-ÖØ-öø-ÿ]+|-[A-Za-zÀ-ÖØ-öø-ÿ]+)*(?=[^&•\\]*)/g);
+      let matches = translatedString.match(/[A-Za-zÀ-ž]+(?:[ '\u2019][A-Za-zÀ-ž]+|-[A-Za-zÀ-ž]+)*/g);
       if (matches) {
         matches.forEach(originalWord => {
+          if (originalWord.length === 1) return;
+
           let translatedWord = translateWord(originalWord, dictionary);
           translatedString = translatedString.replace(originalWord, translatedWord);
+
+          if (!isTranslatedString(translatedWord, dictionary)) {
+            untranslatedContent.push(translatedWord);
+          }
         });
+      } else if (!isTranslatedString(originalText, dictionary)) {
+        if (originalText.length === 1) return;
+        untranslatedContent.push(originalText);
       }
     }
     element.textContent = translatedString;
   });
+  getUntranslatedContent(untranslatedContent); // Defined in ./checkMissingTranslations.js
 }
 
 function translateWord(word, dictionary) {
@@ -76,6 +92,12 @@ function translateWord(word, dictionary) {
   }
 
   return word;
+}
+
+function isTranslatedString(word, dictionary) {
+  let isTranslated = Object.values(dictionary).some((translation) => translation.replaceAll('.', "").toLowerCase() === word.replaceAll('.', "").toLowerCase());
+
+  return isTranslated;
 }
 
 function getTextNodes(parentElement) {

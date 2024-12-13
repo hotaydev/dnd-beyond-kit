@@ -11,6 +11,7 @@ const githubSetti = document.getElementById('moreSettingsQuestion');
 const interface   = document.getElementById('cleanInterface');
 const question    = document.getElementById('likingInterface');
 const review      = document.getElementById('leaveAReview');
+const helpTransl  = document.getElementById('helpUsTranslating');
 const missTransl  = document.getElementById('periodicallySendMissingTranslations');
 
 if (title)       title.innerText       = currentBrowser.i18n.getMessage("title");
@@ -24,4 +25,5 @@ if (githubSetti) githubSetti.innerText = currentBrowser.i18n.getMessage("moreSet
 if (interface)   interface.innerText   = currentBrowser.i18n.getMessage("cleanInterface");
 if (question)    question.innerText    = currentBrowser.i18n.getMessage("likingInterface");
 if (review)      review.innerText      = currentBrowser.i18n.getMessage("leaveAReview");
+if (helpTransl)  helpTransl.innerText  = currentBrowser.i18n.getMessage("helpUsTranslating");
 if (missTransl)  missTransl.innerText  = currentBrowser.i18n.getMessage("periodicallySendMissingTranslations");
