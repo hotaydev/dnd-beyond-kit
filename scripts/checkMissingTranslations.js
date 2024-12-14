@@ -24,7 +24,7 @@ function getUntranslatedContent(untranslatedContent) {
     if (trimmedText.includes('.prefix__')) return '';
 
     return trimmedText.replace(/^[.,+•):;]\s/, '').replace(/[.,+•“”(:;]$/, '').replaceAll("--", "").replace(/\d+$/, '').trim();
-  }).filter((a) => a !== '');
+  }).filter((a) => a !== '' && a.length > 1);
 
   const combinedTranslations = [...new Set([...translationsMissingButNotSent, ...newTranslations])];
   const nonTranslatedContent = combinedTranslations.filter(item => !translationsArray.includes(item));
@@ -33,12 +33,14 @@ function getUntranslatedContent(untranslatedContent) {
   checkIfHadPassed24HoursToSendMissingTranslations();
 }
 
+let isAlreadySending = false;
 function sendMissingTranslations(translationsMissingButNotSent) {
   const translationsMissingAndSent = JSON.parse(localStorage.getItem("beyondKitTranslationsMissingAlreadySent") || '[]');
 
   const willSend = translationsMissingButNotSent.filter(item => !translationsMissingAndSent.includes(item));
 
-  if (willSend.length > 20) {
+  if (!isAlreadySending && willSend.length > 20) {
+    isAlreadySending = true;
     willSend.shift(); // Remove first element. First element is, in most times, the name of the character from the sheet.
     fetch('https://n8n.hotay.dev/webhook/dnd-beyond-kit-translation-new-translations', {
       method: 'POST',
@@ -48,9 +50,11 @@ function sendMissingTranslations(translationsMissingButNotSent) {
       body: JSON.stringify(willSend),
     }).then(() => {
       localStorage.setItem("beyondKitTranslationsMissingAlreadySent", JSON.stringify([...new Set([...translationsMissingAndSent, ...translationsMissingButNotSent])]));
+      isAlreadySending = false;
     }).catch((err) => {
       // On error we just don't execute/retry nothing. This error will not impact the user.
       console.log(err);
+      isAlreadySending = false;
     });
   }
 }
@@ -63,7 +67,7 @@ function checkIfHadPassed24HoursToSendMissingTranslations() {
   const timeDifference = Date.now() - lastUpdatedTime;
   const passedMoreThan24Hours = timeDifference > 24 * 60 * 60 * 1000;
 
-  if (passedMoreThan24Hours) {
+  if (passedMoreThan24Hours || savedArrayOfTranslations.length === 0) {
     const currentKnownTranslations = "https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/main/translations/base.json";
 
     fetch(currentKnownTranslations)
@@ -83,9 +87,10 @@ function checkIfHadPassed24HoursToSendMissingTranslations() {
       });
 
     const translationsMissingButNotSent = JSON.parse(localStorage.getItem("beyondKitTranslationsMissing") || '[]');
+    const translationsMissingAlreadySent = JSON.parse(localStorage.getItem("beyondKitTranslationsMissingAlreadySent") || '[]');
 
     // Each time the user access the extension, if it have passed more than 24 hours, we send the missing translations
-    if (translationsMissingButNotSent.length > 20) {
+    if ((translationsMissingButNotSent.length - translationsMissingAlreadySent.length) > 20) {
       sendMissingTranslations(translationsMissingButNotSent)
     }
   } else {
@@ -95,12 +100,53 @@ function checkIfHadPassed24HoursToSendMissingTranslations() {
   }
 }
 
+function checkForMissingTranslations(parentElement) {
+  let elements = getTextNodes(parentElement);
+  const untranslatedContent = [];
+
+  elements.forEach(element => {
+    let originalText = element.textContent;
+
+    // Avoid CSS Classes
+    if (originalText.includes('.prefix__')) return;
+
+    let matches = originalText.match(/[A-Za-zÀ-ž]+(?:[ '\u2019][A-Za-zÀ-ž]+|-[A-Za-zÀ-ž]+)*/g);
+    if (matches) {
+      matches.forEach(originalWord => {
+        if (originalWord.length === 1) return;
+
+        untranslatedContent.push(originalWord);
+      });
+    } else {
+      untranslatedContent.push(originalText);
+    }
+  });
+  getUntranslatedContent(untranslatedContent);
+}
+
 // Start function, called when page loads
 (() => {
   // After 5 seconds, we call our main function for this script
   setTimeout(async () => {
-    await currentBrowser.storage.local.get("sendMissingTranslations").then((result) => {
+    await currentBrowser.storage.local.get("sendMissingTranslations").then(async (result) => {
       canSendMissingTranslations = result.sendMissingTranslations ?? false; // Deactivated by default
+
+      // If we can send missing translations, check if the extension language is English.
+      // If the extension language is English, then `getUntranslatedContent()` is not called from `./translations.js`
+      if (canSendMissingTranslations) {
+        await currentBrowser.storage.local.get("language").then((result) => {
+
+          if (!result.language || result.language === "en-us") {
+            // Extension language is set to "English", so we call the function that gets the untranslated content
+            setInterval(() => {
+              checkForMissingTranslations(document.querySelector("main")); // Main content
+              checkForMissingTranslations(document.querySelector(".ct-sidebar__portal")); // General side menu
+              checkForMissingTranslations(document.querySelector("dialog")); // Mobile menu
+            }, 2 * 1000); // Each 2 seconds
+          }
+        });
+      }
+
     });
   }, 5000);
 })()
