@@ -1,0 +1,54 @@
+{
+  "title": {
+    "message": "D&D Beyond Kit",
+    "description": "Title of the extension"
+  },
+  "choose_language": {
+    "message": "以下のリストから言語を選択:",
+    "description": "Language to be used on the translation"
+  },
+  "choose_language_option": {
+    "message": "言語選択",
+    "description": "Default option of language"
+  },
+  "thanks": {
+    "message": "拡張機能を使ってくれてありがとう！",
+    "description": "Thanks message to the user"
+  },
+  "backToTop": {
+    "message": "トップに戻る",
+    "description": "Button to scroll to the top of page"
+  },
+  "convertToSI": {
+    "message": "単位をSI単位系にする",
+    "description": "Toggle the International Metrics System"
+  },
+  "settingsTitle": {
+    "message": "設定",
+    "description": "Title of Settings tab"
+  },
+  "moreSettingsQuestion": {
+    "message": "もっと機能が欲しい？GitHubでリクエストしてください",
+    "description": "More configurations message to GitHub"
+  },
+  "cleanInterface": {
+    "message": "画面をすっきりさせる",
+    "description": "Remove distractions from the interface"
+  },
+  "periodicallySendMissingTranslations": {
+    "message": "未翻訳箇所を検出しやすくする",
+    "description": "Help detect missing translations"
+  },
+  "likingInterface": {
+    "message": "冒険者よ、拡張機能を楽しんでいるかい？",
+    "description": "Question to the user if they like the extension"
+  },
+  "leaveAReview": {
+    "message": "レビューをよろしく！",
+    "description": "Ask the user to leave a review"
+  },
+  "helpUsTranslating": {
+    "message": "D&D Beyond!の翻訳に協力をお願いします！",
+    "description": "Help us translating D&D Beyond"
+  }
+}

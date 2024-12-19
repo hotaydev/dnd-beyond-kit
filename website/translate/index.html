@@ -442,6 +442,24 @@
         sendForm: `<h2>Odeslat překlady</h2><p>Níže uvedené údaje jsou volitelné. Pokud budou poskytnuty, přidáme vaše překladatelské kredity na stránku rozšíření.</p><label for="name">Jméno (volitelné): </label><input type="text" id="name" name="name"><br><label for="email">E-mail/Website/Link (volitelné): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Odeslat překlady</button><br/><a href="#" onclick="downloadTranslationsFile()" style="margin-top: 5px;">Stačí stáhnout soubor JSON</a>`,
         hideCompleted: "Skrýt dokončené",
         showCompleted: "Zobrazit dokončené",
+      },
+      "ja": {
+        languageName: "日本語",
+        headerTitle: "D&D Beyond Kit 翻訳",
+        uiLanguageLabel: "表示言語:",
+        contentLanguageLabel: "翻訳先言語:",
+        defaultTextColumn: "デフォルトテキスト (English)",
+        translationColumn: "翻訳",
+        statusColumn: "状態",
+        newLanguageButton: "新規言語作成",
+        complete: "完了",
+        incomplete: "未完了",
+        save: "保存",
+        instructions: "翻訳の手引き",
+        instructionsLong: `<h2>翻訳の手引き</h2><div><strong>編集ページの構造:</strong><ul><li>左上で<strong>翻訳先言語</strong>を選ぶ。</li><li>右上で<strong>表示言語</strong>を選ぶ。</li><li>表: <ul><li><strong>デフォルトテキスト</strong>: オリジナルの英語のテキスト</li><li><strong>翻訳</strong>: 翻訳先のテキストと翻訳完了率</li><li><strong>状態</strong>: 翻訳状態の表示</li></ul></li></ul></div><div><strong>使い方:</strong><ul><li>「翻訳」列のフィールドに選択した言語の翻訳を入力する。</li><li必要な翻訳/編集を終えたら右下の「保存」ボタンをクリックする。</li><li>ボタンをクリックした後、名前をメールアドレスを入力する（拡張機能のページにクレジットしたい場合のみ）。</li><li>最後に「翻訳を送信」をクリックする。受け取り次第、可能な限り早く拡張機能に取り込みます。</li></ul></div><div class="close-area"><button onclick="closePopUp()">閉じる</button></div>`,
+        sendForm: `<h2>翻訳送信</h2><p>この情報はオプションです。もし入力すると、拡張機能のページにクレジットが載ります。</p><label for="name">名前 (オプション): </label><input type="text" id="name" name="name"><br><label for="email">E-mail/ウェブサイト/リンク (オプション): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">翻訳を送信</button><br/><a href="#" onclick="downloadTranslationsFile()" style="margin-top: 5px;">JSONファイルをダウンロードだけする</a>`,
+        hideCompleted: "完了を非表示",
+        showCompleted: "未完了を非表示",
       }
     };
 
@@ -473,6 +491,10 @@
         name: "German (Deutsch)",
         file: `${baseGithubTranslationLink}/de-de.json`,
       },
+      'ja-jp': {
+        name: "Japanese (日本語)",
+        file: `${baseGithubTranslationLink}/ja-jp.json`,
+      }
     };
 
     const languageSelect = document.getElementById("languageSelect");
