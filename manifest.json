@@ -71,7 +71,8 @@
         "translations/it-it.json",
         "translations/de-de.json",
         "translations/fr-fr.json",
-        "translations/cs-cz.json"
+        "translations/cs-cz.json",
+        "translations/ja-jp.json"
       ],
       "matches": [
         "https://www.dndbeyond.com/*"
