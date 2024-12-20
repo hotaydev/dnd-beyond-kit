@@ -9,6 +9,7 @@
 - [Translation Tool (Help us translating!)](https://dnd-beyond-kit.hotay.dev/translate)
 
 ### This extension is used to:
+
 - Traslate your D&D Beyond character sheet page to your language;
 - Use the International Unit System (SI) for metrics on Character Sheet, monsters, spells, etc.;
 - Remove the Character Sheep interface pollutionm leaving it simpler;
