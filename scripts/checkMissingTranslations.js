@@ -1,5 +1,4 @@
-// Something similar to this script need to be added to the extension, so we have a way to detect new content from different D&D races.
-// IMPORTANT: this feature need to be disabled by default and users need to be able to enable it manually, because we respect users' privacy.
+// IMPORTANT: This feature is disabled by default and users need to enable it manually. We respect users' privacy.
 
 let translationsArray = [];
 let canSendMissingTranslations = false; // Deactivated by default
