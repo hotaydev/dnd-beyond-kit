@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/main/website/dice.svg" width="80" alt="d20 dice" />
+  <a href="https://dnd-beyond-kit.hotay.dev" target="_blank"><img src="https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/main/website/dice.svg" width="80" alt="d20 dice" /></a>
   <h1>D&D Beyond Kit</h1>
 </div>
 
