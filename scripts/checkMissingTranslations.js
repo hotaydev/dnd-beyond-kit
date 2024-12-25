@@ -22,9 +22,10 @@ function getUntranslatedContent(untranslatedContent) {
     if (trimmedText === 'm.') return '';
     if (trimmedText === 'kg.') return '';
     if (trimmedText.includes('.prefix__')) return '';
+    if (/[\u4E00-\u9FFF\u3040-\u30FF\u31F0-\u31FF\u3400-\u4DBF\uAC00-\uD7AF]/.test(trimmedText)) return ''; // Avoid Japanese, Chinese and Korean strings
 
     return trimmedText.replace(/^[.,+•):;]\s/, '').replace(/[.,+•“”(:;]$/, '').replaceAll("--", "").replace(/\d+$/, '').trim();
-  }).filter((a) => a !== '' && a.length > 1);
+  }).filter((a) => a && a !== '' && a.length > 1);
 
   const combinedTranslations = [...new Set([...translationsMissingButNotSent, ...newTranslations])];
   const nonTranslatedContent = combinedTranslations.filter(item => !translationsArray.includes(item));
