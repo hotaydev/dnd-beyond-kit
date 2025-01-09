@@ -33,6 +33,7 @@ Currently we have translations to the following languages:
 - German (Deutsch)
 - Czech (Čeština)
 - Japanese (日本語)
+- Dutch (Nederlands)
 
 Want to help us translating D&D Beyond content? We created a [Translation Tool](https://dnd-beyond-kit.hotay.dev/translate) to make this process easier!!
 
