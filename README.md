@@ -3,7 +3,7 @@
   <h1>D&D Beyond Kit</h1>
 </div>
 
-- [Webite](https://dnd-beyond-kit.hotay.dev)
+- [Website](https://dnd-beyond-kit.hotay.dev)
 - [Link for Chrome Web Store](https://chromewebstore.google.com/detail/dd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg?utm_source=github)
 - [Link for Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/dnd-beyond-kit/?utm_source=github)
 - [Translation Tool (Help us translating!)](https://dnd-beyond-kit.hotay.dev/translate)
