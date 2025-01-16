@@ -448,7 +448,7 @@
         headerTitle: "D&D Beyond Kit 翻訳",
         uiLanguageLabel: "表示言語:",
         contentLanguageLabel: "翻訳先言語:",
-        defaultTextColumn: "デフォルトテキスト (English)",
+        defaultTextColumn: "デフォルトテキスト (英語)",
         translationColumn: "翻訳",
         statusColumn: "状態",
         newLanguageButton: "新規言語作成",
@@ -463,21 +463,21 @@
       },
       "nl": {
         languageName: "Nederlands",
-        headerTitle: "Translate D&D Beyond Kit",
-        uiLanguageLabel: "Interface Language:",
-        contentLanguageLabel: "Language to translate:",
-        defaultTextColumn: "Default Text (English)",
-        translationColumn: "Translation",
-        statusColumn: "Status",
-        newLanguageButton: "Add New Language",
-        complete: "Complete",
-        incomplete: "Incomplete",
-        save: "Save",
-        instructions: "Instructions for translation",
-        instructionsLong: `<h2>Translation Instructions</h2><div><strong>Page Editing Structure:</strong><ul><li>Choose the <strong>language to be translated</strong> in the top left corner.</li><li>Choose the <strong>interface language</strong> in the top right corner.</li><li>Table: <ul><li><strong>Standard Text</strong>: Original text in English</li><li><strong>Translation</strong>: Translation in the chosen language and the translation completeness percentage</li><li><strong>Status</strong>: Indicates if there is already a translation</li></ul></li></ul></div><div><strong>How to use:</strong><ul><li>Fill in the fields of the "Translation" column with the respective translation for the chosen language.</li><li>Once you have finished the translations/edits you want to make, click the "Save" button at the bottom right corner.</li><li>After clicking the button, fill in your name and email (optional, if you want credits on the extension page).</li><li>Finally, click "Submit Translations." We will receive them and include them in the extension as soon as possible.</li></ul></div><div class="close-area"><button onclick="closePopUp()">Close</button></div>`,
-        sendForm: `<h2>Send Translations</h2><p>The information below is optional. If provided, we will add your translation credits to the extension’s page.</p><label for="name">Name (Optional): </label><input type="text" id="name" name="name"><br><label for="email">E-mail/Website/Link (Optional): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Send Translations</button><br/><a href="#" onclick="downloadTranslationsFile()" style="margin-top: 5px;">Just download the JSON file</a>`,
-        hideCompleted: "Hide completed",
-        showCompleted: "Show completed",
+        headerTitle: "Vertaal D&D Beyond Kit",
+        uiLanguageLabel: "Taal van de Interface:",
+        contentLanguageLabel: "Taal om te vertalen:",
+        defaultTextColumn: "Standaart tekst (Engels)",
+        translationColumn: "Vertaling",
+        statusColumn: "Staat",
+        newLanguageButton: "Voeg een nieuwe taal toe",
+        complete: "Compleet",
+        incomplete: "Incompleet",
+        save: "Bewaar",
+        instructions: "Instructies voor het vertalen",
+        instructionsLong: `<h2>Vertaal instructies</h2><div><strong>Pagina bewerkingsstructuur:</strong><ul><li>Kies de <strong>taal die moet worden vertaald</strong> in de linkerbovenhoek.</li><li>Kies de <strong>interface taal</strong> in de rechterbovenhoek.</li><li>Tabel: <ul><li><strong>Standaard tekst</strong>: Originele tekst in Engels</li><li><strong>Vertaling</strong>: Vertaling in de gekozen taal en de percentage volledigheid vertaling</li><li><strong>Staat</strong>: Indicatie of daar al een vertaling staat</li></ul></li></ul></div><div><strong>Hoe te gebruiken:</strong><ul><li>Vul in de velden van de "Vertaling" kolom met de respectieve vertaling voor de gekozen taal.</li><li>Eenmaal de vertalingen/wijzigingen die je wilt maken klaar zijn, klik op de "Bewaar" knop in de rechter benedenhoek</li><li>Na het klikken van de knop, vul jouw naam en email (optioneel, als je krediet wilt op de extensiepagina).</li><li>Tenslotte, klik "Dien vertalingen in." Wij zullen ze krijgen en in de extensie plaatsen zo spoedig mogelijk.</li></ul></div><div class="close-area"><button onclick="closePopUp()">Sluiten</button></div>`,
+        sendForm: `<h2>Stuur vertalingen</h2><p>De informatie hieronder is optioneel. Indien u deze voorziet, zullen wij deze toevoegen aan de vertalings kredieten van de extensies pagina.</p><label for="name">Naam (Optioneel): </label><input type="text" id="name" name="name"><br><label for="email">E-mail/Website/Link (Optioneel): </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">Stuur vertalingen</button><br/><a href="#" onclick="downloadTranslationsFile()" style="margin-top: 5px;">Download gewoon de JSON bestanden</a>`,
+        hideCompleted: "Verbergen voltooid",
+        showCompleted: "Toon voltooid",
       },
     };
 
@@ -546,7 +546,7 @@
       try {
         const [defaultDataArray, translatedData] = await Promise.all([
           fetch(defaultTextsForTranslation).then(res => res.json()),
-          fetch(translations[language].file).then(res => res.json())
+          fetch(translations[language].file).then(res => res.json()).catch(() => (alert('Language to be translated not found in the main branch.')))
         ]);
 
         const defaultData = Object.fromEntries(
