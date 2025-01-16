@@ -1,0 +1,54 @@
+{
+  "title": {
+    "message": "D&D Beyond Kit",
+    "description": "Title of the extension"
+  },
+  "choose_language": {
+    "message": "Kies jouw taal van de lijst hieronder:",
+    "description": "Language to be used on the translation"
+  },
+  "choose_language_option": {
+    "message": "Kies taal",
+    "description": "Default option of language"
+  },
+  "thanks": {
+    "message": "Bedankt voor het gebruiken voor deze extensie",
+    "description": "Thanks message to the user"
+  },
+  "backToTop": {
+    "message": "Terug naar boven",
+    "description": "Button to scroll to the top of page"
+  },
+  "convertToSI": {
+    "message": "Metingen omzetten naar SI",
+    "description": "Toggle the International Metrics System"
+  },
+  "settingsTitle": {
+    "message": "Instellingen",
+    "description": "Title of Settings tab"
+  },
+  "moreSettingsQuestion": {
+    "message": "Meer configuratie nodig? Verzoek op GitHub!",
+    "description": "More configurations message to GitHub"
+  },
+  "cleanInterface": {
+    "message": "Ruim afleidingen op van de interface",
+    "description": "Remove distractions from the interface"
+  },
+  "periodicallySendMissingTranslations": {
+    "message": "Help met het detecteren van missende vertalingen",
+    "description": "Help detect missing translations"
+  },
+  "likingInterface": {
+    "message": "Reiziger, geniet je van de extensie?",
+    "description": "Question to the user if they like the extension"
+  },
+  "leaveAReview": {
+    "message": "Laat jouw beoordeling achter!",
+    "description": "Ask the user to leave a review"
+  },
+  "helpUsTranslating": {
+    "message": "Help ons met het vertalen van D&D Beyond!",
+    "description": "Help us translating D&D Beyond"
+  }
+}
