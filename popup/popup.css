@@ -128,21 +128,7 @@ input:checked+.slider:before {
   text-align: center;
   margin-top: 20px;
   color: #666;
-}
-
-.github {
-  text-align: center;
-  margin-top: 14px;
   margin-bottom: 20px;
-}
-
-.github a {
-  color: #333;
-  text-decoration: none;
-}
-
-.github a:hover {
-  text-decoration: underline;
 }
 
 .separator {

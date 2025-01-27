@@ -11,10 +11,6 @@
     "message": "Sprache wählen",
     "description": "Default option of language"
   },
-  "thanks": {
-    "message": "Vielen Dank für die Verwendung dieser Erweiterung!",
-    "description": "Thanks message to the user"
-  },
   "backToTop": {
     "message": "Zurück nach oben",
     "description": "Button to scroll to the top of page"

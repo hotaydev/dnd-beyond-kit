@@ -11,10 +11,6 @@
     "message": "言語選択",
     "description": "Default option of language"
   },
-  "thanks": {
-    "message": "拡張機能を使ってくれてありがとう！",
-    "description": "Thanks message to the user"
-  },
   "backToTop": {
     "message": "トップに戻る",
     "description": "Button to scroll to the top of page"

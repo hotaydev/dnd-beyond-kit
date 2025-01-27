@@ -11,10 +11,6 @@
     "message": "Kies taal",
     "description": "Default option of language"
   },
-  "thanks": {
-    "message": "Bedankt voor het gebruiken voor deze extensie",
-    "description": "Thanks message to the user"
-  },
   "backToTop": {
     "message": "Terug naar boven",
     "description": "Button to scroll to the top of page"

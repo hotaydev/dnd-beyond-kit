@@ -11,10 +11,6 @@
     "message": "Choose language",
     "description": "Default option of language"
   },
-  "thanks": {
-    "message": "Thank you for using this extension!",
-    "description": "Thanks message to the user"
-  },
   "backToTop": {
     "message": "Back to top",
     "description": "Button to scroll to the top of page"

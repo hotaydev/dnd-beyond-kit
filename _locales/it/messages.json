@@ -11,10 +11,6 @@
     "message": "Scegli la lingua",
     "description": "Default option of language"
   },
-  "thanks": {
-    "message": "Grazie per aver utilizzato questa estensione!",
-    "description": "Thanks message to the user"
-  },
   "backToTop": {
     "message": "Torna in cima",
     "description": "Button to scroll to the top of page"
