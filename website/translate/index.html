@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Translate D&D Beyond Kit</title>
-  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -244,6 +244,20 @@
       margin-right: 2rem;
       user-select: none;
     }
+
+    #newLanguage {
+      background-color: #6200ea;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all ease .3s;
+    }
+
+    #newLanguage:hover {
+      background-color: #791aff;
+    }
   </style>
 </head>
 
@@ -273,7 +287,7 @@
       <div><label for="languageSelect" id="contentLanguageLabel">Choose Content Language:</label>
         <select id="languageSelect"></select>
 
-        <!-- <button id="newLanguage">Create New Language</button> -->
+        <button id="newLanguage">Add New Language</button>
       </div>
 
       <div>
@@ -310,6 +324,18 @@
     </div>
     <div id="sendTranslations" class="popup" style="text-align: center;">
       <!-- Filled dynamically based on current language -->
+    </div>
+    <div id="sendNewLanguage" class="popup" style="text-align: center;">
+      <h2>Add new Language</h2>
+      <p>Please, fill in the following fields to add a new language to the extension:</p>
+
+      <label for="language-name-in-english">Language name in English: </label>
+      <input type="text" id="language-name-in-english" name="language-name-in-english"><br />
+
+      <label for="language-name-original">Language name in your language: </label>
+      <input type="email" id="language-name-original" name="language-name-original"><br />
+
+      <button onclick="goToNewTranslationsPage()" style="margin-top: 20px;">Continue</button>
     </div>
     <div id="overlay" onclick="closePopUp()"></div>
 
@@ -873,11 +899,11 @@
       document.getElementById("translationColumn").textContent = translations.translationColumn;
       document.getElementById("instructions").textContent = translations.instructions.title;
       document.getElementById("fullInstructions").innerHTML = `<h2>${translations.instructions.instructions}</h2><div><strong>${translations.instructions.structure}:</strong><ul><li>${translations.instructions.languageToBeTranslated}</li><li>${translations.instructions.interfaceLanguage}</li><li>${translations.instructions.table}: <ul><li><strong>${translations.instructions.standardText}</strong>: ${translations.instructions.originalText}</li><li><strong>${translations.instructions.translation}</strong>: ${translations.instructions.translationText}</li><li><strong>${translations.instructions.status}</strong>: ${translations.instructions.statusText}</li></ul></li></ul></div><div><strong>${translations.instructions.howToUse}:</strong><ul><li>${translations.instructions.step1}</li><li>${translations.instructions.step2}</li><li>${translations.instructions.step3}</li><li>${translations.instructions.step4}</li></ul></div><div class="close-area"><button onclick="closePopUp()">${translations.instructions.close}</button></div>`;
-      document.getElementById("sendTranslations").innerHTML = `<h2>${translations.sendForm.title}</h2><p>${translations.sendForm.instructions}</p><label for="name">${translations.sendForm.name}: </label><input type="text" id="name" name="name"><br><label for="email">${translations.sendForm.email}: </label><input type="email" id="email" name="email"><br><button onclick="sendTranslations()" style="margin-top: 20px;">${translations.sendForm.send}</button><br/><a href="#" onclick="downloadTranslationsFile()" style="margin-top: 5px;">${translations.sendForm.justDownload}</a>`;
+      document.getElementById("sendTranslations").innerHTML = `<h2>${translations.sendForm.title}</h2><p>${translations.sendForm.instructions}</p><label for="name">${translations.sendForm.name}: </label><input type="text" id="name" name="name"><br/><label for="email">${translations.sendForm.email}: </label><input type="email" id="email" name="email"><br/><button onclick="sendTranslations()" style="margin-top: 20px;">${translations.sendForm.send}</button><br/><a href="#" onclick="downloadTranslationsFile()" style="margin-top: 5px;">${translations.sendForm.justDownload}</a>`;
       document.getElementById("statusColumn").textContent = translations.statusColumn;
       document.getElementById("hideCompletedText").textContent = isShowingCompletedTexts ? translations.hideCompleted : translations.showCompleted;
       document.getElementById("floatingButton").textContent = translations.save;
-      // document.getElementById("newLanguage").textContent = translations.newLanguageButton;
+      document.getElementById("newLanguage").textContent = translations.newLanguageButton;
       document.querySelectorAll(".status-complete").forEach(element => element.textContent = translations.complete);
       document.querySelectorAll(".status-incomplete").forEach(element => element.textContent = translations.incomplete);
     };
@@ -919,9 +945,15 @@
       document.getElementById('overlay').style.display = 'block';
     });
 
+    document.getElementById('newLanguage').addEventListener('click', function () {
+      document.getElementById('sendNewLanguage').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    });
+
     function closePopUp() {
       document.getElementById('fullInstructions').style.display = 'none';
       document.getElementById('sendTranslations').style.display = 'none';
+      document.getElementById('sendNewLanguage').style.display = 'none';
       document.getElementById('overlay').style.display = 'none';
     }
 
@@ -991,6 +1023,17 @@
       }).catch(error => {
         alert("Error sending translations: " + error);
       });
+    }
+
+    function goToNewTranslationsPage() {
+      const newLanguageNameInEnglish = document.getElementById('language-name-in-english').value;
+      const newLanguageNameOriginal = document.getElementById('language-name-original').value;
+
+      if (newLanguageNameInEnglish && newLanguageNameOriginal) {
+        window.location.href = `/translate/new/?english=${newLanguageNameInEnglish}&original=${newLanguageNameOriginal}`;
+      } else {
+        alert('Please fill both fields for the new language.');
+      }
     }
 
     function hideOrShowCompletedContent() {
