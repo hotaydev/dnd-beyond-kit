@@ -235,12 +235,31 @@
       </tbody>
     </table>
 
+    <div id="sendNewLanguage" class="popup" style="text-align: center;">
+      <h2>Send Translations</h2>
+      <p>
+        The information below is optional. If provided, we will add your translation credits to the extension’s page.
+      </p>
+
+      <label for="name">Name (Optional): </label>
+      <input type="text" id="name" name="name"><br>
+
+      <label for="email">E-mail/Website/Link (Optional): </label>
+      <input type="email" id="email" name="email"><br>
+
+      <button onclick="sendNewLanguage()" style="margin-top: 20px;">Add new Language</button>
+    </div>
+    <div id="overlay" onclick="closePopUp()"></div>
+
     <div id="floatingButton">
       Add Language
     </div>
   </main>
 
   <script>
+
+    let newLanguageEnglish;
+    let newLanguageOriginal;
 
     const allTextsToBeTranslated = [
       // Extension UI - START
@@ -334,14 +353,69 @@
 
     (() => {
       const currentURL = new URL(window.location.href);
-      const newLanguageEnglish = currentURL.searchParams.get('english');
-      const newLanguageOriginal = currentURL.searchParams.get('original');
+      newLanguageEnglish = currentURL.searchParams.get('english');
+      newLanguageOriginal = currentURL.searchParams.get('original');
       document.getElementById('initial-message').innerText = `Adding ${newLanguageEnglish} language (${newLanguageOriginal})`;
       document.getElementById('text-in-language').innerText = `Text in ${newLanguageEnglish} (${newLanguageOriginal})`;
 
       const translationTable = document.getElementById("translationTable");
       renderTranslationTable();
     })();
+
+    document.getElementById('floatingButton').addEventListener('click', function () {
+      document.getElementById('sendNewLanguage').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    });
+
+    function closePopUp() {
+      document.getElementById('sendNewLanguage').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+
+    function sendNewLanguage() {
+      const user = document.querySelector('input[name="name"]').value;
+      const email = document.querySelector('input[name="email"]').value;
+      const finalEditedTranslations = {};
+
+      try {
+
+        document.querySelectorAll('tbody tr').forEach((row) => {
+          const td = row.querySelectorAll('td');
+          const key = td[0].textContent.toLowerCase();
+          const value = td[1].querySelector('textarea').value;
+
+          if (value.trim() === '') {
+            throw new Error("All fields must be filled to add a new language");
+          };
+
+          finalEditedTranslations[key] = value;
+        });
+
+        const finalObject = {
+          user,
+          email,
+          translations: finalEditedTranslations,
+          lang: `${newLanguageEnglish} (${newLanguageOriginal})`,
+        };
+
+        closePopUp();
+
+        // TODO: Improve message to show a success/error toast
+        fetch('https://n8n.hotay.dev/webhook/dnd-beyond-kit-translation', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(finalObject),
+        }).then(response => {
+          alert("Translations sent successfully! Thank you <3");
+        }).catch(error => {
+          alert("Error sending translations: " + error);
+        });
+      } catch (error) {
+        alert(error);
+      }
+    }
   </script>
 </body>
 
