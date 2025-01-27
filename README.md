@@ -62,6 +62,7 @@ We use the same `manifest.json` for both platforms.
 - [Gabriele](mailto:we@improve.games) and [bembe83](https://github.com/bembe83) - Italian translations
 - [lill-la](https://github.com/lill-la) - Japanese support and translations for both, UI and Beyond pages.
 - [Disispower](https://github.com/Disispower) - Contributed with Dutch translations for both, UI and Beyond pages.
+- [Eltrio723](https://github.com/Eltrio723) - Helped with Spanish translations for Beyond pages.
 
 ### Thanks
 
