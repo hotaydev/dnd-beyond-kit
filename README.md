@@ -57,12 +57,11 @@ We use the same `manifest.json` for both platforms.
 - [Taylor](https://github.com/taylorho) - Creator and main developer
 - [San](mailto:pedromussipereira@gmail.com) - Helped with ideas and Brazilian Portuguese translations
 - [mlynarp](https://github.com/mlynarp) - Many Czech translations and development help
-- [MrProditio](https://github.com/MrProditio) - Spanish translations
+- [MrProditio](https://github.com/MrProditio) and [Eltrio723](https://github.com/Eltrio723) - Spanish translations
 - [vgauther](https://github.com/vgauther) and [Ins0mniakk](https://github.com/Ins0mniakk) - French translations
 - [Gabriele](mailto:we@improve.games) and [bembe83](https://github.com/bembe83) - Italian translations
 - [lill-la](https://github.com/lill-la) - Japanese support and translations for both, UI and Beyond pages.
 - [Disispower](https://github.com/Disispower) - Contributed with Dutch translations for both, UI and Beyond pages.
-- [Eltrio723](https://github.com/Eltrio723) - Helped with Spanish translations for Beyond pages.
 
 ### Thanks
 
