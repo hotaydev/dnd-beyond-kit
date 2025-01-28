@@ -141,6 +141,7 @@ async function translateContent() {
         translateTextInElements(document.querySelector("main"), translations);
         translateTextInElements(document.querySelector(".ct-sidebar__portal"), translations); // General side menu
         translateTextInElements(document.querySelector("dialog"), translations); // Mobile menu
+        translateTextInElements(document.querySelector(".fullscreen-modal-overlay"), translations); // Character Creator overlays/popups
       }, 100);
     }, true); // Don't remove this "true"
   }
@@ -153,7 +154,7 @@ async function translateContent() {
 }
 
 async function runWhenPageReady() {
-  const isCharacterBuilderPage = (/^https:\/\/www\.dndbeyond\.com\/characters\/\d+\/builder\/.*/.test(window.location.href) && document.querySelector(".character-builder-inner .builder-page-body"));
+  const isCharacterBuilderPage = (/^https:\/\/www\.dndbeyond\.com\/characters\/\d+\/builder\/.*/.test(window.location.href) && document.querySelector(".character-builder-inner .character-builder-page-header"));
   const isCharacterAppPage = document.querySelectorAll("[class^='ct-character-header-']:is(.ct-character-header-mobile, .ct-character-header-desktop)").length > 0;
 
   if (isCharacterAppPage || isCharacterBuilderPage) {
