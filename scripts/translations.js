@@ -153,7 +153,10 @@ async function translateContent() {
 }
 
 async function runWhenPageReady() {
-  if (document.querySelectorAll("[class^='ct-character-header-']:is(.ct-character-header-mobile, .ct-character-header-desktop)").length > 0) {
+  const isCharacterBuilderPage = (/^https:\/\/www\.dndbeyond\.com\/characters\/\d+\/builder\/.*/.test(window.location.href) && document.querySelector(".character-builder-inner .builder-page-body"));
+  const isCharacterAppPage = document.querySelectorAll("[class^='ct-character-header-']:is(.ct-character-header-mobile, .ct-character-header-desktop)").length > 0;
+
+  if (isCharacterAppPage || isCharacterBuilderPage) {
     await translateContent();
   } else {
     setTimeout(runWhenPageReady, 500);
