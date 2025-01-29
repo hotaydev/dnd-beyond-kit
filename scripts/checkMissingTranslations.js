@@ -11,23 +11,26 @@ function isDiceString(input) {
 function getUntranslatedContent(untranslatedContent) {
   if (!canSendMissingTranslations) return; // Deactivated by default
 
-  const translationsMissingButNotSent = JSON.parse(localStorage.getItem("beyondKitTranslationsMissing") || '[]');
+  if (translationsArray.length > 0) {
+    const translationsMissingButNotSent = JSON.parse(localStorage.getItem("beyondKitTranslationsMissing") || '[]');
 
-  const newTranslations = untranslatedContent.map((content) => {
-    let trimmedText = content.trim();
-    if (isDiceString(trimmedText)) return '';
-    if (trimmedText === '*') return '';
-    if (trimmedText === 'NaN') return '';
-    if (trimmedText === 'm.') return '';
-    if (trimmedText === 'kg.') return '';
-    if (trimmedText.includes('.prefix__')) return '';
+    const newTranslations = untranslatedContent.map((content) => {
+      let trimmedText = content.trim();
+      if (isDiceString(trimmedText)) return '';
+      if (trimmedText === '*') return '';
+      if (trimmedText === 'NaN') return '';
+      if (trimmedText === 'm.') return '';
+      if (trimmedText === 'kg.') return '';
+      if (trimmedText.includes('.prefix__')) return '';
+      if (/[\u4E00-\u9FFF\u3040-\u30FF\u31F0-\u31FF\u3400-\u4DBF\uAC00-\uD7AF]/.test(trimmedText)) return ''; // Avoid Japanese, Chinese and Korean strings
 
-    return trimmedText.replace(/^[.,+•):;]\s/, '').replace(/[.,+•“”(:;]$/, '').replaceAll("--", "").replace(/\d+$/, '').trim();
-  }).filter((a) => a !== '' && a.length > 1);
+      return trimmedText.replaceAll(/^[.,+º•):;]\s/g, '').replaceAll(/[.,+º•“”(:;]$/g, '').replaceAll("--", "").replace(/\d+$/, '').trim();
+    }).filter((a) => a && a !== '' && a.length > 1);
 
-  const combinedTranslations = [...new Set([...translationsMissingButNotSent, ...newTranslations])];
-  const nonTranslatedContent = combinedTranslations.filter(item => !translationsArray.includes(item));
-  localStorage.setItem("beyondKitTranslationsMissing", JSON.stringify(nonTranslatedContent));
+    const combinedTranslations = [...new Set([...translationsMissingButNotSent, ...newTranslations])];
+    const nonTranslatedContent = combinedTranslations.filter(item => !translationsArray.includes(item));
+    localStorage.setItem("beyondKitTranslationsMissing", JSON.stringify(nonTranslatedContent));
+  }
 
   checkIfHadPassed24HoursToSendMissingTranslations();
 }
@@ -137,6 +140,7 @@ function checkForMissingTranslations(parentElement) {
 
           if (!result.language || result.language === "en-us") {
             // Extension language is set to "English", so we call the function that gets the untranslated content
+            // We do this here because the `translations.js` file don't try to translate content when the language is "English".
             setInterval(() => {
               checkForMissingTranslations(document.querySelector("main")); // Main content
               checkForMissingTranslations(document.querySelector(".ct-sidebar__portal")); // General side menu
@@ -147,5 +151,5 @@ function checkForMissingTranslations(parentElement) {
       }
 
     });
-  }, 5000);
+  }, 5 * 1000);
 })()

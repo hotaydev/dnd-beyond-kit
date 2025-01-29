@@ -11,10 +11,6 @@
     "message": "Výběr jazyka",
     "description": "Default option of language"
   },
-  "thanks": {
-    "message": "Děkujeme vám za používání tohoto rozšíření!",
-    "description": "Thanks message to the user"
-  },
   "backToTop": {
     "message": "Zpět na začátek",
     "description": "Button to scroll to the top of page"

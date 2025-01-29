@@ -1,5 +1,7 @@
 // `currentBrowser` is defined in ./metrics.js
 
+const characterBuilderPageRegex = /^https:\/\/www\.dndbeyond\.com\/characters\/\d+\/builder\/.*/;
+
 async function getTranslations(lang) {
 
   if (lang === 'en-us') {
@@ -141,19 +143,25 @@ async function translateContent() {
         translateTextInElements(document.querySelector("main"), translations);
         translateTextInElements(document.querySelector(".ct-sidebar__portal"), translations); // General side menu
         translateTextInElements(document.querySelector("dialog"), translations); // Mobile menu
+        translateTextInElements(document.querySelector(".fullscreen-modal-overlay"), translations); // Character Creator overlays/popups
       }, 100);
     }, true); // Don't remove this "true"
   }
 
-  await minifyContent();
-  setInterval(() => {
-    const splittedTitle = document.title.split('\'s');
-    if (splittedTitle.length > 1) document.title = splittedTitle[0] + " | D&D Beyond";
-  }, 2000); // 2 seconds
+  if (!characterBuilderPageRegex.test(window.location.href)) {
+    await minifyContent();
+    setInterval(() => {
+      const splittedTitle = document.title.split('\'s');
+      if (splittedTitle.length > 1) document.title = splittedTitle[0] + " | D&D Beyond";
+    }, 2000); // 2 seconds
+  }
 }
 
 async function runWhenPageReady() {
-  if (document.querySelectorAll("[class^='ct-character-header-']:is(.ct-character-header-mobile, .ct-character-header-desktop)").length > 0) {
+  const isCharacterBuilderPage = (characterBuilderPageRegex.test(window.location.href) && document.querySelector(".character-builder-inner .character-builder-page-header"));
+  const isCharacterAppPage = document.querySelectorAll("[class^='ct-character-header-']:is(.ct-character-header-mobile, .ct-character-header-desktop)").length > 0;
+
+  if (isCharacterAppPage || isCharacterBuilderPage) {
     await translateContent();
   } else {
     setTimeout(runWhenPageReady, 500);

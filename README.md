@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/main/website/dice.svg" width="80" alt="d20 dice" />
+  <a href="https://dnd-beyond-kit.hotay.dev" target="_blank"><img src="https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/main/website/dice.svg" width="80" alt="d20 dice" /></a>
   <h1>D&D Beyond Kit</h1>
 </div>
 
-- [Webite](https://dnd-beyond-kit.hotay.dev)
+- [Website](https://dnd-beyond-kit.hotay.dev)
 - [Link for Chrome Web Store](https://chromewebstore.google.com/detail/dd-beyond-kit/gdpopbkamfkkenkillfnocgljokkcopg?utm_source=github)
 - [Link for Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/dnd-beyond-kit/?utm_source=github)
 - [Translation Tool (Help us translating!)](https://dnd-beyond-kit.hotay.dev/translate)
@@ -33,6 +33,7 @@ Currently we have translations to the following languages:
 - German (Deutsch)
 - Czech (Čeština)
 - Japanese (日本語)
+- Dutch (Nederlands)
 
 Want to help us translating D&D Beyond content? We created a [Translation Tool](https://dnd-beyond-kit.hotay.dev/translate) to make this process easier!!
 
@@ -56,10 +57,11 @@ We use the same `manifest.json` for both platforms.
 - [Taylor](https://github.com/taylorho) - Creator and main developer
 - [San](mailto:pedromussipereira@gmail.com) - Helped with ideas and Brazilian Portuguese translations
 - [mlynarp](https://github.com/mlynarp) - Many Czech translations and development help
-- [MrProditio](https://github.com/MrProditio) - Spanish translations
+- [MrProditio](https://github.com/MrProditio) and [Eltrio723](https://github.com/Eltrio723) - Spanish translations
 - [vgauther](https://github.com/vgauther) and [Ins0mniakk](https://github.com/Ins0mniakk) - French translations
 - [Gabriele](mailto:we@improve.games) and [bembe83](https://github.com/bembe83) - Italian translations
 - [lill-la](https://github.com/lill-la) - Japanese support and translations for both, UI and Beyond pages.
+- [Disispower](https://github.com/Disispower) - Contributed with Dutch translations for both, UI and Beyond pages.
 
 ### Thanks
 
