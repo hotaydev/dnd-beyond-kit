@@ -1,14 +1,25 @@
 // `currentBrowser` is defined in ./metrics.js
 
 const characterBuilderPageRegex = /^https:\/\/www\.dndbeyond\.com\/characters\/\d+\/builder\/.*/;
+let dictionary;
 
-async function getTranslations(lang) {
+async function getTranslations(lang, remote = false) {
+  if (lang === 'en-us') return null;
 
-  if (lang === 'en-us') {
-    return null;
+  const lastLang = localStorage.getItem("beyondKitlastUsedLanguage");
+  if (lastLang !== lang) {
+    localStorage.removeItem('beyondKitlastCheckedForNewerTranslations');
+    localStorage.removeItem('beyondKitNewerTranslations');
+    localStorage.setItem("beyondKitlastUsedLanguage", lang);
+  } else {
+    const newerTranslations = localStorage.getItem('beyondKitNewerTranslations');
+    if (newerTranslations) {
+      return JSON.parse(newerTranslations);
+    }
   }
 
-  const jsonUrl = currentBrowser.runtime.getURL(`translations/${lang}.json`);
+  const githubBaseURL = 'https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/main/translations';
+  const jsonUrl = remote ? `${githubBaseURL}/${lang}.json` : currentBrowser.runtime.getURL(`translations/${lang}.json`);
 
   return await fetch(jsonUrl)
     .then(res => res.json())
@@ -51,7 +62,7 @@ async function minifyContent() {
   if (search) search.style.visibility = 'hidden';
 }
 
-function translateTextInElements(parentElement, dictionary) {
+function translateTextInElements(parentElement) {
   let elements = getTextNodes(parentElement);
   const untranslatedContent = [];
 
@@ -61,21 +72,21 @@ function translateTextInElements(parentElement, dictionary) {
     // Avoid CSS Classes
     if (originalText.includes('.prefix__')) return;
 
-    let translatedString = translateWord(originalText, dictionary);
+    let translatedString = translateWord(originalText);
     if (originalText == translatedString) {
       let matches = translatedString.match(/[A-Za-zÀ-ž]+(?:[ '\u2019][A-Za-zÀ-ž]+|-[A-Za-zÀ-ž]+)*/g);
       if (matches) {
         matches.forEach(originalWord => {
           if (originalWord.length === 1) return;
 
-          let translatedWord = translateWord(originalWord, dictionary);
+          let translatedWord = translateWord(originalWord);
           translatedString = translatedString.replace(originalWord, translatedWord);
 
-          if (!isTranslatedString(translatedWord, dictionary)) {
+          if (!isTranslatedString(translatedWord)) {
             untranslatedContent.push(translatedWord);
           }
         });
-      } else if (!isTranslatedString(originalText, dictionary)) {
+      } else if (!isTranslatedString(originalText)) {
         if (originalText.length === 1) return;
         untranslatedContent.push(originalText);
       }
@@ -85,7 +96,7 @@ function translateTextInElements(parentElement, dictionary) {
   getUntranslatedContent(untranslatedContent); // Defined in ./checkMissingTranslations.js
 }
 
-function translateWord(word, dictionary) {
+function translateWord(word) {
   let lowerWord = word.toLowerCase();
 
   if (dictionary.hasOwnProperty(lowerWord)) {
@@ -95,7 +106,7 @@ function translateWord(word, dictionary) {
   return word;
 }
 
-function isTranslatedString(word, dictionary) {
+function isTranslatedString(word) {
   let isTranslated = Object.values(dictionary).some((translation) => translation.replaceAll('.', "").toLowerCase() === word.replaceAll('.', "").toLowerCase());
 
   return isTranslated;
@@ -132,18 +143,18 @@ function getTextNodes(parentElement) {
 
 async function translateContent() {
   const language = await languageOfTheExtension();
-  const translations = await getTranslations(language);
+  dictionary = await getTranslations(language);
 
-  if (translations) {
-    translateTextInElements(document.querySelector("main"), translations);
+  if (dictionary) {
+    translateTextInElements(document.querySelector("main"), dictionary);
 
     document.addEventListener('click', function () {
       // Wait some time after click to also translate content after opening the sidebar and after changing tabs
       setTimeout(() => {
-        translateTextInElements(document.querySelector("main"), translations);
-        translateTextInElements(document.querySelector(".ct-sidebar__portal"), translations); // General side menu
-        translateTextInElements(document.querySelector("dialog"), translations); // Mobile menu
-        translateTextInElements(document.querySelector(".fullscreen-modal-overlay"), translations); // Character Creator overlays/popups
+        translateTextInElements(document.querySelector("main"), dictionary);
+        translateTextInElements(document.querySelector(".ct-sidebar__portal"), dictionary); // General side menu
+        translateTextInElements(document.querySelector("dialog"), dictionary); // Mobile menu
+        translateTextInElements(document.querySelector(".fullscreen-modal-overlay"), dictionary); // Character Creator overlays/popups
       }, 100);
     }, true); // Don't remove this "true"
   }
@@ -155,6 +166,31 @@ async function translateContent() {
       if (splittedTitle.length > 1) document.title = splittedTitle[0] + " | D&D Beyond";
     }, 2000); // 2 seconds
   }
+
+  checkIfThereAreNewerRemoteTranslations(language);
+}
+
+async function checkIfThereAreNewerRemoteTranslations(lang) {
+  setTimeout(async () => {
+    const lastUpdatedTime = parseInt(localStorage.getItem("beyondKitlastCheckedForNewerTranslations") || "0");
+
+    // Check if the difference is greater than 24 hours (24 * 60 * 60 * 1000 ms)
+    const timeDifference = Date.now() - lastUpdatedTime;
+    const passedMoreThan24Hours = timeDifference > 24 * 60 * 60 * 1000;
+
+    if (!passedMoreThan24Hours) return;
+
+    localStorage.setItem("beyondKitlastCheckedForNewerTranslations", Date.now().toString());
+    const remoteTranslations = await getTranslations(lang, true);
+    if (remoteTranslations) {
+      const untranslatedContent = Object.keys(remoteTranslations).map((key) => !!dictionary[key]).filter((value) => value === false);
+      if (untranslatedContent.length === 0) return;
+
+      // Remote language file has more translated content than the local one 
+      localStorage.setItem("beyondKitNewerTranslations", JSON.stringify(remoteTranslations));
+      dictionary = remoteTranslations;
+    }
+  }, 10 * 1000); // 10 seconds, to ensure the UI is already translated before we insert more workload to the page
 }
 
 async function runWhenPageReady() {
