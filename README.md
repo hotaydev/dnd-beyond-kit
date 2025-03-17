@@ -47,6 +47,8 @@ To do this manually, just add the text you want to edit/translate in lowercase a
 If you **want to add a new language**, then you can create a new JSON file in the `translations/` folder, with the name lik `<lang>-<country_code>.json`, for example: Brazilian Portuguese is called `pt-br.json`.
 in this case we need also to add this configuration to the `popup/popup.html` file and to `manifest.json`. For more details, [open an Issue](https://github.com/hotaydev/dnd-beyond-kit/issues/new) and we will help you in this process.
 
+For simplicity you can also [add a new language by our web tool, clicking here](https://dnd-beyond-kit.hotay.dev/translate) and clicking in the *"Add new Language"* button.
+
 ### Browser support
 
 Actually we support Firefox and chromium-based browsers, such as Google Chrome, Brave, Opera, and others.
