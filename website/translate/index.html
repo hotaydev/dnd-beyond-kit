@@ -730,6 +730,49 @@
         hideCompleted: "Verbergen voltooid",
         showCompleted: "Toon voltooid",
       },
+      "ru": {
+        languageName: "Русский",
+        headerTitle: "Перевести Комплект для D&D Beyond",
+        uiLanguageLabel: "Язык интерфейса:",
+        contentLanguageLabel: "Язык перевода:",
+        defaultTextColumn: "Язык по умолчанию (Английский)",
+        translationColumn: "Перевод",
+        statusColumn: "Статус",
+        newLanguageButton: "Добавить Новый Язык",
+        complete: "Завершено",
+        incomplete: "Незавершено",
+        save: "Сохранить",
+        instructions: {
+          title: "Инструкции для перевода",
+          instructions: "Инструкции по переводу",
+          structure: "Структура Редактирования Страницы",
+          languageToBeTranslated: "Выберите язык перевода в левом верхнем углу.",
+          interfaceLanguage: "Выберите язык интерфейса в правом верхнем углу.",
+          table: "Таблица",
+          standardText: "Стандартный Текст",
+          originalText: "Исходный текст на английском",
+          translation: "Перевод",
+          translationText: "Перевод на выбранный язык и процент завершённости перевода",
+          status: "Статус",
+          statusText: "Отображает если такой перевод уже есть",
+          howToUse: "Как использовать",
+          step1: `Заполните поля столбца \"Перевод\" соответствующим переводом на выбранный вами язык`,
+          step2: `Как только вы завершили перевод/правки, которые хотите добавить, нажмите на кнопку \"Сохранить\" в правом нижнем углу.`,
+          step3: `После нажатия кнопки, заполните в поля своё имя и адрес электронной почтып E-mail (необязательно, если хотите получить указание авторства на странице расширения).`,
+          step4: `В конце, нажмите \"Предложить перевод.\" Мы получим его и введём в расширение как можно быстрее.`,
+          close: "Закрыть",
+        },
+        sendForm: {
+          title: "Отправить Переводы",
+          instructions: "Информация снизу необязательнна. Если она будет предоставлена, мы добавим её к  авторству на странице расширения.",
+          name: "Имя (Необязательно)",
+          email: "Адрес электронной почты (E-mail)/Вебсайт/Ссылка (Необязательно)",
+          send: "Send Translations",
+          justDownload: "Просто скачать файл JSON",
+        },
+        hideCompleted: "Скрыть завершённые поля",
+        showCompleted: "Показать завершённые поля",
+      },
     };
 
     const baseGithubTranslationLink = "https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/main/translations";
@@ -767,6 +810,10 @@
       'nl-nl': {
         name: "Dutch (Nederlands)",
         file: `${baseGithubTranslationLink}/nl-nl.json`,
+      },
+      'ru-ru': {
+        name: "Russian (Русский)",
+        file: `${baseGithubTranslationLink}/ru-ru.json`,
       }
     };
 

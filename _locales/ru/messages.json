@@ -1,0 +1,50 @@
+{
+  "title": {
+    "message": "D&D Beyond Kit",
+    "description": "Title of the extension"
+  },
+  "choose_language": {
+    "message": "Выберите свой язык из списка ниже:",
+    "description": "Language to be used on the translation"
+  },
+  "choose_language_option": {
+    "message": "Выберите язык",
+    "description": "Default option of language"
+  },
+  "backToTop": {
+    "message": "Вернуться наверх",
+    "description": "Button to scroll to the top of page"
+  },
+  "convertToSI": {
+    "message": "Превести единицы измерения в СИ (метры)",
+    "description": "Toggle the International Metrics System"
+  },
+  "settingsTitle": {
+    "message": "Настройки",
+    "description": "Title of Settings tab"
+  },
+  "moreSettingsQuestion": {
+    "message": "Нужно больше настроек? Сделайте запрос на GitHub!",
+    "description": "More configurations message to GitHub"
+  },
+  "cleanInterface": {
+    "message": "Убрать отвлекающие факторы из интерфейса",
+    "description": "Remove distractions from the interface"
+  },
+  "periodicallySendMissingTranslations": {
+    "message": "Помочь в обнаружении недостающих переводов",
+    "description": "Help detect missing translations"
+  },
+  "likingInterface": {
+    "message": "Путник, по душе ли вам расширение?",
+    "description": "Question to the user if they like the extension"
+  },
+  "leaveAReview": {
+    "message": "Оставьте свой отзыв!",
+    "description": "Ask the user to leave a review"
+  },
+  "helpUsTranslating": {
+    "message": "Помогите нам перевести D&D Beyond!",
+    "description": "Help us translating D&D Beyond"
+  }
+}
