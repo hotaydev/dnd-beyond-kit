@@ -48,7 +48,7 @@ To do this manually, just add the text you want to edit/translate in lowercase a
 If you **want to add a new language**, then you can create a new JSON file in the `translations/` folder, with the name lik `<lang>-<country_code>.json`, for example: Brazilian Portuguese is called `pt-br.json`.
 in this case we need also to add this configuration to the `popup/popup.html` file and to `manifest.json`. For more details, [open an Issue](https://github.com/hotaydev/dnd-beyond-kit/issues/new) and we will help you in this process.
 
-For simplicity you can also [add a new language by our web tool, clicking here](https://dnd-beyond-kit.hotay.dev/translate) and clicking in the *"Add new Language"* button.
+For simplicity you can also [add a new language by our web tool, clicking here](https://dnd-beyond-kit.hotay.dev/translate) and clicking in the _"Add new Language"_ button.
 
 ### Browser support
 
@@ -61,7 +61,7 @@ We use the same `manifest.json` for both platforms.
 - [San](mailto:pedromussipereira@gmail.com) - Helped with ideas and Brazilian Portuguese translations
 - [mlynarp](https://github.com/mlynarp) - Many Czech translations and development help
 - [MrProditio](https://github.com/MrProditio), [Eltrio723](https://github.com/Eltrio723), [Júlia Nogales](mailto:julianolo71@gmail.com) and Hector C. - Spanish translations
-- [vgauther](https://github.com/vgauther), [Ins0mniakk](https://github.com/Ins0mniakk) and [Saturnin](saturnin@mailibre.fr) - French translations
+- [vgauther](https://github.com/vgauther), [Ins0mniakk](https://github.com/Ins0mniakk), [Saturnin](saturnin@mailibre.fr) and Forteleone - French translations
 - [Gabriele](mailto:we@improve.games) and [bembe83](https://github.com/bembe83) - Italian translations
 - [lill-la](https://github.com/lill-la) and [Shun Matsuba](https://x.com/fraulein_trpg) - Japanese support and translations for both, UI and Beyond pages.
 - [Disispower](https://github.com/Disispower) - Contributed with Dutch translations for both, UI and Beyond pages.
