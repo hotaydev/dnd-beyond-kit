@@ -96,6 +96,31 @@ function translateTextInElements(parentElement) {
   getUntranslatedContent(untranslatedContent); // Defined in ./checkMissingTranslations.js
 }
 
+// Replaces dice notation (e.g., 1d4, 2d8) with localized versions
+function localizeDiceNotation(text, lang) {
+
+  // German localization example: 1d4 -> 1w4
+  if (lang === 'de-de') {
+    return text.replace(/\b(\d+)d(\d+)\b/g, '$1w$2');
+  }
+
+  // Russian localization: Replace 'd' with 'к'
+  // if (lang === 'ru-ru') {
+  //   return text.replace(/\b(\d+)d(\d+)\b/g, '$1к$2');
+  // }
+
+  return text;
+}
+
+function localizeDiceNotationInElement(element, lang) {
+  if (!element) return;
+
+  const nodes = getTextNodes(element);
+  nodes.forEach(node => {
+    node.textContent = localizeDiceNotation(node.textContent, lang);
+  });
+}
+
 function translateWord(word) {
   let lowerWord = word.toLowerCase();
 
@@ -147,11 +172,14 @@ async function translateContent() {
 
   if (dictionary) {
     translateTextInElements(document.querySelector("main"), dictionary);
+    localizeDiceNotationInElement(document.querySelector("main"), language);
 
     document.addEventListener('click', function () {
       // Wait some time after click to also translate content after opening the sidebar and after changing tabs
       setTimeout(() => {
-        translateTextInElements(document.querySelector("main"), dictionary);
+        const main = document.querySelector("main");
+        translateTextInElements(main, dictionary);
+        localizeDiceNotationInElement(main, lang);
         translateTextInElements(document.querySelector(".ct-sidebar__portal"), dictionary); // General side menu
         translateTextInElements(document.querySelector("dialog"), dictionary); // Mobile menu
         translateTextInElements(document.querySelector(".fullscreen-modal-overlay"), dictionary); // Character Creator overlays/popups
