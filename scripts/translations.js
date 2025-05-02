@@ -98,6 +98,7 @@ function translateTextInElements(parentElement) {
 
 // Replaces dice notation (e.g., 1d4, 2d8) with localized versions
 function localizeDiceNotation(text, lang) {
+  // TODO: we can possibly turn this into a toggable feature through the interface
 
   // German localization example: 1d4 -> 1w4
   if (lang === 'de-de') {
@@ -105,9 +106,9 @@ function localizeDiceNotation(text, lang) {
   }
 
   // Russian localization: Replace 'd' with 'к'
-  // if (lang === 'ru-ru') {
-  //   return text.replace(/\b(\d+)d(\d+)\b/g, '$1к$2');
-  // }
+  if (lang === 'ru-ru') {
+    return text.replace(/\b(\d+)d(\d+)\b/g, '$1к$2');
+  }
 
   return text;
 }

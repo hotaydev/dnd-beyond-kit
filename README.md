@@ -58,6 +58,7 @@ We use the same `manifest.json` for both platforms.
 ### People who helped translating this extension <3
 
 - [Taylor](https://github.com/taylorho) - Creator and main developer
+- [JulianPrieber](https://github.com/JulianPrieber) - Helped with many German translations and other i18n features
 - [San](mailto:pedromussipereira@gmail.com) - Helped with ideas and Brazilian Portuguese translations
 - [mlynarp](https://github.com/mlynarp) - Many Czech translations and development help
 - [MrProditio](https://github.com/MrProditio), [Eltrio723](https://github.com/Eltrio723), [Júlia Nogales](mailto:julianolo71@gmail.com) and Hector C. - Spanish translations
