@@ -216,82 +216,6 @@ input:checked+.slider:before {
   display: none !important;
 }
 
-.review-banner {
-  position: relative;
-  width: 100%;
-  height: 22px;
-  background-color: rgb(177, 15, 15);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  font-size: 14px;
-  font-family: "Times New Roman", Georgia, "Garamond", "Courier New", serif;
-}
-
-.review-banner.top {
-  padding-top: 5px;
-}
-
-.review-banner.bottom {
-  padding-bottom: 5px;
-}
-
-.review-banner a {
-  text-decoration: underline;
-  color: white;
-  font-weight: bold;
-}
-
-.review-banner::before,
-.review-banner::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  border-radius: 50%;
-}
-
-.review-banner.top::before {
-  top: -10px;
-  left: -10px;
-}
-
-.review-banner.top::after {
-  top: -10px;
-  right: -10px;
-}
-
-.review-banner.bottom::before {
-  bottom: -10px;
-  left: -10px;
-}
-
-.review-banner.bottom::after {
-  bottom: -10px;
-  right: -10px;
-}
-
-.close-area {
-  width: 100%;
-  display: flex;
-  justify-content: end;
-}
-
-.close {
-  position: relative;
-  bottom: 41px;
-  right: 6px;
-  padding: 5px;
-  text-align: end;
-  cursor: pointer;
-  font-size: 16px;
-  color: white;
-  z-index: 1000;
-}
-
 .go-back {
   width: 100%;
   display: flex;
@@ -303,4 +227,68 @@ input:checked+.slider:before {
   cursor: pointer;
   font-size: 16px;
   color: #333;
+}
+
+.arcana-pixel-cta {
+  background: linear-gradient(135deg, #6b46c1 0%, #9f7aea 100%);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(107, 70, 193, 0.2);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+.arcana-pixel-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(107, 70, 193, 0.3);
+}
+
+.arcana-pixel-cta p {
+  margin: 0;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.arcana-pixel-cta .cta-button {
+  background-color: white;
+  color: #6b46c1;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.arcana-pixel-cta .cta-button:hover {
+  background-color: #f8f5ff;
+  transform: scale(1.05);
+}
+
+.arcana-pixel-cta .close-btn {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.arcana-pixel-cta .close-btn:hover {
+  color: white;
 }

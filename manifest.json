@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "DnD Beyond Kit",
   "description": "Translate, add common metrics, and add new features to your D&D Beyond pages.",
-  "version": "0.16.1",
+  "version": "0.17.0",
   "default_locale": "en",
   "icons": {
     "16": "images/icon-16.png",
@@ -19,11 +19,7 @@
       "128": "images/icon-128.png"
     }
   },
-  "permissions": [
-    "storage",
-    "scripting",
-    "activeTab"
-  ],
+  "permissions": ["storage", "scripting", "activeTab"],
   "host_permissions": [
     "https://www.dndbeyond.com/characters/*",
     "https://www.dndbeyond.com/monsters*",
@@ -41,9 +37,7 @@
         "scripts/lazyLoad.js",
         "scripts/libs/purify.min.js"
       ],
-      "css": [
-        "scripts/styles.css"
-      ],
+      "css": ["scripts/styles.css"],
       "matches": [
         "https://www.dndbeyond.com/characters/*",
         "https://www.dndbeyond.com/monsters*",
@@ -54,13 +48,8 @@
       ]
     },
     {
-      "js": [
-        "scripts/translations.js",
-        "scripts/checkMissingTranslations.js"
-      ],
-      "matches": [
-        "https://www.dndbeyond.com/characters/*"
-      ]
+      "js": ["scripts/translations.js", "scripts/checkMissingTranslations.js"],
+      "matches": ["https://www.dndbeyond.com/characters/*"]
     }
   ],
   "web_accessible_resources": [
@@ -76,9 +65,7 @@
         "translations/nl-nl.json",
         "translations/ru-ru.json"
       ],
-      "matches": [
-        "https://www.dndbeyond.com/*"
-      ]
+      "matches": ["https://www.dndbeyond.com/*"]
     }
   ],
   "browser_specific_settings": {

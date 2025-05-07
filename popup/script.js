@@ -8,8 +8,8 @@ const convertToSiInputElement = document.getElementById('convertToSiInput');
 const cleanInterfaceInput = document.getElementById('cleanInterfaceInput');
 const sendMissingTranslations = document.getElementById('periodicallySendMissingTranslationsInput');
 const leaveAReviewLink = document.getElementById('leaveAReview');
-const closeReviewQuestion = document.querySelector('.close-area .close');
-const reviewArea = document.getElementById('review-area');
+const arcanaPixelCta = document.getElementById('arcana-pixel-cta');
+const closeArcanaPixelCta = document.querySelector('.arcana-pixel-cta .close-btn');
 
 if (languageSelectorElement) languageSelectorElement.addEventListener('change', async (event) => {
   currentBrowser.storage.local.set({ "language": event.target.value });
@@ -31,9 +31,11 @@ if (sendMissingTranslations) sendMissingTranslations.addEventListener('change', 
   await reloadPage();
 });
 
-if (closeReviewQuestion) closeReviewQuestion.addEventListener('click', async (event) => {
-  reviewArea.classList.add('d-none');
-  currentBrowser.storage.local.set({ "askForReview": 1 });
+if (closeArcanaPixelCta) closeArcanaPixelCta.addEventListener('click', async (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  arcanaPixelCta.classList.add('d-none');
+  currentBrowser.storage.local.set({ "hideArcanaCta": 0 });
 });
 
 (async () => {
@@ -53,15 +55,15 @@ if (closeReviewQuestion) closeReviewQuestion.addEventListener('click', async (ev
     return result.language ?? "en-us";
   });
 
-  await currentBrowser.storage.local.get("askForReview").then((result) => {
-    if (!result.askForReview) {
-      currentBrowser.storage.local.set({ "askForReview": 20 });
-      if (reviewArea) reviewArea.classList.remove('d-none');
-    } else if (parseInt(result.askForReview) >= 20) {
-      if (reviewArea) reviewArea.classList.remove('d-none');
-    } else {
-      currentBrowser.storage.local.set({ "askForReview": parseInt(result.askForReview) + 1 });
+  await currentBrowser.storage.local.get("hideArcanaCta").then((result) => {
+    const hideArcanaCtaCount = parseInt(result.hideArcanaCta ?? "0");
+
+    if (hideArcanaCtaCount < 15) {
+      currentBrowser.storage.local.set({ "hideArcanaCta": hideArcanaCtaCount + 1 });
+      return;
     }
+
+    if (arcanaPixelCta) arcanaPixelCta.classList.remove('d-none');
   });
 
   if (languageSelectorElement) languageSelectorElement.value = selectedLanguage;
