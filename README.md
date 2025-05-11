@@ -61,7 +61,7 @@ We use the same `manifest.json` for both platforms.
 - [JulianPrieber](https://github.com/JulianPrieber) - Helped with many German translations and other i18n features
 - [San](mailto:pedromussipereira@gmail.com) - Helped with ideas and Brazilian Portuguese translations
 - [mlynarp](https://github.com/mlynarp) - Many Czech translations and development help
-- [MrProditio](https://github.com/MrProditio), [Eltrio723](https://github.com/Eltrio723), [Júlia Nogales](mailto:julianolo71@gmail.com) and Hector C. - Spanish translations
+- [MrProditio](https://github.com/MrProditio), [Eltrio723](https://github.com/Eltrio723), [Júlia Nogales](mailto:julianolo71@gmail.com), GhettoMonkey and Hector C. - Spanish translations
 - [vgauther](https://github.com/vgauther), [Ins0mniakk](https://github.com/Ins0mniakk), [Saturnin](saturnin@mailibre.fr) and Forteleone - French translations
 - [Gabriele](mailto:we@improve.games) and [bembe83](https://github.com/bembe83) - Italian translations
 - [lill-la](https://github.com/lill-la) and [Shun Matsuba](https://x.com/fraulein_trpg) - Japanese support and translations for both, UI and Beyond pages.
