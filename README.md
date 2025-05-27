@@ -64,7 +64,7 @@ We use the same `manifest.json` for both platforms.
 - [MrProditio](https://github.com/MrProditio), [Eltrio723](https://github.com/Eltrio723), [Júlia Nogales](mailto:julianolo71@gmail.com), GhettoMonkey and Hector C. - Spanish translations
 - [vgauther](https://github.com/vgauther), [Ins0mniakk](https://github.com/Ins0mniakk), [Saturnin](saturnin@mailibre.fr) and Forteleone - French translations
 - [Gabriele](mailto:we@improve.games) and [bembe83](https://github.com/bembe83) - Italian translations
-- [lill-la](https://github.com/lill-la) and [Shun Matsuba](https://x.com/fraulein_trpg) - Japanese support and translations for both, UI and Beyond pages.
+- [lill-la](https://github.com/lill-la), [Shun Matsuba](https://x.com/fraulein_trpg) and [SaitoJohn](https://github.com/SaitoJohn) - Japanese support and translations for both, UI and Beyond pages.
 - [Disispower](https://github.com/Disispower) and Woodychopper - Contributed with Dutch translations for both, UI and Beyond pages.
 - [MarouchX](noraundyne@gmail.com) - Russian support to the extension
 - Netleak - Czech translations contributions
