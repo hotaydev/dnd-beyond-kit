@@ -59,7 +59,7 @@ We use the same `manifest.json` for both platforms.
 
 - [Taylor](https://github.com/taylorho) - Creator and main developer
 - [JulianPrieber](https://github.com/JulianPrieber) and [Wilms](mailto:philip.jakob.leopold.wilms@gmail.com) - Helped with many German translations and other i18n features
-- [San](mailto:pedromussipereira@gmail.com) - Helped with ideas and Brazilian Portuguese translations
+- [San](mailto:pedromussipereira@gmail.com) and [susdw](mailto:carloscvgnl@gmail.com) - Helped with Brazilian Portuguese translations
 - [mlynarp](https://github.com/mlynarp) - Many Czech translations and development help
 - [MrProditio](https://github.com/MrProditio), [Eltrio723](https://github.com/Eltrio723), [Júlia Nogales](mailto:julianolo71@gmail.com), GhettoMonkey and Hector C. - Spanish translations
 - [vgauther](https://github.com/vgauther), [Ins0mniakk](https://github.com/Ins0mniakk), [Saturnin](saturnin@mailibre.fr) and Forteleone - French translations
