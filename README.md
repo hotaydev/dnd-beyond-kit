@@ -60,14 +60,13 @@ We use the same `manifest.json` for both platforms.
 - [Taylor](https://github.com/taylorho) - Creator and main developer
 - [JulianPrieber](https://github.com/JulianPrieber), [Wilms](mailto:philip.jakob.leopold.wilms@gmail.com), [Catdcast3r](mailto:cardcast3r@gmail.com) and Martin - Helped with many German translations
 - [San](mailto:pedromussipereira@gmail.com) and [susdw](mailto:carloscvgnl@gmail.com) - Helped with Brazilian Portuguese translations
-- [mlynarp](https://github.com/mlynarp) - Many Czech translations and development help
+- [mlynarp](https://github.com/mlynarp) and Netleak - Czech translations contributions
 - [MrProditio](https://github.com/MrProditio), [Eltrio723](https://github.com/Eltrio723), [Júlia Nogales](mailto:julianolo71@gmail.com), GhettoMonkey and Hector C. - Spanish translations
 - [vgauther](https://github.com/vgauther), [Ins0mniakk](https://github.com/Ins0mniakk), [Saturnin](saturnin@mailibre.fr) and Forteleone - French translations
 - [Gabriele](mailto:we@improve.games) and [bembe83](https://github.com/bembe83) - Italian translations
 - [lill-la](https://github.com/lill-la), [Shun Matsuba](https://x.com/fraulein_trpg), [SaitoJohn](https://github.com/SaitoJohn) and [フロイラ](mailto:matsuba0721.ggl@gmail.com) - Japanese support and translations for both, UI and Beyond pages.
 - [Disispower](https://github.com/Disispower) and Woodychopper - Contributed with Dutch translations for both, UI and Beyond pages.
 - [MarouchX](noraundyne@gmail.com) - Russian support to the extension
-- Netleak - Czech translations contributions
 
 ### Thanks
 
