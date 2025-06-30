@@ -58,7 +58,7 @@ We use the same `manifest.json` for both platforms.
 ### People who helped translating this extension <3
 
 - [Taylor](https://github.com/taylorho) - Creator and main developer
-- [JulianPrieber](https://github.com/JulianPrieber), [Wilms](mailto:philip.jakob.leopold.wilms@gmail.com), [Catdcast3r](mailto:cardcast3r@gmail.com) and Martin - Helped with many German translations
+- [JulianPrieber](https://github.com/JulianPrieber), [Wilms](mailto:philip.jakob.leopold.wilms@gmail.com), [Catdcast3r](mailto:cardcast3r@gmail.com), [fLowBop](mailto:vincentweber1988@gmail.com) and Martin - Helped with many German translations
 - [San](mailto:pedromussipereira@gmail.com) and [susdw](mailto:carloscvgnl@gmail.com) - Helped with Brazilian Portuguese translations
 - [mlynarp](https://github.com/mlynarp) and Netleak - Czech translations contributions
 - [MrProditio](https://github.com/MrProditio), [Eltrio723](https://github.com/Eltrio723), [Júlia Nogales](mailto:julianolo71@gmail.com), GhettoMonkey and Hector C. - Spanish translations
