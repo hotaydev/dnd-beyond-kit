@@ -35,6 +35,8 @@ Currently we have translations to the following languages:
 - Japanese (日本語)
 - Dutch (Nederlands)
 - Russian (Русский)
+- Traditional Chinese (繁體中文)
+- Turkish (Türkçe)
 
 Want to help us translating D&D Beyond content? We created a [Translation Tool](https://dnd-beyond-kit.hotay.dev/translate) to make this process easier!!
 
@@ -66,7 +68,8 @@ We use the same `manifest.json` for both platforms.
 - [Gabriele](mailto:we@improve.games) and [bembe83](https://github.com/bembe83) - Italian translations
 - [lill-la](https://github.com/lill-la), [Shun Matsuba](https://x.com/fraulein_trpg), [SaitoJohn](https://github.com/SaitoJohn) and [フロイラ](mailto:matsuba0721.ggl@gmail.com) - Japanese support and translations for both, UI and Beyond pages.
 - [Disispower](https://github.com/Disispower) and Woodychopper - Contributed with Dutch translations for both, UI and Beyond pages.
-- [MarouchX](noraundyne@gmail.com) - Russian support to the extension
+- [MarouchX](mailto:noraundyne@gmail.com) - Russian support to the extension
+- [Erozbey](mailto:erozbey1@gmail.com) - Turkish support to the extension
 
 ### Thanks
 

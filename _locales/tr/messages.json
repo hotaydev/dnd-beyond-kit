@@ -1,0 +1,50 @@
+{
+  "title": {
+    "message": "D&D Beyond Kit",
+    "description": "Title of the extension"
+  },
+  "choose_language": {
+    "message": "Aşağıdaki listeden dilinizi seçin:",
+    "description": "Language to be used on the translation"
+  },
+  "choose_language_option": {
+    "message": "Bir dil seç",
+    "description": "Default option of language"
+  },
+  "backToTop": {
+    "message": "Başa dön",
+    "description": "Button to scroll to the top of page"
+  },
+  "convertToSI": {
+    "message": "Ölçümleri SI'ya dönüştür",
+    "description": "Toggle the International Metrics System"
+  },
+  "settingsTitle": {
+    "message": "Ayarlar",
+    "description": "Title of Settings tab"
+  },
+  "moreSettingsQuestion": {
+    "message": "Daha fazla yapılandırma mı gerekiyor? GitHub'da talep edin!",
+    "description": "More configurations message to GitHub"
+  },
+  "cleanInterface": {
+    "message": "Arayüzden dikkat dağıtıcı unsurları kaldır",
+    "description": "Remove distractions from the interface"
+  },
+  "periodicallySendMissingTranslations": {
+    "message": "Eksik çevirileri tespit etmeye yardımcı olun",
+    "description": "Help detect missing translations"
+  },
+  "likingInterface": {
+    "message": "Gezgin, eklentiyi beğendin mi?",
+    "description": "Question to the user if they like the extension"
+  },
+  "leaveAReview": {
+    "message": "Yorumunuzu yazın!",
+    "description": "Ask the user to leave a review"
+  },
+  "helpUsTranslating": {
+    "message": "D&D Beyond'u çevirmeye yardım edin!",
+    "description": "Help us translating D&D Beyond"
+  }
+}
