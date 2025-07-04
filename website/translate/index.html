@@ -816,6 +816,49 @@
         hideCompleted: "隱藏已完成的項目",
         showCompleted: "顯示已完成的項目",
       },
+      "tr": {
+        languageName: "Türkçe",
+        headerTitle: "D&D Beyond Kit'i çevir",
+        uiLanguageLabel: "Arayüz Dili:",
+        contentLanguageLabel: "Çevrilecek Dil:",
+        defaultTextColumn: "Varsayılan Metin (İngilizce)",
+        translationColumn: "Çeviri",
+        statusColumn: "Durum",
+        newLanguageButton: "Yeni Dil Ekle",
+        complete: "Tamamlandı",
+        incomplete: "Tamamlanmadı",
+        save: "Kaydet",
+        instructions: {
+          title: "Çeviri için talimatlar",
+          instructions: "Çeviri Talimatları",
+          structure: "Sayfa Düzenleme Yapısı",
+          languageToBeTranslated: "Sol üst köşeden çevrilecek dili seçin.",
+          interfaceLanguage: "Sağ üst köşeden arayüz dilini seçin.",
+          table: "Tablo",
+          standardText: "Standart Metin",
+          originalText: "İngilizce Orjinal Metin",
+          translation: "Çeviri",
+          translationText: "Seçilen Dilde Çeviri ve Çeviri Tamamlanma Yüzdesi",
+          status: "Durum",
+          statusText: "Zaten bir çeviri olup olmadığını gösterir",
+          howToUse: "Nasıl kullanılır",
+          step1: `“Çeviri” sütunundaki alanları, seçilen dil için uygun çeviriyle doldurun.`,
+          step2: `Yapmak istediğiniz çevirileri/düzenlemeleri tamamladıktan sonra, sağ alt köşedeki “Kaydet” düğmesine tıklayın.`,
+          step3: `Düğmeye tıkladıktan sonra, adınızı ve e-posta adresinizi girin (isteğe bağlı, uzantı sayfasında kredi almak istiyorsanız).`,
+          step4: `Son olarak, “Çevirileri Gönder” düğmesine tıklayın. Çevirileri alacağız ve mümkün olan en kısa sürede uzantıya ekleyeceğiz.`,
+          close: "Kapat",
+        },
+        sendForm: {
+          title: "Çevirileri Gönder",
+          instructions: "Aşağıdaki bilgiler isteğe bağlıdır. Sağlanırsa, çevirinizin kaynak bilgilerini uzantının sayfasına ekleyeceğiz.",
+          name: "İsim (isteğe bağlı)",
+          email: "E-posta/İnternet Sitesi/Bağlantı (İsteğe Bağlı)",
+          send: "Çevirileri Gönder",
+          justDownload: "Sadece JSON dosyasını indirin",
+        },
+        hideCompleted: "Tamamlananları gizle",
+        showCompleted: "Tamamlananları göster",
+      },
     };
 
     const baseGithubTranslationLink = "https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/main/translations";
@@ -861,6 +904,10 @@
       'zh-tw': {
         name: "Traditional Chinese (繁體中文)",
         file: `${baseGithubTranslationLink}/zh-tw.json`,
+      },
+      'tr-tr': {
+        name: "Turkish (Türkçe)",
+        file: `${baseGithubTranslationLink}/tr-tr.json`,
       }
     };
 
