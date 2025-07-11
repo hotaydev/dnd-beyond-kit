@@ -59,17 +59,19 @@ We use the same `manifest.json` for both platforms.
 
 ### People who helped translating this extension <3
 
-- [Taylor](https://github.com/taylorho) - Creator and main developer
-- [JulianPrieber](https://github.com/JulianPrieber), [Wilms](mailto:philip.jakob.leopold.wilms@gmail.com), [Catdcast3r](mailto:cardcast3r@gmail.com), [fLowBop](mailto:vincentweber1988@gmail.com) and Martin - Helped with many German translations
-- [San](mailto:pedromussipereira@gmail.com) and [susdw](mailto:carloscvgnl@gmail.com) - Helped with Brazilian Portuguese translations
-- [mlynarp](https://github.com/mlynarp) and Netleak - Czech translations contributions
-- [MrProditio](https://github.com/MrProditio), [Eltrio723](https://github.com/Eltrio723), [Júlia Nogales](mailto:julianolo71@gmail.com), GhettoMonkey and Hector C. - Spanish translations
-- [vgauther](https://github.com/vgauther), [Ins0mniakk](https://github.com/Ins0mniakk), [Saturnin](saturnin@mailibre.fr) and Forteleone - French translations
-- [Gabriele](mailto:we@improve.games) and [bembe83](https://github.com/bembe83) - Italian translations
-- [lill-la](https://github.com/lill-la), [Shun Matsuba](https://x.com/fraulein_trpg), [SaitoJohn](https://github.com/SaitoJohn) and [フロイラ](mailto:matsuba0721.ggl@gmail.com) - Japanese support and translations for both, UI and Beyond pages.
-- [Disispower](https://github.com/Disispower) and Woodychopper - Contributed with Dutch translations for both, UI and Beyond pages.
-- [MarouchX](mailto:noraundyne@gmail.com) - Russian support to the extension
-- [Erozbey](mailto:erozbey1@gmail.com) - Turkish support to the extension
+|  Language                          |  Contributors  |
+|------------------------------------|----------------|
+|  Brazilian Portuguese (Português)  |  [TaylorHo](https://github.com/taylorho), [San](mailto:pedromussipereira@gmail.com) and [susdw](mailto:carloscvgnl@gmail.com)  |
+|  Spanish (Español)                 |  [MrProditio](https://github.com/MrProditio), [Eltrio723](https://github.com/Eltrio723), [Júlia Nogales](mailto:julianolo71@gmail.com), GhettoMonkey and Hector C.  |
+|  Italian (Italiano)                |  [Gabriele](mailto:we@improve.games) and [bembe83](https://github.com/bembe83)  |
+|  French (Français)                 |  [vgauther](https://github.com/vgauther), [Ins0mniakk](https://github.com/Ins0mniakk), [Saturnin](saturnin@mailibre.fr) and Forteleone  |
+|  German (Deutsch)                  |  [JulianPrieber](https://github.com/JulianPrieber), [Wilms](mailto:philip.jakob.leopold.wilms@gmail.com), [Catdcast3r](mailto:cardcast3r@gmail.com), [fLowBop](mailto:vincentweber1988@gmail.com) and Martin  |
+|  Czech (Čeština)                   |  [mlynarp](https://github.com/mlynarp) and Netleak  |
+|  Japanese (日本語)                  |  [lill-la](https://github.com/lill-la), [Shun Matsuba](https://x.com/fraulein_trpg), [SaitoJohn](https://github.com/SaitoJohn) and [フロイラ](mailto:matsuba0721.ggl@gmail.com)  |
+|  Dutch (Nederlands)                |  [Disispower](https://github.com/Disispower) and Woodychopper  |
+|  Russian (Русский)                 |  [MarouchX](mailto:noraundyne@gmail.com)  |
+|  Traditional Chinese (繁體中文)     |  anonymous  |
+|  Turkish (Türkçe)                  |  [Erozbey](mailto:erozbey1@gmail.com)  |
 
 ### Thanks
 
