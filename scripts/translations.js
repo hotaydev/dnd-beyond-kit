@@ -180,7 +180,7 @@ async function translateContent() {
       setTimeout(() => {
         const main = document.querySelector("main");
         translateTextInElements(main, dictionary);
-        localizeDiceNotationInElement(main, lang);
+        localizeDiceNotationInElement(main, language);
         translateTextInElements(document.querySelector(".ct-sidebar__portal"), dictionary); // General side menu
         translateTextInElements(document.querySelector("dialog"), dictionary); // Mobile menu
         translateTextInElements(document.querySelector(".fullscreen-modal-overlay"), dictionary); // Character Creator overlays/popups
