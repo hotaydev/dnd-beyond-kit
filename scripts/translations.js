@@ -67,6 +67,9 @@ function translateTextInElements(parentElement) {
   const untranslatedContent = [];
 
   elements.forEach(element => {
+    // already processed?
+    if (element.parentElement?.dataset?.bkDone) return;
+
     let originalText = element.textContent;
 
     // Avoid CSS Classes
@@ -92,6 +95,9 @@ function translateTextInElements(parentElement) {
       }
     }
     element.textContent = translatedString;
+
+    // mark so we don't touch it again
+    element.parentElement.dataset.bkDone = "1";
   });
   getUntranslatedContent(untranslatedContent); // Defined in ./checkMissingTranslations.js
 }
