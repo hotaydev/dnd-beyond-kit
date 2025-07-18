@@ -73,6 +73,7 @@ We use the same `manifest.json` for both platforms.
 |  Russian (Русский)                 |  [MarouchX](mailto:noraundyne@gmail.com)  |
 |  Traditional Chinese (繁體中文)     |  anonymous  |
 |  Turkish (Türkçe)                  |  [Erozbey](mailto:erozbey1@gmail.com)  |
+|  Korean (한국어)                   |  Hwanya  |
 
 ### Thanks
 

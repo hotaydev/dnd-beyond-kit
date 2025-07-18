@@ -859,6 +859,49 @@
         hideCompleted: "Tamamlananları gizle",
         showCompleted: "Tamamlananları göster",
       },
+      'ko-kr': {
+        languageName: "한국어",
+        headerTitle: "D&D Beyond Kit 번역하기",
+        uiLanguageLabel: "인터페이스 언어:",
+        contentLanguageLabel: "번역할 언어:",
+        defaultTextColumn: "기본 텍스트 (영어)",
+        translationColumn: "번역",
+        statusColumn: "상태",
+        newLanguageButton: "새 언어 추가",
+        complete: "완료",
+        incomplete: "미완료",
+        save: "저장",
+        instructions: {
+          title: "번역 지침",
+          instructions: "번역 지침",
+          structure: "페이지 편집 구조",
+          languageToBeTranslated: "왼쪽 상단에서 번역할 언어를 선택하세요.",
+          interfaceLanguage: "오른쪽 상단에서 인터페이스 언어를 선택하세요.",
+          table: "표",
+          standardText: "표준 텍스트",
+          originalText: "영어 원본 텍스트",
+          translation: "번역",
+          translationText: "선택한 언어로의 번역 및 번역 완료율",
+          status: "상태",
+          statusText: "번역이 이미 존재하는지 여부를 나타냅니다",
+          howToUse: "사용 방법",
+          step1: `선택한 언어에 해당하는 번역으로 "번역" 열의 필드를 채우세요.`,
+          step2: `번역/편집을 완료한 후, 오른쪽 하단의 "저장" 버튼을 클릭하세요.`,
+          step3: `버튼을 클릭한 후, 이름과 이메일을 입력하세요 (선택사항, 확장 프로그램 페이지에 크레딧을 원하는 경우).`,
+          step4: `마지막으로 "번역 전송"을 클릭하세요. 저희가 받아서 가능한 한 빨리 확장 프로그램에 포함시키겠습니다.`,
+          close: "닫기",
+        },
+        sendForm: {
+          title: "번역 전송",
+          instructions: "아래 정보는 선택사항입니다. 제공되면 확장 프로그램 페이지에 번역 크레딧을 추가하겠습니다.",
+          name: "이름 (선택사항)",
+          email: "이메일/웹사이트/링크 (선택사항)",
+          send: "번역 전송",
+          justDownload: "JSON 파일만 다운로드",
+        },
+        hideCompleted: "완료된 항목 숨기기",
+        showCompleted: "완료된 항목 표시",
+      },
     };
 
     const baseGithubTranslationLink = "https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/main/translations";
@@ -908,6 +951,10 @@
       'tr-tr': {
         name: "Turkish (Türkçe)",
         file: `${baseGithubTranslationLink}/tr-tr.json`,
+      },
+      'ko-kr': {
+        name: "Korean (한국어)",
+        file: `${baseGithubTranslationLink}/ko-kr.json`,
       }
     };
 
