@@ -65,7 +65,8 @@
         "translations/nl-nl.json",
         "translations/ru-ru.json",
         "translations/zh-tw.json",
-        "translations/tr-tr.json"
+        "translations/tr-tr.json",
+        "translations/ko-kr.json"
       ],
       "matches": ["https://www.dndbeyond.com/*"]
     }
