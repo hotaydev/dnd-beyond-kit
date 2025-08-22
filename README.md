@@ -63,7 +63,7 @@ We use the same `manifest.json` for both platforms.
 |  Language                          |  Contributors  |
 |------------------------------------|----------------|
 |  Brazilian Portuguese (Português)  |  [TaylorHo](https://github.com/taylorho), [San](mailto:pedromussipereira@gmail.com) and [susdw](mailto:carloscvgnl@gmail.com)  |
-|  Spanish (Español)                 |  [MrProditio](https://github.com/MrProditio), [Eltrio723](https://github.com/Eltrio723), [Júlia Nogales](mailto:julianolo71@gmail.com), GhettoMonkey and Hector C.  |
+|  Spanish (Español)                 |  [MrProditio](https://github.com/MrProditio), [Eltrio723](https://github.com/Eltrio723), [Júlia Nogales](mailto:julianolo71@gmail.com), GhettoMonkey, Hector C. and Serph  |
 |  Italian (Italiano)                |  [Gabriele](mailto:we@improve.games) and [bembe83](https://github.com/bembe83)  |
 |  French (Français)                 |  [vgauther](https://github.com/vgauther), [Ins0mniakk](https://github.com/Ins0mniakk), [Saturnin](saturnin@mailibre.fr) and Forteleone  |
 |  German (Deutsch)                  |  [JulianPrieber](https://github.com/JulianPrieber), [Wilms](mailto:philip.jakob.leopold.wilms@gmail.com), [Catdcast3r](mailto:cardcast3r@gmail.com), [fLowBop](mailto:vincentweber1988@gmail.com), Martin and ash  |
