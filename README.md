@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://dnd-beyond-kit.hotay.dev" target="_blank"><img src="https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/main/website/dice.svg" width="80" alt="d20 dice" /></a>
+  <a href="https://dnd-beyond-kit.hotay.dev" target="_blank"><img src="https://raw.githubusercontent.com/TaylorHo/dnd-beyond-kit/main/website/dice.svg" width="80" alt="d20 dice" /></a>
   <h1>D&D Beyond Kit</h1>
 </div>
 
@@ -49,7 +49,7 @@ You can also manually help us translating the content by editing the JSON files 
 To do this manually, just add the text you want to edit/translate in lowercase as the **key** of the JSON, and the translate text as the **value** of the JSON.
 
 If you **want to add a new language**, then you can create a new JSON file in the `translations/` folder, with the name lik `<lang>-<country_code>.json`, for example: Brazilian Portuguese is called `pt-br.json`.
-in this case we need also to add this configuration to the `popup/popup.html` file and to `manifest.json`. For more details, [open an Issue](https://github.com/hotaydev/dnd-beyond-kit/issues/new) and we will help you in this process.
+in this case we need also to add this configuration to the `popup/popup.html` file and to `manifest.json`. For more details, [open an Issue](https://github.com/TaylorHo/dnd-beyond-kit/issues/new) and we will help you in this process.
 
 For simplicity you can also [add a new language by our web tool, clicking here](https://dnd-beyond-kit.hotay.dev/translate) and clicking in the _"Add new Language"_ button.
 

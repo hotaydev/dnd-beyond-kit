@@ -70,7 +70,7 @@ function checkIfHadPassed24HoursToSendMissingTranslations() {
   const passedMoreThan24Hours = timeDifference > 24 * 60 * 60 * 1000;
 
   if (passedMoreThan24Hours || savedArrayOfTranslations.length === 0) {
-    const currentKnownTranslations = "https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/main/translations/base.json";
+    const currentKnownTranslations = "https://raw.githubusercontent.com/TaylorHo/dnd-beyond-kit/main/translations/base.json";
 
     fetch(currentKnownTranslations)
       .then(res => res.json())

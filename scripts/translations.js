@@ -18,7 +18,7 @@ async function getTranslations(lang, remote = false) {
     }
   }
 
-  const githubBaseURL = 'https://raw.githubusercontent.com/hotaydev/dnd-beyond-kit/main/translations';
+  const githubBaseURL = 'https://raw.githubusercontent.com/TaylorHo/dnd-beyond-kit/main/translations';
   const jsonUrl = remote ? `${githubBaseURL}/${lang}.json` : currentBrowser.runtime.getURL(`translations/${lang}.json`);
 
   return await fetch(jsonUrl)
